@@ -3,12 +3,15 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "build": "prisma generate && next build",
+    "build": "npm run prisma:generate && next build",
+    "build:nextjs": "next build",
     "build:cloudflare": "npx @cloudflare/next-on-pages",
+    "prisma:generate": "prisma generate",
     "dev": "next dev",
     "lint": "eslint .",
     "start": "next start",
-    "postinstall": "prisma generate",
+    "postinstall": "npm run prisma:generate:safe",
+    "prisma:generate:safe": "prisma generate || echo '⚠️  Prisma generation skipped (DATABASE_URL not set)'",
     "deploy:cloudflare": "npm run build:cloudflare && wrangler pages deploy .vercel/output/static",
     "preview:cloudflare": "wrangler pages dev .vercel/output/static --compatibility-flag=nodejs_compat"
   },
