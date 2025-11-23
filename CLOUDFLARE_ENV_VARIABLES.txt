@@ -1,0 +1,81 @@
+================================================================================
+CLOUDFLARE PAGES - ENVIRONMENT VARIABLES
+================================================================================
+
+📋 COPY THESE TO CLOUDFLARE DASHBOARD
+Location: Settings → Environment Variables → Add Variable
+
+⚠️ IMPORTANT: Add for BOTH "Production" and "Preview" environments
+
+================================================================================
+REQUIRED VARIABLES
+================================================================================
+
+DATABASE_URL=your_database_connection_string_here
+
+SMTP_HOST=smtp.gmail.com
+SMTP_PORT=587
+SMTP_USER=hello@forgerdigital.com
+SMTP_PASSWORD=gioytymruerwpjzk
+SMTP_FROM_EMAIL=hello@forgerdigital.com
+
+NEXTAUTH_URL=https://forger-digital.pages.dev
+NEXTAUTH_SECRET=Tto3sZoHzoddH4/yoJ69AVElDNoeCUwQZPweXrtujQw=
+
+NODE_ENV=production
+
+================================================================================
+OPTIONAL VARIABLES (add if you use these services)
+================================================================================
+
+# Payment Processing (Stripe)
+STRIPE_SECRET_KEY=sk_live_your_key_here
+STRIPE_PUBLISHABLE_KEY=pk_live_your_key_here
+STRIPE_WEBHOOK_SECRET=whsec_your_webhook_secret
+
+# Caching (Redis)
+REDIS_URL=redis://your_redis_url
+
+# Error Tracking (Sentry)
+SENTRY_DSN=https://your_sentry_dsn
+SENTRY_AUTH_TOKEN=your_sentry_token
+
+# Force HTTPS
+FORCE_HTTPS=true
+
+================================================================================
+HOW TO ADD IN CLOUDFLARE DASHBOARD
+================================================================================
+
+1. Go to: https://dash.cloudflare.com/a313f914a3caf00d68b03de5eadc54cc/pages/view/forger-digital/settings
+
+2. Scroll to "Environment Variables" section
+
+3. For each variable:
+   - Click "Add variable"
+   - Enter Variable name (e.g., "DATABASE_URL")
+   - Enter Value (the actual value)
+   - Select environment: "Production" or "Preview" (add to BOTH)
+   - Click "Save"
+
+4. After adding all variables, click "Save" at the bottom
+
+5. Go to "Deployments" tab and redeploy
+
+================================================================================
+IMPORTANT NOTES
+================================================================================
+
+⚠️ DATABASE_URL: Replace with your actual database connection string
+   - Supabase: postgres://postgres.[project-ref]:[password]@aws-0-us-east-1.pooler.supabase.com:6543/postgres
+   - Neon: postgresql://[user]:[password]@[host]/[database]?sslmode=require
+   - PlanetScale: mysql://[user]:[password]@[host]/[database]?sslaccept=strict
+
+⚠️ NEXTAUTH_URL: Must match your actual deployment URL
+   - After first deployment, update if URL is different
+   - For custom domain: Update to https://yourdomain.com
+
+⚠️ SMTP_PASSWORD: This is a Google Workspace App Password (already configured)
+
+================================================================================
+
