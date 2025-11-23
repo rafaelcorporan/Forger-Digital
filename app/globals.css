@@ -1,0 +1,442 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Smooth scrolling for anchor links */
+html {
+  scroll-behavior: smooth;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+}
+
+:root {
+  /* Updated theme to match Forger Digital dark, technical aesthetic */
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.65 0.15 265);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.577 0.245 27.325);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.22 0 0);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(0.65 0.15 265);
+  --chart-1: oklch(0.65 0.15 265);
+  --chart-2: oklch(0.6 0.118 184.704);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+  --radius: 0.5rem;
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.65 0.15 265);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.18 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.22 0 0);
+  --sidebar-ring: oklch(0.65 0.15 265);
+}
+
+.dark {
+  --background: oklch(0.08 0 0);
+  --foreground: oklch(0.98 0 0);
+  --card: oklch(0.12 0 0);
+  --card-foreground: oklch(0.98 0 0);
+  --popover: oklch(0.12 0 0);
+  --popover-foreground: oklch(0.98 0 0);
+  --primary: oklch(0.98 0 0);
+  --primary-foreground: oklch(0.08 0 0);
+  --secondary: oklch(0.18 0 0);
+  --secondary-foreground: oklch(0.98 0 0);
+  --muted: oklch(0.18 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --accent: oklch(0.65 0.15 265);
+  --accent-foreground: oklch(0.98 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.98 0 0);
+  --border: oklch(0.22 0 0);
+  --input: oklch(0.22 0 0);
+  --ring: oklch(0.65 0.15 265);
+  --chart-1: oklch(0.65 0.15 265);
+  --chart-2: oklch(0.696 0.17 162.48);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+  --sidebar: oklch(0.12 0 0);
+  --sidebar-foreground: oklch(0.98 0 0);
+  --sidebar-primary: oklch(0.65 0.15 265);
+  --sidebar-primary-foreground: oklch(0.98 0 0);
+  --sidebar-accent: oklch(0.18 0 0);
+  --sidebar-accent-foreground: oklch(0.98 0 0);
+  --sidebar-border: oklch(0.22 0 0);
+  --sidebar-ring: oklch(0.65 0.15 265);
+}
+
+@theme inline {
+  --font-sans: "Geist", "Geist Fallback";
+  --font-mono: "Geist Mono", "Geist Mono Fallback";
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+    overflow-y: auto;
+    overflow-x: hidden;
+    min-height: 100%;
+    height: auto;
+  }
+  
+  /* WCAG 2.1 AA Compliant Focus Indicators */
+  *:focus-visible {
+    outline: 2px solid var(--color-ring);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+  
+  /* Ensure keyboard navigation is always visible */
+  a:focus-visible,
+  button:focus-visible,
+  input:focus-visible,
+  textarea:focus-visible,
+  select:focus-visible,
+  [tabindex]:focus-visible {
+    outline: 2px solid oklch(0.828 0.189 84.429); /* Orange-500 */
+    outline-offset: 2px;
+    box-shadow: 0 0 0 4px oklch(0.828 0.189 84.429 / 0.2);
+  }
+  
+  /* Remove default outline for mouse users but keep for keyboard */
+  *:focus:not(:focus-visible) {
+    outline: none;
+  }
+}
+
+/* Hide Next.js development overlay indicators - COMPREHENSIVE REMOVAL */
+/* VERIFIED TARGETS - Based on actual DOM structure */
+/* Target the outer container with inline styles */
+div[style*="touch-action: none"][style*="user-select: none"],
+div[style*="touch-action:none"][style*="user-select:none"],
+/* Next.js Dev Tools Badge Root Container */
+div[data-next-badge-root="true"],
+[data-next-badge-root],
+/* Next.js Dev Tools Badge */
+div[data-next-badge="true"],
+[data-next-badge],
+/* Next.js Logo Button */
+#next-logo,
+button[id="next-logo"],
+button[data-nextjs-dev-tools-button="true"],
+[data-nextjs-dev-tools-button="true"],
+[data-next-mark="true"],
+button[data-next-mark="true"],
+/* Badge dot indicator */
+[data-dot],
+div[data-dot="true"],
+/* Target by ARIA label */
+button[aria-label*="Next.js Dev Tools"],
+button[aria-label*="Open Next.js"],
+/* Next.js Dev Tools Container and Panel */
+#__next-build-watcher,
+#__next-dev-overlay,
+.__next-dev-overlay,
+[data-nextjs-dialog],
+[data-nextjs-toast],
+.nextjs-toast-errors-parent,
+[data-nextjs-toast-errors],
+.nextjs-build-watcher,
+.__next-build-watcher,
+[data-nextjs-dev-tools],
+[data-nextjs-dev-tools-panel],
+.__next-dev-tools,
+#__next-dev-tools,
+.nextjs-dev-tools,
+/* Additional Next.js overlay selectors */
+div[id*="__next"],
+div[class*="__next"],
+div[class*="nextjs"],
+div[id*="nextjs"],
+[data-nextjs],
+/* Parent containers for Next.js Dev Tools button */
+div:has(button[id="next-logo"]),
+div:has(button[data-nextjs-dev-tools-button="true"]),
+div:has([data-nextjs-dev-tools-button="true"]),
+/* Fixed position overlays at bottom */
+div[style*="position: fixed"][style*="bottom"],
+div[style*="position: fixed"][style*="left"],
+div[style*="position: fixed"][style*="bottom: 0"],
+div[style*="position: fixed"][style*="left: 0"],
+div[style*="position:fixed"][style*="bottom"],
+div[style*="position:fixed"][style*="left"],
+/* Issue/error indicator overlays */
+div[class*="issue"],
+div[class*="error"],
+div[class*="debug"],
+div[class*="overlay"],
+/* Development tool indicators */
+div[aria-label*="Issue"],
+div[aria-label*="Error"],
+div[title*="Issue"],
+div[title*="Error"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  z-index: -9999 !important;
+}
+
+/* Additional protection: Hide any fixed position elements at bottom-left or bottom-right */
+body > div[style*="position: fixed"]:has([style*="bottom: 0"]),
+body > div[style*="position: fixed"]:has([style*="bottom"]),
+body > div[style*="position:fixed"]:has([style*="bottom"]),
+/* Hide any divs with rounded corners and light backgrounds that could be overlays */
+div[style*="border-radius"][style*="background"][style*="white"],
+div[style*="border-radius"][style*="background"][style*="#fff"],
+div[style*="border-radius"][style*="background-color"][style*="white"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Footer-specific: Ensure no white squares appear in footer area */
+footer div[style*="background"][style*="white"],
+footer div[style*="background-color"][style*="white"],
+footer div[style*="background"][style*="#fff"],
+footer div[style*="background"][style*="#ffffff"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Remove light grey/white rectangle in bottom-left corner (image 2 artifact) */
+div[style*="position: fixed"][style*="bottom: 0"][style*="left: 0"],
+div[style*="position:fixed"][style*="bottom:0"][style*="left:0"],
+div[style*="position: fixed"][style*="bottom"][style*="left"],
+div[style*="border-radius"][style*="background"][style*="grey"],
+div[style*="border-radius"][style*="background"][style*="gray"],
+div[style*="border-radius"][style*="background-color"][style*="grey"],
+div[style*="border-radius"][style*="background-color"][style*="gray"],
+div[style*="border-radius"][style*="background"][style*="#f5f5f5"],
+div[style*="border-radius"][style*="background"][style*="#fafafa"],
+div[style*="border-radius"][style*="background"][style*="rgb(245"],
+div[style*="border-radius"][style*="background"][style*="rgba(245"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+  position: absolute !important;
+  left: -9999px !important;
+  top: -9999px !important;
+  z-index: -9999 !important;
+  pointer-events: none !important;
+}
+
+/* Target any element with rounded corners on right side in bottom-left position */
+body > div:last-child[style*="bottom"][style*="left"],
+body > div:last-child[style*="border-radius"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* COMPREHENSIVE WHITE SQUARE ELIMINATION - ALL FIXED OVERLAYS */
+/* Hide ALL fixed-position elements with light backgrounds that could appear as white squares */
+div[style*="position: fixed"],
+div[style*="position:fixed"] {
+  &:has([style*="background: white"]),
+  &:has([style*="background:white"]),
+  &:has([style*="background: #fff"]),
+  &:has([style*="background:#fff"]),
+  &:has([style*="background-color: white"]),
+  &:has([style*="background-color:white"]),
+  &:has([style*="background-color: #fff"]),
+  &:has([style*="background-color:#fff"]),
+  &:has([style*="background: rgb(255"]),
+  &:has([style*="background:rgb(255"]) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    width: 0 !important;
+    height: 0 !important;
+    overflow: hidden !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -9999 !important;
+    pointer-events: none !important;
+  }
+}
+
+/* Target Spline watermark/badge specifically */
+div[style*="position: fixed"][style*="bottom"][style*="right"],
+div[style*="position:fixed"][style*="bottom"][style*="right"],
+a[style*="position: fixed"][style*="bottom"][style*="right"],
+a[style*="position:fixed"][style*="bottom"][style*="right"],
+/* Target Spline badge by common patterns */
+div[style*="position: absolute"][style*="bottom"][style*="left"],
+div[style*="position:absolute"][style*="bottom"][style*="left"],
+a[style*="position: absolute"][style*="bottom"],
+a[style*="position:absolute"][style*="bottom"],
+/* Target elements with Spline logo styling */
+div[style*="display: flex"][style*="align-items"][style*="bottom"],
+a[href*="spline.design"],
+a[href*="spline"],
+/* Hide anything with "Built with Spline" styling */
+div:has(> a[href*="spline"]),
+div:has(> svg):has(> a) {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  width: 0 !important;
+  height: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Nuclear option: Hide any small fixed elements at edges of screen */
+body > div[style*="position: fixed"][style*="width"][style*="height"],
+body > div[style*="position:fixed"][style*="width"][style*="height"],
+body > a[style*="position: fixed"],
+body > a[style*="position:fixed"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+}
+
+/* ULTIMATE NUCLEAR OPTION: Hide Next.js 15 Turbopack Dev Indicator */
+/* Target the specific structure of Next.js dev indicators */
+body > div:has(button),
+body > div:has(div[style*="position: fixed"]) {
+  &:not(#__next):not([data-root]):not([id]):not([class]) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    width: 0 !important;
+    height: 0 !important;
+    position: absolute !important;
+    left: -9999px !important;
+    top: -9999px !important;
+    z-index: -9999 !important;
+  }
+}
+
+/* Target button elements in fixed containers at bottom corners */
+button[data-nextjs-route-announcer-button],
+button[aria-label*="Route"],
+button[aria-label*="Info"],
+button[aria-label*="Dynamic"],
+button[style*="position: fixed"],
+button[style*="position:fixed"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Hide any div containing "Route", "Turbopack", "Dynamic" text nodes */
+body > div {
+  &:has(button:not([class]):not([id])) {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+
+/* SPLINE WATERMARK REMOVAL - Cover the iframe badge area */
+/* Since Spline badge is inside iframe (cross-origin), we overlay it with CSS */
+section:has(iframe[src*="spline"]) {
+  position: relative;
+}
+
+section:has(iframe[src*="spline"])::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 200px;
+  height: 60px;
+  background: transparent;
+  z-index: 9999 !important;
+  pointer-events: none;
+  /* Match the background color */
+  background: linear-gradient(to right, #111827 0%, transparent 100%);
+}
+
+/* Alternative: Cover the entire bottom strip where Spline badge appears */
+iframe[src*="spline"] {
+  position: relative;
+  /* Clip the bottom portion to hide watermark */
+  clip-path: inset(0 0 50px 0);
+}
+
+/* ACCESSIBILITY: Respect user's motion preferences (WCAG 2.1 AA) */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

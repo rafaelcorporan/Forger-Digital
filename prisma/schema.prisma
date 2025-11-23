@@ -1,0 +1,406 @@
+// Prisma Schema for Authentication System
+// This schema supports NextAuth.js with email/password and OAuth providers
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model - Core user information
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  image         String?
+  password      String? // Hashed password (bcrypt) - null for OAuth users
+  role          UserRole  @default(USER)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  accounts       Account[]
+  sessions       Session[]
+  payments       Payment[]
+  subscriptions  Subscription[]
+  supportTickets SupportTicket[]
+  blogPosts      BlogPost[]
+  blogComments   BlogComment[]
+
+  @@map("users")
+}
+
+// Account model - OAuth provider accounts
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+// Session model - User sessions
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+// VerificationToken model - Email verification and password reset
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verification_tokens")
+}
+
+// User roles enum
+enum UserRole {
+  USER
+  ADMIN
+  SUPER_ADMIN
+}
+
+// Contact Form Submission model
+model ContactFormSubmission {
+  id        String   @id @default(cuid())
+  firstName String
+  lastName  String
+  email     String
+  phone     String?
+  company   String?
+  message   String   @db.Text
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@index([email])
+  @@index([createdAt])
+  @@map("contact_form_submissions")
+}
+
+// Get Started Form Submission model
+model GetStartedSubmission {
+  id                 String   @id @default(cuid())
+  firstName          String
+  lastName           String
+  company            String
+  email              String
+  phone              String?
+  role               String?
+  projectDescription String   @db.Text
+  serviceInterests   String[] // Array of service interests
+  contactMethod      String
+  timeline           String?
+  budget             String?
+  createdAt          DateTime @default(now())
+  updatedAt          DateTime @updatedAt
+
+  @@index([email])
+  @@index([createdAt])
+  @@map("get_started_submissions")
+}
+
+// Payment model - Stripe payment records
+model Payment {
+  id              String        @id @default(cuid())
+  userId          String? // Optional - can be null for guest payments
+  subscriptionId  String? // Optional - for subscription payments
+  stripePaymentId String        @unique
+  stripeSessionId String? // For checkout sessions
+  amount          Int // Amount in cents
+  currency        String        @default("usd")
+  status          PaymentStatus @default(PENDING)
+  paymentMethod   String? // card, bank_transfer, etc.
+  metadata        Json? // Additional metadata from Stripe
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  // Relations
+  user         User?         @relation(fields: [userId], references: [id], onDelete: SetNull)
+  subscription Subscription? @relation(fields: [subscriptionId], references: [id], onDelete: SetNull)
+
+  @@index([userId])
+  @@index([subscriptionId])
+  @@index([stripePaymentId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("payments")
+}
+
+// Subscription model - User subscriptions
+model Subscription {
+  id                   String             @id @default(cuid())
+  userId               String
+  stripeSubscriptionId String             @unique
+  stripePriceId        String
+  stripeCustomerId     String
+  status               SubscriptionStatus @default(ACTIVE)
+  planId               String // starter, professional, enterprise
+  currentPeriodStart   DateTime
+  currentPeriodEnd     DateTime
+  cancelAtPeriodEnd    Boolean            @default(false)
+  metadata             Json? // Additional metadata
+  createdAt            DateTime           @default(now())
+  updatedAt            DateTime           @updatedAt
+
+  // Relations
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  payments Payment[] // One subscription can have multiple payments
+
+  @@index([userId])
+  @@index([stripeSubscriptionId])
+  @@index([status])
+  @@map("subscriptions")
+}
+
+// Payment status enum
+enum PaymentStatus {
+  PENDING
+  PROCESSING
+  SUCCEEDED
+  FAILED
+  CANCELED
+  REFUNDED
+}
+
+// Subscription status enum
+enum SubscriptionStatus {
+  ACTIVE
+  CANCELED
+  PAST_DUE
+  UNPAID
+  INCOMPLETE
+  INCOMPLETE_EXPIRED
+  TRIALING
+}
+
+// Search Index model - Stores searchable content for full-text search
+model SearchIndex {
+  id          String   @id @default(cuid())
+  contentType String // 'service', 'project', 'team', 'page', 'story'
+  contentId   String // ID or slug of the content
+  title       String
+  description String?  @db.Text
+  content     String   @db.Text // Full text content for search
+  url         String // URL to the content
+  tags        String[] // Tags/categories for filtering
+  metadata    Json? // Additional metadata (technologies, skills, etc.)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@index([contentType])
+  @@index([contentId])
+  @@index([url])
+  @@map("search_index")
+}
+
+// Support Ticket model - Customer support tickets
+model SupportTicket {
+  id          String         @id @default(cuid())
+  userId      String? // Optional - can be null for guest tickets
+  email       String // Required for contact
+  subject     String
+  description String         @db.Text
+  category    TicketCategory @default(GENERAL)
+  priority    TicketPriority @default(MEDIUM)
+  status      TicketStatus   @default(OPEN)
+  assignedTo  String? // User ID of assigned support agent
+  attachments Json? // Array of attachment URLs/metadata
+  metadata    Json? // Additional metadata
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  resolvedAt  DateTime?
+
+  // Relations
+  user    User?                @relation(fields: [userId], references: [id], onDelete: SetNull)
+  replies SupportTicketReply[]
+
+  @@index([userId])
+  @@index([email])
+  @@index([status])
+  @@index([category])
+  @@index([priority])
+  @@index([assignedTo])
+  @@index([createdAt])
+  @@map("support_tickets")
+}
+
+// Support Ticket Reply model - Replies to support tickets
+model SupportTicketReply {
+  id          String   @id @default(cuid())
+  ticketId    String
+  userId      String? // Optional - can be null for system/automated replies
+  email       String? // For guest replies
+  message     String   @db.Text
+  isInternal  Boolean  @default(false) // Internal notes not visible to customer
+  attachments Json? // Array of attachment URLs/metadata
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  ticket SupportTicket @relation(fields: [ticketId], references: [id], onDelete: Cascade)
+
+  @@index([ticketId])
+  @@index([userId])
+  @@index([createdAt])
+  @@map("support_ticket_replies")
+}
+
+// Ticket Category enum
+enum TicketCategory {
+  GENERAL
+  TECHNICAL
+  BILLING
+  FEATURE_REQUEST
+  BUG_REPORT
+  ACCOUNT
+  OTHER
+}
+
+// Ticket Priority enum
+enum TicketPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+// Ticket Status enum
+enum TicketStatus {
+  OPEN
+  IN_PROGRESS
+  WAITING_CUSTOMER
+  RESOLVED
+  CLOSED
+}
+
+// Blog Post model - Blog posts and articles
+model BlogPost {
+  id          String        @id @default(cuid())
+  title       String
+  slug        String        @unique
+  excerpt     String?       @db.Text
+  content     String        @db.Text
+  featuredImage String?
+  authorId    String
+  status      PostStatus    @default(DRAFT)
+  publishedAt DateTime?
+  categoryId  String?
+  metaTitle   String?
+  metaDescription String?   @db.Text
+  metaKeywords String[]
+  seoJsonLd   Json? // Additional SEO structured data
+  views       Int           @default(0)
+  readingTime Int? // Estimated reading time in minutes
+  createdAt   DateTime      @default(now())
+  updatedAt   DateTime      @updatedAt
+
+  // Relations
+  author     User           @relation(fields: [authorId], references: [id], onDelete: Cascade)
+  category   BlogCategory?  @relation(fields: [categoryId], references: [id], onDelete: SetNull)
+  tags       BlogTag[]
+  comments   BlogComment[]
+
+  @@index([slug])
+  @@index([status])
+  @@index([authorId])
+  @@index([categoryId])
+  @@index([publishedAt])
+  @@index([createdAt])
+  @@map("blog_posts")
+}
+
+// Blog Category model - Content categories
+model BlogCategory {
+  id          String     @id @default(cuid())
+  name        String     @unique
+  slug        String     @unique
+  description String?    @db.Text
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+
+  // Relations
+  posts BlogPost[]
+
+  @@index([slug])
+  @@map("blog_categories")
+}
+
+// Blog Tag model - Content tags
+model BlogTag {
+  id        String   @id @default(cuid())
+  name      String   @unique
+  slug      String   @unique
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  posts BlogPost[]
+
+  @@index([slug])
+  @@map("blog_tags")
+}
+
+// Blog Comment model - User comments on posts
+model BlogComment {
+  id        String      @id @default(cuid())
+  postId    String
+  authorId  String? // Optional - can be null for guest comments
+  authorName String // Required for guest comments
+  authorEmail String // Required for guest comments
+  content   String      @db.Text
+  status    CommentStatus @default(PENDING)
+  parentId  String? // For nested/reply comments
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+
+  // Relations
+  post   BlogPost  @relation(fields: [postId], references: [id], onDelete: Cascade)
+  author User?     @relation(fields: [authorId], references: [id], onDelete: SetNull)
+  parent BlogComment? @relation("CommentReplies", fields: [parentId], references: [id], onDelete: Cascade)
+  replies BlogComment[] @relation("CommentReplies")
+
+  @@index([postId])
+  @@index([authorId])
+  @@index([status])
+  @@index([createdAt])
+  @@map("blog_comments")
+}
+
+// Post Status enum
+enum PostStatus {
+  DRAFT
+  PENDING_REVIEW
+  PUBLISHED
+  ARCHIVED
+}
+
+// Comment Status enum
+enum CommentStatus {
+  PENDING
+  APPROVED
+  REJECTED
+  SPAM
+}

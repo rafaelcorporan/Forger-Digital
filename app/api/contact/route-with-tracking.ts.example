@@ -1,0 +1,58 @@
+/**
+ * Example: API route with error tracking
+ * This shows how to integrate error tracking into existing API routes
+ */
+
+import { NextRequest, NextResponse } from "next/server"
+import { withErrorTracking, createErrorResponse } from "@/lib/api-error-handler"
+import { captureException, addBreadcrumb } from "@/lib/sentry"
+import { prisma } from "@/lib/prisma"
+
+// Original handler
+async function handleContactForm(request: NextRequest) {
+  try {
+    const data = await request.json()
+    
+    // Add breadcrumb for tracking
+    addBreadcrumb("Processing contact form", "form", "info", {
+      email: data.email,
+    })
+
+    // Your existing logic here
+    await prisma.contactFormSubmission.create({
+      data: {
+        firstName: data.firstName,
+        lastName: data.lastName,
+        email: data.email,
+        // ... rest of fields
+      },
+    })
+
+    return NextResponse.json({ success: true })
+  } catch (error: any) {
+    // Capture specific errors
+    if (error.code === "P2002") {
+      // Unique constraint violation
+      captureException(error, {
+        tags: {
+          error_type: "database_constraint",
+          constraint: "email",
+        },
+        level: "warning",
+      })
+      return createErrorResponse("Email already exists", 409, error)
+    }
+
+    // Re-throw to be caught by withErrorTracking
+    throw error
+  }
+}
+
+// Export wrapped handler
+export const POST = withErrorTracking(handleContactForm, {
+  operation: "contact_form_submission",
+  tags: {
+    endpoint: "contact",
+  },
+})
+

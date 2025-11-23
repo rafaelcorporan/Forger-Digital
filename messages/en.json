@@ -1,0 +1,1466 @@
+{
+  "common": {
+    "brand": "Forger Digital",
+    "tagline": "We transform your digital vision into robust, scalable reality.",
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "back": "Back",
+    "next": "Next",
+    "previous": "Previous",
+    "search": "Search",
+    "filter": "Filter",
+    "all": "All",
+    "backToServices": "Back to Services",
+    "backToSuccessStories": "Back to Success Stories",
+    "notFound": "Not Found",
+    "serviceNotFound": "Service Not Found",
+    "serviceNotFoundDescription": "The service you're looking for doesn't exist.",
+    "storyNotFound": "Story Not Found",
+    "storyNotFoundDescription": "The success story you're looking for doesn't exist.",
+    "overview": "Overview",
+    "keyBenefits": "Key Benefits",
+    "useCases": "Use Cases",
+    "technologies": "Technologies",
+    "relatedServices": "Related Services",
+    "getStarted": "Get Started",
+    "contactUs": "Contact Us"
+  },
+  "navigation": {
+    "home": "Home",
+    "services": "Services",
+    "work": "Work",
+    "portfolio": "Portfolio",
+    "about": "About",
+    "contact": "Contact",
+    "careers": "Careers",
+    "team": "Team",
+    "search": "Search",
+    "searchPlaceholder": "Search services, projects, team members...",
+    "openSearch": "Open search dialog"
+  },
+  "hero": {
+    "title": "Forger Digital",
+    "subtitle": "Forger Digital: Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.",
+    "description": "Forge Digital: Evokes craftsmanship, creation, & building robust solutions. Digital: Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.",
+    "primaryButton": "Start a Project",
+    "secondaryButton": "View Our Work",
+    "stats": {
+      "projects": "Projects Delivered",
+      "satisfaction": "Client Satisfaction",
+      "experience": "Years Experience"
+    }
+  },
+  "contact": {
+    "title": "Ready to Start Your Digital Transformation?",
+    "subtitle": "Get In Touch",
+    "description": "Let's discuss how Forger Digital can help you achieve your business goals with cutting-edge technology and expert craftsmanship.",
+    "formTitle": "Start Your Project",
+    "formDescription": "Tell us about your project and we'll get back to you within 24 hours.",
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "company": "Company",
+      "message": "Project Details"
+    },
+    "placeholders": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "email": "your.email@example.com",
+      "phone": "+1 (347) 829-4952",
+      "company": "Your Company Name",
+      "message": "Tell us about your project, goals, timeline, and requirements..."
+    },
+    "helpText": {
+      "firstName": "Please enter your first name as it appears on official documents",
+      "lastName": "Please enter your last name as it appears on official documents",
+      "email": "We'll use this email to respond to your inquiry. Make sure it's active and accessible.",
+      "emailPrivacy": "We'll never share your email with third parties",
+      "phone": "Optional. Include country code for international numbers (e.g., +1 for US)",
+      "company": "Optional. Your company or organization name",
+      "message": "Describe your project goals, timeline, and any specific requirements. Minimum 10 characters."
+    },
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "phoneInvalid": "Please enter a valid phone number",
+      "messageRequired": "Message is required",
+      "messageMinLength": "Message must be at least 10 characters long"
+    },
+    "submit": "Send Message",
+    "submitting": "Sending...",
+    "success": "Message sent successfully!",
+    "successDescription": "We'll get back to you within 24 hours.",
+    "error": "Something went wrong. Please try again.",
+    "autoSave": "Draft saved automatically"
+  },
+  "footer": {
+    "common": {
+      "brand": "Forger Digital",
+      "tagline": {
+        "line1": "We transform your digital vision",
+        "line2": "into robust, scalable reality."
+      }
+    },
+    "company": "Company",
+    "resources": "Resources",
+    "legal": "Legal",
+    "links": {
+      "about": "About",
+      "services": "Services",
+      "careers": "Careers",
+      "team": "Team",
+      "contact": "Contact",
+      "gettingStarted": "Getting Started",
+      "caseStudies": "Case Studies",
+      "apiDocumentation": "API Documentation",
+      "support": "Support",
+      "insights": "Insights",
+      "privacyPolicy": "Privacy Policy",
+      "termsOfService": "Terms of Service",
+      "security": "Security",
+      "contentSecurityPolicy": "Content Security Policy",
+      "compliance": "Compliance",
+      "cookiePolicy": "Cookie Policy",
+      "manageCookies": "Manage Cookies"
+    },
+    "copyright": "© 2025 Forger Digital. All rights reserved.",
+    "social": {
+      "linkedin": "Visit our LinkedIn profile",
+      "twitter": "Visit our Twitter profile",
+      "github": "Visit our GitHub profile"
+    }
+  },
+  "language": {
+    "switch": "Switch language",
+    "current": "Current language"
+  },
+  "features": {
+    "title": "Comprehensive Digital Solutions",
+    "subtitle": "From strategic consulting to cutting-edge implementation, we deliver end-to-end digital transformation services.",
+    "learnMore": "Learn More",
+    "seeMore": "See More Services",
+    "seeLess": "See Less Services",
+    "services": {
+      "customSoftwareDevelopment": {
+        "title": "Custom Software Development",
+        "description": "Bespoke software solutions tailored to your unique business requirements and scalability needs.",
+        "features": ["Full-stack development", "API integration", "Cloud-native architecture"],
+        "category": "Core Services",
+        "detailedContent": "We specialize in building custom software solutions that perfectly align with your business goals. Our approach combines deep technical expertise with business acumen to deliver solutions that drive real ROI. From initial architecture design through deployment and ongoing support, we ensure your custom software grows with your business.",
+        "benefits": [
+          "Tailored solutions that match your exact requirements",
+          "Scalable architecture for future growth",
+          "Complete control over features and functionality",
+          "Integration with existing systems"
+        ],
+        "useCases": [
+          "Enterprise application development",
+          "Business process automation",
+          "Custom ERP systems",
+          "Industry-specific solutions"
+        ],
+        "technologies": ["Full-stack development", "API integration", "Cloud-native architecture"]
+      },
+      "webApplicationDevelopment": {
+        "title": "Web Application Development",
+        "description": "High-performance web applications built with modern frameworks and best practices.",
+        "features": ["React/Next.js", "Progressive Web Apps", "E-commerce solutions"],
+        "category": "Core Services",
+        "detailedContent": "Our web application development expertise spans modern frameworks and technologies. We build applications that not only look beautiful but perform exceptionally well. From single-page applications to complex multi-tenant platforms, we deliver web solutions that scale and inspire.",
+        "benefits": [
+          "Lightning-fast performance",
+          "Responsive design across all devices",
+          "SEO-optimized applications",
+          "Modern user experiences"
+        ],
+        "useCases": [
+          "SaaS platforms",
+          "E-commerce applications",
+          "Collaboration tools",
+          "Real-time data platforms"
+        ],
+        "technologies": ["React/Next.js", "Progressive Web Apps", "E-commerce solutions"]
+      },
+      "mobileAppDevelopment": {
+        "title": "Mobile App Development",
+        "description": "Native and cross-platform mobile applications that deliver exceptional user experiences.",
+        "features": ["iOS & Android", "React Native", "Flutter development"],
+        "category": "Core Services",
+        "detailedContent": "We develop mobile applications that users love to use. Whether you need a native iOS app, Android app, or cross-platform solution, we have the expertise to deliver. Our mobile development process prioritizes user experience, performance, and scalability.",
+        "benefits": [
+          "Native performance on iOS and Android",
+          "Code reuse across platforms",
+          "Offline functionality",
+          "App store optimization"
+        ],
+        "useCases": [
+          "Consumer mobile applications",
+          "Enterprise mobile solutions",
+          "Location-based services",
+          "Mobile-first startups"
+        ],
+        "technologies": ["iOS & Android", "React Native", "Flutter development"]
+      },
+      "enterpriseSolutions": {
+        "title": "Enterprise Solutions",
+        "description": "Scalable enterprise systems and integrations that streamline your business operations.",
+        "features": ["System integration", "Legacy modernization", "Data migration"],
+        "category": "Core Services",
+        "detailedContent": "Our enterprise solutions unite disparate systems and workflows into cohesive, efficient operations. We understand the complexity of enterprise environments and bring proven strategies for successful integration and modernization.",
+        "benefits": [
+          "Unified business operations",
+          "Reduced operational complexity",
+          "Improved data consistency",
+          "Scalable infrastructure"
+        ],
+        "useCases": [
+          "Digital transformation initiatives",
+          "Legacy system modernization",
+          "Multi-system integration",
+          "Enterprise consolidation"
+        ],
+        "technologies": ["System integration", "Legacy modernization", "Data migration"]
+      },
+      "emergingTechnologies": {
+        "title": "Emerging Technologies",
+        "description": "AI, blockchain, and IoT solutions that position your business at the forefront of innovation.",
+        "features": ["AI/ML implementation", "Blockchain development", "IoT solutions"],
+        "category": "Core Services",
+        "detailedContent": "Stay ahead of the curve with our emerging technology expertise. We help businesses harness AI, blockchain, and IoT to create new opportunities and drive innovation. Our experienced team can guide your organization through emerging tech adoption with proven strategies.",
+        "benefits": [
+          "Competitive advantage through innovation",
+          "Automated decision-making",
+          "New revenue streams",
+          "Future-proof architecture"
+        ],
+        "useCases": [
+          "Predictive analytics",
+          "Smart contracts and DeFi",
+          "Connected device networks",
+          "Autonomous systems"
+        ],
+        "technologies": ["AI/ML implementation", "Blockchain development", "IoT solutions"]
+      },
+      "digitalTransformation": {
+        "title": "Digital Transformation",
+        "description": "Strategic guidance and implementation to digitize and optimize your business processes.",
+        "features": ["Process automation", "Digital strategy", "Change management"],
+        "category": "Core Services",
+        "detailedContent": "Digital transformation is not just about technology—it's about reimagining your business. We guide organizations through comprehensive digital transformation journeys, ensuring sustainable change and measurable results.",
+        "benefits": [
+          "Streamlined business processes",
+          "Improved customer experiences",
+          "Reduced costs and waste",
+          "Data-driven decision-making"
+        ],
+        "useCases": [
+          "Digital-first business models",
+          "Customer experience enhancement",
+          "Operational efficiency",
+          "Organizational change"
+        ],
+        "technologies": ["Process automation", "Digital strategy", "Change management"]
+      },
+      "kubernetesClusterDesign": {
+        "title": "Kubernetes Cluster Design & Deployment",
+        "description": "Architect and deploy production-ready Kubernetes clusters tailored to your scalability requirements. Ensure optimal resource allocation and high availability.",
+        "features": ["Kubernetes, Helm, Kustomize", "AWS EKS, GCP GKE, Azure AKS", "Scalable container orchestration"],
+        "category": "Cloud Infrastructure",
+        "detailedContent": "We design and deploy enterprise-grade Kubernetes clusters optimized for your specific workloads. From cluster architecture to production deployment, we ensure your containerized applications run reliably at scale.",
+        "benefits": [
+          "Automatic application scaling",
+          "High availability and resilience",
+          "Efficient resource utilization",
+          "Simplified deployment pipelines"
+        ],
+        "useCases": [
+          "Microservices architectures",
+          "Containerized applications",
+          "Multi-cloud deployments",
+          "CI/CD pipelines"
+        ],
+        "technologies": ["Kubernetes, Helm, Kustomize", "AWS EKS, GCP GKE, Azure AKS", "Scalable container orchestration"]
+      },
+      "infrastructureAsCode": {
+        "title": "Infrastructure as Code (IaC) & Terraform",
+        "description": "Provision and manage cloud infrastructure programmatically with version control and automated deployments.",
+        "features": ["Terraform modules", "AWS CloudFormation, Azure RM", "Consistent environments"],
+        "category": "Cloud Infrastructure",
+        "detailedContent": "Our Infrastructure as Code expertise enables organizations to manage cloud infrastructure with the same rigor as application code. We implement Terraform-based workflows that ensure consistency, traceability, and efficiency.",
+        "benefits": [
+          "Reproducible infrastructure",
+          "Version-controlled configuration",
+          "Faster deployment cycles",
+          "Reduced configuration drift"
+        ],
+        "useCases": [
+          "Multi-environment management",
+          "Infrastructure scaling",
+          "Disaster recovery",
+          "Development automation"
+        ],
+        "technologies": ["Terraform modules", "AWS CloudFormation, Azure RM", "Consistent environments"]
+      },
+      "cloudPlatformSpecialization": {
+        "title": "Cloud Platform Specialization",
+        "description": "Navigate multi-cloud landscapes with expert architecture design for AWS, GCP, and Azure.",
+        "features": ["AWS optimization", "GCP solutions", "Azure cloud services"],
+        "category": "Cloud Infrastructure",
+        "detailedContent": "Navigate the cloud landscape confidently with our multi-cloud expertise. We help organizations choose the right cloud platforms and architect solutions that leverage the best capabilities of AWS, GCP, and Azure.",
+        "benefits": [
+          "Optimized cloud costs",
+          "Multi-cloud flexibility",
+          "Vendor lock-in prevention",
+          "Best-of-breed services"
+        ],
+        "useCases": [
+          "Cloud migration strategies",
+          "Multi-cloud architectures",
+          "Cost optimization",
+          "Hybrid cloud deployments"
+        ],
+        "technologies": ["AWS optimization", "GCP solutions", "Azure cloud services"]
+      },
+      "serverlessEventDriven": {
+        "title": "Serverless & Event-Driven Architecture",
+        "description": "Design scalable, cost-effective serverless solutions that automatically scale based on demand.",
+        "features": ["AWS Lambda, Google Functions", "Azure Functions", "Automatic scaling"],
+        "category": "Cloud Infrastructure",
+        "detailedContent": "Build scalable, cost-effective applications using serverless and event-driven architectures. We design solutions that eliminate server management overhead while maintaining high reliability and performance.",
+        "benefits": [
+          "Reduced operational overhead",
+          "Pay-per-use pricing",
+          "Automatic scaling",
+          "Faster time-to-market"
+        ],
+        "useCases": [
+          "Real-time data processing",
+          "API backends",
+          "Scheduled tasks",
+          "Event-driven workflows"
+        ],
+        "technologies": ["AWS Lambda, Google Functions", "Azure Functions", "Automatic scaling"]
+      },
+      "restfulGraphqlApi": {
+        "title": "RESTful & GraphQL API Development",
+        "description": "Build high-performance, well-documented APIs that serve as the backbone of your platform.",
+        "features": ["REST & GraphQL design", "API versioning & docs", "Developer-friendly APIs"],
+        "category": "API Development",
+        "detailedContent": "We architect and implement APIs that power modern applications. Whether REST or GraphQL, our APIs are designed for performance, usability, and scalability.",
+        "benefits": [
+          "Efficient data fetching",
+          "Strong type safety",
+          "Self-documenting APIs",
+          "Developer-friendly experiences"
+        ],
+        "useCases": [
+          "Mobile app backends",
+          "Third-party integrations",
+          "Microservices communication",
+          "Data aggregation layers"
+        ],
+        "technologies": ["REST & GraphQL design", "API versioning & docs", "Developer-friendly APIs"]
+      },
+      "enterpriseIntegrationMiddleware": {
+        "title": "Enterprise Integration & Middleware",
+        "description": "Seamlessly connect legacy systems with modern applications through robust integration solutions.",
+        "features": ["RabbitMQ, Apache Kafka", "Message routing", "Real-time synchronization"],
+        "category": "API Development",
+        "detailedContent": "Integrate complex enterprise systems with sophisticated middleware solutions. We bridge legacy and modern systems, enabling seamless data flow and real-time synchronization across your organization.",
+        "benefits": [
+          "Unified business processes",
+          "Real-time data synchronization",
+          "Legacy system modernization",
+          "Scalable communication"
+        ],
+        "useCases": [
+          "Multi-system consolidation",
+          "Real-time data pipelines",
+          "ERP integration",
+          "Event streaming platforms"
+        ],
+        "technologies": ["RabbitMQ, Apache Kafka", "Message routing", "Real-time synchronization"]
+      },
+      "thirdPartySaaSIntegrations": {
+        "title": "Third-Party & SaaS Integrations",
+        "description": "Integrate with leading SaaS platforms and payment gateways to extend functionality.",
+        "features": ["Stripe, PayPal integration", "Salesforce, HubSpot", "Workflow automation"],
+        "category": "API Development",
+        "detailedContent": "Enhance your applications by integrating with best-in-class SaaS platforms. We seamlessly connect your systems with leading tools like Stripe, Salesforce, HubSpot, and more.",
+        "benefits": [
+          "Extended functionality",
+          "Reduced development time",
+          "Workflow automation",
+          "Unified data ecosystem"
+        ],
+        "useCases": [
+          "Payment processing",
+          "CRM integration",
+          "Marketing automation",
+          "Accounting system integration"
+        ],
+        "technologies": ["Stripe, PayPal integration", "Salesforce, HubSpot", "Workflow automation"]
+      },
+      "apiSecurityCompliance": {
+        "title": "API Security & Compliance",
+        "description": "Protect your APIs with enterprise-grade security including OAuth 2.0, rate limiting, and compliance.",
+        "features": ["OAuth 2.0, JWT", "GDPR, HIPAA, PCI-DSS", "DDoS protection"],
+        "category": "API Development",
+        "detailedContent": "Secure your APIs against modern threats with comprehensive security measures. We implement authentication, authorization, rate limiting, and compliance controls tailored to your requirements.",
+        "benefits": [
+          "Protected sensitive data",
+          "Regulatory compliance",
+          "Reduced security breaches",
+          "User trust and confidence"
+        ],
+        "useCases": [
+          "Regulatory compliance",
+          "Sensitive data protection",
+          "Public API security",
+          "Multi-tenant systems"
+        ],
+        "technologies": ["OAuth 2.0, JWT", "GDPR, HIPAA, PCI-DSS", "DDoS protection"]
+      },
+      "applicationPerformanceOptimization": {
+        "title": "Application Performance Optimization",
+        "description": "Accelerate your application with strategic caching, compression, and frontend optimization.",
+        "features": ["Redis, Memcached caching", "CDN integration", "Core Web Vitals optimization"],
+        "category": "Performance",
+        "detailedContent": "Every millisecond counts. We optimize applications across the entire stack—frontend, backend, and infrastructure—to deliver lightning-fast experiences that delight users.",
+        "benefits": [
+          "Faster load times",
+          "Improved user experience",
+          "Better SEO rankings",
+          "Reduced infrastructure costs"
+        ],
+        "useCases": [
+          "E-commerce platforms",
+          "Content delivery",
+          "Real-time applications",
+          "Mobile applications"
+        ],
+        "technologies": ["Redis, Memcached caching", "CDN integration", "Core Web Vitals optimization"]
+      },
+      "databasePerformanceScaling": {
+        "title": "Database Performance & Scaling",
+        "description": "Optimize database queries and scale databases horizontally to support millions of concurrent users.",
+        "features": ["Query optimization", "Sharding & indexing", "Read replicas"],
+        "category": "Performance",
+        "detailedContent": "Transform database performance with expert optimization and scaling strategies. We design databases that handle massive scale while maintaining blazing-fast response times.",
+        "benefits": [
+          "Sub-millisecond response times",
+          "Horizontal scalability",
+          "High availability",
+          "Reduced downtime"
+        ],
+        "useCases": [
+          "High-traffic platforms",
+          "Real-time analytics",
+          "Time-series data",
+          "Multi-tenant applications"
+        ],
+        "technologies": ["Query optimization", "Sharding & indexing", "Read replicas"]
+      },
+      "loadTestingCapacityPlanning": {
+        "title": "Load Testing & Capacity Planning",
+        "description": "Validate system performance under realistic conditions and plan infrastructure growth.",
+        "features": ["JMeter, Locust, k6", "Bottleneck identification", "Capacity forecasting"],
+        "category": "Performance",
+        "detailedContent": "Know your system's limits before they're tested by real users. Our comprehensive load testing and capacity planning ensure your systems handle peak demand reliably.",
+        "benefits": [
+          "Predictable performance",
+          "Proactive scaling",
+          "Confidence in reliability",
+          "Cost optimization"
+        ],
+        "useCases": [
+          "Launch preparation",
+          "Black Friday readiness",
+          "Capacity planning",
+          "Performance baselines"
+        ],
+        "technologies": ["JMeter, Locust, k6", "Bottleneck identification", "Capacity forecasting"]
+      },
+      "monitoringObservabilityAnalytics": {
+        "title": "Monitoring, Observability & Analytics",
+        "description": "Gain complete visibility into system performance with comprehensive monitoring and real-time analytics.",
+        "features": ["Prometheus, ELK Stack", "Distributed tracing", "Real-time alerting"],
+        "category": "Performance",
+        "detailedContent": "See everything happening in your systems with comprehensive monitoring and observability. We implement solutions that provide complete visibility, enabling quick problem detection and resolution.",
+        "benefits": [
+          "Proactive problem detection",
+          "Reduced mean time to recovery",
+          "Data-driven optimization",
+          "System insights"
+        ],
+        "useCases": [
+          "Production monitoring",
+          "Incident response",
+          "Performance analytics",
+          "Usage analytics"
+        ],
+        "technologies": ["Prometheus, ELK Stack", "Distributed tracing", "Real-time alerting"]
+      },
+      "applicationSecurityAppSec": {
+        "title": "Application Security (AppSec)",
+        "description": "Protect applications from vulnerabilities with secure code review and penetration testing.",
+        "features": ["SAST/DAST scanning", "OWASP remediation", "Security testing"],
+        "category": "Security",
+        "detailedContent": "Build security into applications from day one. Our AppSec services include secure code review, vulnerability scanning, penetration testing, and remediation guidance.",
+        "benefits": [
+          "Fewer vulnerabilities",
+          "Reduced breach risk",
+          "Compliance certification",
+          "Customer trust"
+        ],
+        "useCases": [
+          "Pre-launch security",
+          "Compliance audit preparation",
+          "Vulnerability management",
+          "Security certifications"
+        ],
+        "technologies": ["SAST/DAST scanning", "OWASP remediation", "Security testing"]
+      },
+      "identityAccessManagement": {
+        "title": "Identity & Access Management (IAM)",
+        "description": "Control access across your organization with centralized identity management and multi-factor authentication.",
+        "features": ["OAuth 2.0, SAML", "RBAC implementation", "Multi-factor authentication"],
+        "category": "Security",
+        "detailedContent": "Implement robust identity and access management systems that balance security with usability. We deploy IAM solutions that protect your resources while enabling authorized access.",
+        "benefits": [
+          "Centralized access control",
+          "Enhanced security",
+          "User convenience",
+          "Compliance satisfaction"
+        ],
+        "useCases": [
+          "Enterprise SSO",
+          "Employee access management",
+          "Customer identity platforms",
+          "Privileged access management"
+        ],
+        "technologies": ["OAuth 2.0, SAML", "RBAC implementation", "Multi-factor authentication"]
+      },
+      "dataProtectionPrivacy": {
+        "title": "Data Protection & Privacy",
+        "description": "Safeguard sensitive data with encryption at rest and in transit, privacy-by-design implementation.",
+        "features": ["AES-256 encryption", "TLS/SSL, HSM", "GDPR compliance"],
+        "category": "Security",
+        "detailedContent": "Protect sensitive data with comprehensive encryption and privacy measures. We implement privacy-by-design principles and ensure compliance with GDPR, HIPAA, and other regulations.",
+        "benefits": [
+          "Protected sensitive information",
+          "Regulatory compliance",
+          "User privacy",
+          "Brand protection"
+        ],
+        "useCases": [
+          "Healthcare applications",
+          "Financial services",
+          "Customer data platforms",
+          "Personal information handling"
+        ],
+        "technologies": ["AES-256 encryption", "TLS/SSL, HSM", "GDPR compliance"]
+      },
+      "complianceAuditFrameworks": {
+        "title": "Compliance & Audit Frameworks",
+        "description": "Meet regulatory requirements with comprehensive compliance frameworks including SOC 2 and ISO 27001.",
+        "features": ["SOC 2, ISO 27001", "PCI-DSS, GDPR", "Audit reporting"],
+        "category": "Security",
+        "detailedContent": "Navigate complex regulatory landscapes with confidence. We implement compliance frameworks and prepare organizations for audits and certifications.",
+        "benefits": [
+          "Regulatory compliance",
+          "Audit readiness",
+          "Risk reduction",
+          "Customer confidence"
+        ],
+        "useCases": [
+          "SOC 2 certification",
+          "HIPAA compliance",
+          "PCI-DSS certification",
+          "Audit preparation"
+        ],
+        "technologies": ["SOC 2, ISO 27001", "PCI-DSS, GDPR", "Audit reporting"]
+      },
+      "securityAsAService": {
+        "title": "Security-as-a-Service (SaaS)",
+        "description": "Comprehensive security camera systems and monitoring solutions tailored to nonprofits, SMBs, and enterprises.",
+        "features": ["Camera systems", "Cloud monitoring", "AI detection", "24/7 support"],
+        "category": "Security",
+        "detailedContent": "We offer tiered Security-as-a-Service solutions designed for organizations of all sizes. From basic SimpliSafe setups for nonprofits to enterprise-grade ADT + Nest systems with professional monitoring, we provide scalable security solutions that protect your assets and facilities.",
+        "benefits": [
+          "Scalable security solutions",
+          "Professional monitoring options",
+          "AI-powered threat detection",
+          "Compliance-ready storage"
+        ],
+        "useCases": [
+          "Nonprofit facility protection",
+          "SMB retail security",
+          "Enterprise multi-site monitoring",
+          "Healthcare facility compliance"
+        ],
+        "technologies": ["SimpliSafe, Arlo Secure", "ADT + Nest Cameras", "Cloud storage", "AI detection"]
+      },
+      "dedicatedDevelopmentTeams": {
+        "title": "Dedicated Development Teams",
+        "description": "Scale your engineering capacity with dedicated, vetted development teams integrated with your organization.",
+        "features": ["Full-stack developers", "DevOps engineers", "ML & security experts"],
+        "category": "Team Augmentation",
+        "detailedContent": "Scale your team with experienced developers who work seamlessly within your organization. Our dedicated teams bring specialized expertise and contribute to your long-term success.",
+        "benefits": [
+          "Expanded capacity",
+          "Specialized expertise",
+          "Cost efficiency",
+          "Quick ramp-up"
+        ],
+        "useCases": [
+          "Project acceleration",
+          "Specialized skill needs",
+          "Temporary capacity",
+          "24/7 operations"
+        ],
+        "technologies": ["Full-stack developers", "DevOps engineers", "ML & security experts"]
+      },
+      "technicalLeadershipArchitecture": {
+        "title": "Technical Leadership & Architecture",
+        "description": "Leverage CTO-level expertise and solution architecture guidance for critical technology decisions.",
+        "features": ["Architecture design", "Technology strategy", "Technical governance"],
+        "category": "Team Augmentation",
+        "detailedContent": "Gain access to CTO-level expertise for critical technology decisions. Our technical leaders provide strategic guidance, architecture design, and technology governance.",
+        "benefits": [
+          "Strategic tech decisions",
+          "Architectural excellence",
+          "Risk mitigation",
+          "Future-proofing"
+        ],
+        "useCases": [
+          "CTO services",
+          "Architecture decisions",
+          "Tech stack selection",
+          "Strategic planning"
+        ],
+        "technologies": ["Architecture design", "Technology strategy", "Technical governance"]
+      },
+      "mentorshipSkillsDevelopment": {
+        "title": "Mentorship & Skills Development",
+        "description": "Accelerate team capability with personalized mentorship and best practices guidance.",
+        "features": ["Technical coaching", "Training programs", "Knowledge transfer"],
+        "category": "Team Augmentation",
+        "detailedContent": "Invest in your team's growth with comprehensive mentorship and training programs. We help your engineers develop skills in emerging technologies and best practices.",
+        "benefits": [
+          "Improved team capabilities",
+          "Knowledge retention",
+          "Increased productivity",
+          "Career development"
+        ],
+        "useCases": [
+          "Team upskilling",
+          "Best practices implementation",
+          "Knowledge transfer",
+          "Career mentoring"
+        ],
+        "technologies": ["Technical coaching", "Training programs", "Knowledge transfer"]
+      },
+      "projectManagementDelivery": {
+        "title": "Project Management & Delivery",
+        "description": "Ensure successful project delivery with expert project management and agile coaching.",
+        "features": ["Agile/Scrum coaching", "Quality assurance", "Risk management"],
+        "category": "Team Augmentation",
+        "detailedContent": "Deliver projects on time and on budget with expert project management. We employ proven methodologies, agile practices, and quality assurance to ensure project success.",
+        "benefits": [
+          "On-time delivery",
+          "Quality outcomes",
+          "Risk mitigation",
+          "Team alignment"
+        ],
+        "useCases": [
+          "Agile transformation",
+          "Project oversight",
+          "Quality assurance",
+          "Delivery excellence"
+        ],
+        "technologies": ["Agile/Scrum coaching", "Quality assurance", "Risk management"]
+      }
+    }
+  },
+  "about": {
+    "title": "Forging the Future of Digital Excellence",
+    "paragraph1": "At Forger Digital, we believe in the perfect fusion of cutting-edge technology and masterful craftsmanship. Our team of expert developers, designers, and strategists work together to create digital solutions that don't just meet expectations—they exceed them.",
+    "paragraph2": "Founded on the principle that every line of code matters, we approach each project with the precision of a craftsman and the vision of an innovator. Our quantum leap approach to digital transformation has helped businesses across industries achieve remarkable growth.",
+    "features": {
+      "architecture": {
+        "title": "Architecture",
+        "description": "Scalable system design"
+      },
+      "security": {
+        "title": "Security",
+        "description": "Enterprise-grade protection"
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Lightning-fast solutions"
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Cutting-edge technology"
+      }
+    },
+    "stats": {
+      "awards": "Industry Awards",
+      "team": "Team Members"
+    },
+    "cards": {
+      "architecture": {
+        "title": "Architecture",
+        "description": "Scalable system design",
+        "detailedContent": "We design and implement scalable system architectures that grow with your business. Our architectural approach emphasizes modularity, maintainability, and future-proof design principles. Whether you need microservices architecture, cloud-native solutions, or enterprise-scale system design, we deliver architectures that handle complexity while remaining agile and adaptable.",
+        "keyBenefits": [
+          "Scalable infrastructure that grows with your business",
+          "Modular architecture for easy maintenance and updates",
+          "Future-proof design principles and patterns",
+          "Cloud-native and distributed system expertise",
+          "Performance optimization through smart architecture",
+          "Cost-effective scaling strategies"
+        ],
+        "useCases": [
+          "Microservices and service-oriented architectures",
+          "Cloud migration and multi-cloud strategies",
+          "Legacy system modernization",
+          "High-traffic application architecture",
+          "Event-driven and serverless architectures",
+          "Container orchestration and Kubernetes design"
+        ],
+        "technologies": [
+          "Microservices Architecture",
+          "Cloud Platforms (AWS, GCP, Azure)",
+          "Kubernetes & Docker",
+          "API Gateway & Service Mesh",
+          "Event-Driven Architecture",
+          "Serverless Computing"
+        ],
+        "methodologies": [
+          "Domain-Driven Design (DDD)",
+          "Clean Architecture",
+          "SOLID Principles",
+          "CQRS & Event Sourcing",
+          "API-First Design",
+          "Infrastructure as Code (IaC)"
+        ]
+      },
+      "security": {
+        "title": "Security",
+        "description": "Enterprise-grade protection",
+        "detailedContent": "Enterprise-grade security is at the core of everything we build. We implement comprehensive security measures including authentication, authorization, encryption, and compliance controls. Our security-first approach ensures that applications are protected against modern threats while maintaining usability and performance.",
+        "keyBenefits": [
+          "Enterprise-grade security frameworks",
+          "Zero-trust architecture implementation",
+          "Compliance with industry standards (SOC 2, GDPR, HIPAA)",
+          "Proactive threat detection and prevention",
+          "Secure authentication and authorization systems",
+          "Data encryption at rest and in transit"
+        ],
+        "useCases": [
+          "Application Security (AppSec) implementation",
+          "Identity and Access Management (IAM)",
+          "API security and rate limiting",
+          "Security audits and penetration testing",
+          "Compliance certification support",
+          "Security monitoring and incident response"
+        ],
+        "technologies": [
+          "OAuth 2.0 & OpenID Connect",
+          "JWT & Session Management",
+          "SSL/TLS & Encryption",
+          "Security Scanning Tools (SAST/DAST)",
+          "Secrets Management",
+          "WAF & DDoS Protection"
+        ],
+        "methodologies": [
+          "OWASP Top 10 Compliance",
+          "Secure SDLC",
+          "Threat Modeling",
+          "Security by Design",
+          "Zero-Trust Architecture",
+          "Defense in Depth"
+        ]
+      },
+      "performance": {
+        "title": "Performance",
+        "description": "Lightning-fast solutions",
+        "detailedContent": "Performance is not an afterthought—it's built into every solution we create. We optimize applications for speed, scalability, and efficiency, ensuring your users experience lightning-fast response times even under heavy load. Our performance engineering approach combines profiling, optimization, and continuous monitoring.",
+        "keyBenefits": [
+          "Lightning-fast application response times",
+          "Optimized database queries and data access",
+          "Efficient resource utilization and cost savings",
+          "Scalable performance under high load",
+          "Real-time performance monitoring and alerts",
+          "CDN optimization for global content delivery"
+        ],
+        "useCases": [
+          "Application performance optimization",
+          "Database performance tuning and scaling",
+          "Load testing and performance validation",
+          "Caching strategies and implementation",
+          "Content delivery network (CDN) optimization",
+          "Real-time performance monitoring"
+        ],
+        "technologies": [
+          "Redis & Memcached",
+          "CDN Services (CloudFlare, AWS CloudFront)",
+          "Database Optimization Tools",
+          "Performance Monitoring (New Relic, Datadog)",
+          "Load Testing Tools (JMeter, k6)",
+          "Application Profiling Tools"
+        ],
+        "methodologies": [
+          "Performance Testing",
+          "Capacity Planning",
+          "Caching Strategies",
+          "Database Optimization",
+          "Code Profiling",
+          "Performance Budgets"
+        ]
+      },
+      "innovation": {
+        "title": "Innovation",
+        "description": "Cutting-edge technology",
+        "detailedContent": "We stay at the forefront of technology innovation, continuously exploring and adopting emerging technologies that can transform your business. From AI and machine learning to blockchain and IoT, we help you leverage cutting-edge solutions to gain competitive advantages and create new opportunities.",
+        "keyBenefits": [
+          "Access to latest technology trends",
+          "Competitive advantage through innovation",
+          "Future-proof technology solutions",
+          "Rapid prototyping and experimentation",
+          "Expert guidance on technology adoption",
+          "Innovation-driven business transformation"
+        ],
+        "useCases": [
+          "AI and machine learning integration",
+          "Blockchain and decentralized solutions",
+          "IoT and connected device networks",
+          "Emerging technology exploration",
+          "Innovation labs and proof of concepts",
+          "Technology strategy and roadmap planning"
+        ],
+        "technologies": [
+          "Artificial Intelligence & ML",
+          "Blockchain & Web3",
+          "IoT & Edge Computing",
+          "AR/VR Technologies",
+          "Quantum Computing (Exploration)",
+          "Emerging Frameworks & Tools"
+        ],
+        "methodologies": [
+          "Design Thinking",
+          "Rapid Prototyping",
+          "Agile Innovation",
+          "Technology Scouting",
+          "Proof of Concept Development",
+          "Innovation Workshops"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "What Our Clients Say",
+    "subtitle": "Trusted by industry leaders who value excellence and innovation",
+    "testimonial1": {
+      "quote": "Forger Digital transformed our entire digital infrastructure. Their attention to detail and innovative approach exceeded all expectations.",
+      "name": "Sarah Johnson",
+      "position": "CTO, TechStart Inc."
+    },
+    "testimonial2": {
+      "quote": "The team's expertise in emerging technologies helped us stay ahead of the competition. Truly exceptional craftsmanship.",
+      "name": "Michael Chen",
+      "position": "CEO, InnovateCorp"
+    },
+    "testimonial3": {
+      "quote": "From concept to deployment, Forger Digital delivered a solution that perfectly aligned with our business goals. Outstanding work!",
+      "name": "Emily Rodriguez",
+      "position": "Product Manager, ScaleUp"
+    }
+  },
+  "portfolio": {
+    "title": "Success Stories",
+    "subtitle": "Discover how we've helped businesses transform their digital presence and achieve remarkable results.",
+    "learnMore": "Learn More",
+    "challenge": "Challenge",
+    "solution": "Solution",
+    "results": "Results",
+    "caseStudy": "Case Study",
+    "overview": "Overview",
+    "timeline": "Timeline",
+    "outcomes": "Outcomes",
+    "projectTimeline": "Project Timeline",
+    "keyOutcomesMetrics": "Key Outcomes & Metrics",
+    "technologyStack": "Technology Stack",
+    "readyToTransform": "Ready to Transform Your Business?",
+    "readyToTransformDescription": "Let's discuss how we can help you achieve similar results.",
+    "getInTouch": "Get In Touch",
+    "methodologiesBestPractices": "Methodologies & Best Practices",
+    "stories": {
+      "ecommerce": {
+        "title": "E-commerce Platform Transformation",
+        "client": "TechRetail Corp",
+        "challenge": "Legacy system causing 40% cart abandonment",
+        "solution": "Modern React-based platform with AI recommendations",
+        "results": [
+          "300% increase in conversions",
+          "50% reduction in load time",
+          "95% customer satisfaction"
+        ],
+        "tags": ["E-commerce", "React", "AI/ML"],
+        "overview": "TechRetail Corp was struggling with their outdated e-commerce platform, experiencing significant cart abandonment rates and poor user experience. We completely transformed their digital presence with a modern, AI-powered platform that significantly improved conversion rates and customer satisfaction.",
+        "detailedChallenge": "TechRetail Corp's legacy e-commerce platform was built on outdated technology stack, resulting in slow page loads, poor mobile experience, and high cart abandonment rates (40%). The system couldn't scale during peak shopping seasons and lacked personalization features that modern consumers expect.",
+        "detailedSolution": "We architected and built a completely new platform using React and Next.js for the frontend with a scalable Node.js backend. Implemented machine learning-based product recommendations, optimized for mobile-first experience, integrated with major payment processors, and deployed on AWS with auto-scaling capabilities.",
+        "timeline": [
+          {
+            "phase": "Discovery & Analysis",
+            "description": "Analyzed existing system, identified pain points, and gathered requirements from stakeholders",
+            "duration": "2 weeks"
+          },
+          {
+            "phase": "Architecture Design",
+            "description": "Designed new microservices architecture with React frontend and Node.js backend",
+            "duration": "3 weeks"
+          },
+          {
+            "phase": "Development",
+            "description": "Built responsive frontend, integrated AI recommendation engine, and implemented payment processing",
+            "duration": "8 weeks"
+          },
+          {
+            "phase": "Testing & Optimization",
+            "description": "Comprehensive testing, performance optimization, and security hardening",
+            "duration": "2 weeks"
+          },
+          {
+            "phase": "Deployment & Migration",
+            "description": "Deployed to production and migrated 2M+ customer records with zero downtime",
+            "duration": "1 week"
+          }
+        ],
+        "outcomes": [
+          {
+            "metric": "Conversion Rate",
+            "value": "↑ 300%"
+          },
+          {
+            "metric": "Page Load Time",
+            "value": "↓ 50%"
+          },
+          {
+            "metric": "Cart Abandonment",
+            "value": "↓ 40%"
+          },
+          {
+            "metric": "Customer Satisfaction",
+            "value": "↑ 95%"
+          },
+          {
+            "metric": "Revenue Impact",
+            "value": "+$2.5M annually"
+          }
+        ],
+        "technology": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis", "AWS", "Docker", "AI/ML", "Stripe API"]
+      },
+      "mobile": {
+        "title": "Enterprise Mobile App",
+        "client": "LogiFlow Industries",
+        "challenge": "Manual processes causing operational inefficiencies",
+        "solution": "Cross-platform mobile app with real-time tracking",
+        "results": [
+          "60% reduction in processing time",
+          "90% user adoption rate",
+          "$2M annual savings"
+        ],
+        "tags": ["Mobile", "React Native", "IoT"],
+        "overview": "LogiFlow Industries faced significant operational challenges due to manual, paper-based processes across their logistics operations. We developed a comprehensive cross-platform mobile application that enabled real-time tracking, automated workflows, and dramatically improved operational efficiency.",
+        "detailedChallenge": "LogiFlow Industries operated with manual, paper-based processes across 500+ field teams, resulting in inefficiencies, delayed reporting, lack of real-time visibility, and operational costs. Managers had no way to track deliveries in real-time, and data entry errors were common.",
+        "detailedSolution": "We developed a cross-platform mobile application using React Native, enabling iOS and Android deployment from a single codebase. The app features offline-first architecture for field reliability, real-time GPS tracking, automated data capture, and seamless integration with their backend systems through GraphQL APIs.",
+        "timeline": [
+          {
+            "phase": "Requirements Gathering",
+            "description": "Interviewed field teams, logistics managers, and stakeholders to understand workflow pain points",
+            "duration": "2 weeks"
+          },
+          {
+            "phase": "UI/UX Design",
+            "description": "Created intuitive mobile-first design optimized for field work environments",
+            "duration": "2 weeks"
+          },
+          {
+            "phase": "Development",
+            "description": "Built React Native app for iOS/Android with offline capabilities and real-time GPS tracking",
+            "duration": "10 weeks"
+          },
+          {
+            "phase": "Backend Integration",
+            "description": "Integrated with existing enterprise systems and IoT devices for real-time data sync",
+            "duration": "3 weeks"
+          },
+          {
+            "phase": "Rollout & Training",
+            "description": "Phased deployment across 500+ field teams with comprehensive training program",
+            "duration": "2 weeks"
+          }
+        ],
+        "outcomes": [
+          {
+            "metric": "Processing Time",
+            "value": "↓ 60%"
+          },
+          {
+            "metric": "User Adoption",
+            "value": "↑ 90%"
+          },
+          {
+            "metric": "Operational Cost",
+            "value": "↓ 35%"
+          },
+          {
+            "metric": "Delivery Accuracy",
+            "value": "↑ 98%"
+          },
+          {
+            "metric": "Annual Savings",
+            "value": "$2M"
+          }
+        ],
+        "technology": ["React Native", "Node.js", "GraphQL", "MongoDB", "IoT", "GPS Tracking", "Offline-First", "Firebase", "AWS"]
+      }
+    },
+    "page": {
+      "title": "Portfolio Projects",
+      "subtitle": "Interactive Showcase",
+      "description": "• Explore 12 comprehensive projects showcasing expertise across networking, cloud infrastructure, AI integration, and full-stack development. Click any project to view a detailed demonstration.",
+      "tabs": {
+        "allProjects": "All Projects",
+        "infrastructure": "Infrastructure",
+        "aiAutomation": "AI & Automation",
+        "webBlockchain": "Web & Blockchain"
+      },
+      "categories": {
+        "infrastructureNetworking": "Infrastructure & Networking",
+        "aiAutomation": "AI & Automation",
+        "webUtilitiesBlockchain": "Web & Utilities / Blockchain"
+      },
+      "projects": {
+        "enterpriseNetworkMonitoring": {
+          "title": "Enterprise Network Monitoring Dashboard",
+          "subtitle": "Real-time VLAN health tracking",
+          "category": "Infrastructure & Networking",
+          "description": "Real-time VLAN health tracking with Prometheus and Grafana integration"
+        },
+        "cloudMigrationPortal": {
+          "title": "Cloud Migration Management Portal",
+          "subtitle": "Automated cloud workflows",
+          "category": "Infrastructure & Networking",
+          "description": "Automated cloud migration workflows with infrastructure as code"
+        },
+        "secureIotPlatform": {
+          "title": "Secure IoT Device Management Platform",
+          "subtitle": "Zero-trust device authentication",
+          "category": "Infrastructure & Networking",
+          "description": "Zero-trust device authentication with TLS/DTLS encryption"
+        },
+        "predictiveMaintenance": {
+          "title": "Predictive Network Maintenance System",
+          "subtitle": "AI-driven predictive analytics",
+          "category": "Infrastructure & Networking",
+          "description": "AI-driven predictive analytics reducing downtime by 30%"
+        },
+        "aiChatbot": {
+          "title": "Intelligent Customer Support Chatbot",
+          "subtitle": "OpenAI-powered assistance",
+          "category": "AI & Automation",
+          "description": "OpenAI-powered chatbot with RAG and real-time processing"
+        },
+        "threatDetection": {
+          "title": "AI-Powered Security Threat Detection",
+          "subtitle": "PyTorch-based anomaly detection",
+          "category": "AI & Automation",
+          "description": "PyTorch-based anomaly detection with Wireshark integration"
+        },
+        "dataGraphsConverter": {
+          "title": "Data Graphs Converter",
+          "subtitle": "Interactive data visualizations",
+          "category": "AI & Automation",
+          "description": "Transform CSV data into interactive visualizations"
+        },
+        "financialDashboard": {
+          "title": "Financial Dashboard",
+          "subtitle": "Real-time balance tracking",
+          "category": "Web & Utilities",
+          "description": "Real-time crypto and fiat balance tracking with Plaid integration"
+        },
+        "urlShorterYuupi": {
+          "title": "URL Shorter - Yuupi",
+          "subtitle": "High-performance shortener",
+          "category": "Web & Utilities",
+          "description": "High-performance URL shortener with 2ms redirect latency"
+        },
+        "videoConverter": {
+          "title": "Online Video Converter",
+          "subtitle": "Browser-only video processing",
+          "category": "Web & Utilities",
+          "description": "Browser-only video processing with WebAssembly FFmpeg"
+        },
+        "wepayCryptoWallet": {
+          "title": "WePay - Crypto Wallet",
+          "subtitle": "Multi-signature wallet",
+          "category": "Blockchain & IoT",
+          "description": "Multi-signature cryptocurrency wallet with MetaMask integration"
+        },
+        "iotDashboard": {
+          "title": "IoT-Dashboard",
+          "subtitle": "Real-time sensor visualization",
+          "category": "Blockchain & IoT",
+          "description": "Real-time sensor data visualization with Three.js rendering"
+        }
+      }
+    }
+  },
+  "getStarted": {
+    "title": "Transform Your Digital Vision Into Reality",
+    "description": "Connect with a Principal Engineer to discuss your project and discover how Forger Digital can help you achieve your business goals with cutting-edge technology and expert craftsmanship.",
+    "trustSignals": {
+      "team": "25+ Expert Team Members",
+      "response": "Hours of Response Time",
+      "security": "Enterprise Security",
+      "satisfaction": "98% Client Satisfaction"
+    },
+    "steps": {
+      "personalInfo": "Personal Info",
+      "projectDetails": "Project Details",
+      "contactPreference": "Contact Preference"
+    },
+    "sections": {
+      "aboutYourself": "Tell Us About Yourself",
+      "projectDetails": "Project Details",
+      "contactPreference": "How Would You Like Us to Contact You?"
+    },
+    "fields": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "company": "Company",
+      "role": "Your Role",
+      "email": "Email Address",
+      "phone": "Phone Number",
+      "projectDescription": "Describe Your Digital Vision",
+      "serviceInterests": "Service Areas of Interest",
+      "timeline": "Project Timeline",
+      "budget": "Budget Range"
+    },
+    "placeholders": {
+      "firstName": "John",
+      "lastName": "Doe",
+      "company": "Acme Corp",
+      "role": "CTO, Product Manager, etc.",
+      "email": "john@acme.com",
+      "phone": "+1 (347) 829-4952",
+      "projectDescription": "Tell us about your project goals, challenges, and what you hope to achieve..."
+    },
+    "helpText": {
+      "firstName": "Enter your first name as it appears on official documents",
+      "lastName": "Enter your last name as it appears on official documents",
+      "company": "Your company or organization name",
+      "role": "Your job title or role in the organization",
+      "email": "We'll use this to contact you. Make sure it's active and accessible.",
+      "emailPrivacy": "We'll never share your email with third parties",
+      "phone": "Optional. Include country code for international numbers",
+      "projectDescription": "Provide details about your project goals, challenges, timeline, and expected outcomes",
+      "serviceInterests": "Select all service areas that apply to your project. You can select multiple options.",
+      "timeline": "When do you need this project completed?",
+      "budget": "Estimated budget range for this project",
+      "contactPreference": "Choose your preferred method for our initial consultation"
+    },
+    "services": {
+      "customSoftware": "Custom Software Development",
+      "webApp": "Web Application Development",
+      "mobileApp": "Mobile App Development",
+      "enterprise": "Enterprise Solutions",
+      "cloudDevOps": "Cloud Infrastructure & DevOps",
+      "aiMl": "AI & Machine Learning",
+      "blockchain": "Blockchain Solutions",
+      "digitalTransformation": "Digital Transformation",
+      "teamAugmentation": "Team Augmentation",
+      "technicalConsulting": "Technical Consulting"
+    },
+    "contactMethods": {
+      "email": {
+        "label": "Email",
+        "description": "We'll send you a detailed response"
+      },
+      "phone": {
+        "label": "Phone Call",
+        "description": "Hours discovery call"
+      },
+      "video": {
+        "label": "Video Call",
+        "description": "Hours strategy session"
+      }
+    },
+    "timelineOptions": {
+      "select": "Select timeline",
+      "asap": "ASAP (Rush project)",
+      "1-3months": "1-3 months",
+      "3-6months": "3-6 months",
+      "6-12months": "6-12 months",
+      "flexible": "Flexible"
+    },
+    "budgetOptions": {
+      "select": "Select budget range",
+      "under25k": "Under $25,000",
+      "25k-50k": "$25,000 - $50,000",
+      "50k-100k": "$50,000 - $100,000",
+      "100k-250k": "$100,000 - $250,000",
+      "250kPlus": "$250,000+",
+      "discuss": "Let's discuss"
+    },
+    "validation": {
+      "firstNameRequired": "First name is required",
+      "lastNameRequired": "Last name is required",
+      "companyRequired": "Company name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Please enter a valid email address",
+      "projectDescriptionRequired": "Project description is required",
+      "serviceInterestsRequired": "Please select at least one service area"
+    },
+    "submit": {
+      "button": "Start Your Project",
+      "submitting": "Submitting...",
+      "draftSaved": "Draft saved automatically",
+      "characters": "characters",
+      "servicesSelected": "service selected",
+      "servicesSelectedPlural": "services selected"
+    },
+    "success": {
+      "title": "Thank You for Your Interest!",
+      "description": "We've received your consultation request and will connect you with a Principal Engineer within 1 business hour.",
+      "whatHappensNext": "What Happens Next?",
+      "step1": {
+        "title": "Initial Review",
+        "description": "Our team reviews your project requirements and prepares personalized recommendations."
+      },
+      "step2": {
+        "title": "Expert Consultation",
+        "description": "A Principal Engineer will contact you via your preferred method to discuss your vision."
+      },
+      "step3": {
+        "title": "Custom Proposal",
+        "description": "We'll provide a detailed proposal tailored to your specific needs and timeline."
+      },
+      "returnHome": "Return to Home",
+      "viewWork": "View Our Work"
+    },
+    "legal": {
+      "agreement": "By submitting this form, you agree to our",
+      "privacyPolicy": "Privacy Policy",
+      "and": "and",
+      "termsOfService": "Terms of Service"
+    }
+  },
+  "cookie": {
+    "title": "Cookie Preferences",
+    "description": "This website uses cookies to ensure you get the best experience on our website. Learn more from our",
+    "cookiePolicyLink": "Cookie Policy",
+    "strictlyNecessary": {
+      "title": "STRICTLY NECESSARY",
+      "description": "Strictly Necessary services are absolutely necessary for core functions such as navigating the page or accessing secure areas. The website cannot function properly without these cookies.",
+      "ariaLabel": "Strictly necessary cookies (always enabled)"
+    },
+    "analytics": {
+      "title": "ANALYTICS",
+      "description": "Analytics cookies help us understand how visitors interact with our website by collecting and reporting information anonymously. This helps us improve our website's performance and user experience.",
+      "ariaLabel": "Analytics cookies"
+    },
+    "marketing": {
+      "title": "MARKETING",
+      "description": "Marketing cookies are used to deliver advertisements that are relevant to you and your interests. They may also be used to limit the number of times you see an advertisement and measure the effectiveness of advertising campaigns.",
+      "ariaLabel": "Marketing cookies"
+    },
+    "allowAll": "Allow All",
+    "decline": "Decline",
+    "acceptSelected": "Accept Selected",
+    "poweredBy": "Powered by Forger Digital",
+    "manageCookies": "Manage Cookies"
+  },
+  "support": {
+    "title": "Customer Support",
+    "subtitle": "We're here to help. Find answers, get support, or contact our team.",
+    "quickActions": {
+      "viewTickets": "View My Tickets",
+      "viewTicketsDescription": "Check the status of your support requests",
+      "createTicket": "Create Ticket",
+      "createTicketDescription": "Submit a new support request",
+      "knowledgeBase": "Knowledge Base",
+      "knowledgeBaseDescription": "Browse our FAQ and documentation"
+    },
+    "tabs": {
+      "faq": "FAQ",
+      "createTicket": "Create Ticket",
+      "myTickets": "My Tickets"
+    },
+    "faq": {
+      "searchPlaceholder": "Search FAQ...",
+      "noResults": "No results found. Try a different search term.",
+      "categories": {
+        "general": {
+          "title": "General Questions",
+          "questions": [
+            {
+              "question": "What services does Forger Digital offer?",
+              "answer": "Forger Digital offers comprehensive digital solutions including custom software development, web and mobile applications, cloud infrastructure, AI & machine learning, blockchain solutions, and enterprise integrations. Visit our Services page for detailed information."
+            },
+            {
+              "question": "How do I get started with a project?",
+              "answer": "You can get started by filling out our 'Get Started' form on the homepage, or contact us directly through our contact form. Our team will review your requirements and schedule a consultation to discuss your project in detail."
+            },
+            {
+              "question": "What is your typical project timeline?",
+              "answer": "Project timelines vary based on scope and complexity. Small projects may take 1-3 months, while larger enterprise solutions can take 6-12 months or more. We'll provide a detailed timeline during our initial consultation."
+            },
+            {
+              "question": "Do you provide ongoing support after project completion?",
+              "answer": "Yes, we offer comprehensive post-launch support including maintenance, updates, bug fixes, and feature enhancements. Support packages can be customized based on your needs."
+            }
+          ]
+        },
+        "technical": {
+          "title": "Technical Support",
+          "questions": [
+            {
+              "question": "What technologies do you specialize in?",
+              "answer": "We work with a wide range of modern technologies including React, Next.js, Node.js, Python, AWS, Azure, Kubernetes, Docker, and various databases. Our team stays current with the latest frameworks and tools."
+            },
+            {
+              "question": "Do you provide API documentation?",
+              "answer": "Yes, we provide comprehensive API documentation for all our integrations. You can access it through our API Documentation page or contact support for specific API details."
+            },
+            {
+              "question": "How do you handle security and compliance?",
+              "answer": "Security is a top priority. We implement industry-standard security practices, conduct regular security audits, and ensure compliance with GDPR, CCPA, and other relevant regulations. Visit our Security page for more details."
+            },
+            {
+              "question": "Can you integrate with our existing systems?",
+              "answer": "Absolutely. We specialize in enterprise integrations and can connect new solutions with your existing infrastructure, databases, and third-party services."
+            }
+          ]
+        },
+        "billing": {
+          "title": "Billing & Payments",
+          "questions": [
+            {
+              "question": "What payment methods do you accept?",
+              "answer": "We accept major credit cards, bank transfers, and can arrange custom payment terms for enterprise clients. All payments are processed securely through Stripe."
+            },
+            {
+              "question": "Do you offer subscription plans?",
+              "answer": "Yes, we offer flexible subscription plans for ongoing services, maintenance, and support. Visit our Payment page to view available plans and pricing."
+            },
+            {
+              "question": "Can I get a quote for a custom project?",
+              "answer": "Yes, please fill out our 'Get Started' form with your project details, and our team will provide a customized quote based on your requirements."
+            },
+            {
+              "question": "What is your refund policy?",
+              "answer": "Refund policies vary by service type. For subscription services, refunds are prorated based on unused time. For custom projects, terms are outlined in our service agreement. Contact support for specific refund inquiries."
+            }
+          ]
+        }
+      }
+    },
+    "createTicket": {
+      "title": "Create Support Ticket",
+      "description": "Fill out the form below to submit a support request. Our team will respond as soon as possible.",
+      "email": "Email Address",
+      "subject": "Subject",
+      "subjectPlaceholder": "Brief description of your issue",
+      "category": "Category",
+      "categories": {
+        "general": "General Inquiry",
+        "technical": "Technical Issue",
+        "billing": "Billing Question",
+        "featureRequest": "Feature Request",
+        "bugReport": "Bug Report",
+        "account": "Account Issue",
+        "other": "Other"
+      },
+      "priority": "Priority",
+      "priorities": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "urgent": "Urgent"
+      },
+      "description": "Description",
+      "descriptionPlaceholder": "Please provide detailed information about your issue or question...",
+      "submit": "Submit Ticket",
+      "submitting": "Submitting...",
+      "success": {
+        "title": "Ticket Created Successfully!",
+        "message": "Your support ticket has been created. You will be redirected to view your ticket shortly."
+      }
+    },
+    "tickets": {
+      "loading": "Loading your tickets...",
+      "loginRequired": "Login Required",
+      "loginRequiredDescription": "Please sign in to view your support tickets.",
+      "signIn": "Sign In",
+      "noTickets": "No Tickets Yet",
+      "noTicketsDescription": "You haven't created any support tickets yet. Create your first ticket to get started.",
+      "createFirstTicket": "Create Your First Ticket",
+      "replies": "replies",
+      "status": {
+        "open": "Open",
+        "inProgress": "In Progress",
+        "waitingCustomer": "Waiting for Customer",
+        "resolved": "Resolved",
+        "closed": "Closed"
+      },
+      "priority": {
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "urgent": "Urgent"
+      }
+    },
+    "ticketDetail": {
+      "backToSupport": "Back to Support",
+      "ticketId": "Ticket ID",
+      "created": "Created",
+      "resolved": "Resolved",
+      "description": "Description",
+      "replies": "Replies",
+      "addReply": "Add Reply",
+      "replyMessage": "Your Reply",
+      "replyPlaceholder": "Type your message here...",
+      "sendReply": "Send Reply",
+      "sending": "Sending...",
+      "noReplies": "No replies yet. Be the first to respond!",
+      "supportTeam": "Support Team",
+      "internal": "Internal Note",
+      "categories": {
+        "general": "General",
+        "technical": "Technical",
+        "billing": "Billing",
+        "feature_request": "Feature Request",
+        "bug_report": "Bug Report",
+        "account": "Account",
+        "other": "Other"
+      }
+    }
+  }
+}
+

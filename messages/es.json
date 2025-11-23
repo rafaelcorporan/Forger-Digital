@@ -1,0 +1,1301 @@
+{
+  "common": {
+    "brand": "Forger Digital",
+    "tagline": "Transformamos tu visión digital en una realidad robusta y escalable.",
+    "loading": "Cargando...",
+    "error": "Error",
+    "success": "Éxito",
+    "submit": "Enviar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "close": "Cerrar",
+    "back": "Atrás",
+    "next": "Siguiente",
+    "previous": "Anterior",
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "all": "Todos",
+    "backToServices": "Volver a Servicios",
+    "backToSuccessStories": "Volver a Historias de Éxito",
+    "notFound": "No Encontrado",
+    "serviceNotFound": "Servicio No Encontrado",
+    "serviceNotFoundDescription": "El servicio que buscas no existe.",
+    "storyNotFound": "Historia No Encontrada",
+    "storyNotFoundDescription": "La historia de éxito que buscas no existe.",
+    "overview": "Resumen",
+    "keyBenefits": "Beneficios Clave",
+    "useCases": "Casos de Uso",
+    "technologies": "Tecnologías",
+    "relatedServices": "Servicios Relacionados",
+    "getStarted": "Comenzar",
+    "contactUs": "Ponerse en Contacto"
+  },
+  "navigation": {
+    "home": "Inicio",
+    "services": "Servicios",
+    "work": "Trabajo",
+    "portfolio": "Portafolio",
+    "about": "Acerca de",
+    "contact": "Contacto",
+    "careers": "Carreras",
+    "team": "Equipo",
+    "search": "Buscar",
+    "searchPlaceholder": "Buscar servicios, proyectos, miembros del equipo...",
+    "openSearch": "Abrir diálogo de búsqueda"
+  },
+  "hero": {
+    "title": "Forger Digital",
+    "subtitle": "Forger Digital: Tecnología de vanguardia, avanzada y visionaria. Transformamos tu visión digital en una realidad robusta y escalable.",
+    "description": "Forge Digital: Evoca artesanía, creación y construcción de soluciones robustas. Digital: Abarca ampliamente el ámbito digital, incluyendo web, aplicaciones y software con habilidades innovadoras y poderosas.",
+    "primaryButton": "Iniciar un Proyecto",
+    "secondaryButton": "Ver Nuestro Trabajo",
+    "stats": {
+      "projects": "Proyectos Entregados",
+      "satisfaction": "Satisfacción del Cliente",
+      "experience": "Años de Experiencia"
+    }
+  },
+  "contact": {
+    "title": "¿Listo para Comenzar Tu Transformación Digital?",
+    "subtitle": "Ponte en Contacto",
+    "description": "Hablemos sobre cómo Forger Digital puede ayudarte a alcanzar tus objetivos comerciales con tecnología de vanguardia y artesanía experta.",
+    "formTitle": "Inicia Tu Proyecto",
+    "formDescription": "Cuéntanos sobre tu proyecto y te responderemos dentro de 24 horas.",
+    "fields": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "Correo Electrónico",
+      "phone": "Teléfono",
+      "company": "Empresa",
+      "message": "Detalles del Proyecto"
+    },
+    "placeholders": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "email": "tu.correo@ejemplo.com",
+      "phone": "+1 (347) 829-4952",
+      "company": "Nombre de Tu Empresa",
+      "message": "Cuéntanos sobre tu proyecto, objetivos, cronograma y requisitos..."
+    },
+    "helpText": {
+      "firstName": "Por favor ingresa tu nombre como aparece en documentos oficiales",
+      "lastName": "Por favor ingresa tu apellido como aparece en documentos oficiales",
+      "email": "Usaremos este correo para responder a tu consulta. Asegúrate de que esté activo y accesible.",
+      "emailPrivacy": "Nunca compartiremos tu correo con terceros",
+      "phone": "Opcional. Incluye el código de país para números internacionales (ej., +1 para EE.UU.)",
+      "company": "Opcional. El nombre de tu empresa u organización",
+      "message": "Describe los objetivos de tu proyecto, cronograma y requisitos específicos. Mínimo 10 caracteres."
+    },
+    "validation": {
+      "firstNameRequired": "El nombre es requerido",
+      "lastNameRequired": "El apellido es requerido",
+      "emailRequired": "El correo electrónico es requerido",
+      "emailInvalid": "Por favor ingresa un correo electrónico válido",
+      "phoneInvalid": "Por favor ingresa un número de teléfono válido",
+      "messageRequired": "El mensaje es requerido",
+      "messageMinLength": "El mensaje debe tener al menos 10 caracteres"
+    },
+    "submit": "Enviar Mensaje",
+    "submitting": "Enviando...",
+    "success": "¡Mensaje enviado con éxito!",
+    "successDescription": "Te responderemos dentro de 24 horas.",
+    "error": "Algo salió mal. Por favor intenta de nuevo.",
+    "autoSave": "Borrador guardado automáticamente"
+  },
+  "footer": {
+    "common": {
+      "brand": "Forger Digital",
+      "tagline": {
+        "line1": "Transformamos tu visión digital",
+        "line2": "en una realidad robusta y escalable."
+      }
+    },
+    "company": "Empresa",
+    "resources": "Recursos",
+    "legal": "Legal",
+    "links": {
+      "about": "Acerca de",
+      "services": "Servicios",
+      "careers": "Carreras",
+      "team": "Equipo",
+      "contact": "Contacto",
+      "gettingStarted": "Comenzar",
+      "caseStudies": "Casos de Estudio",
+      "apiDocumentation": "Documentación API",
+      "support": "Soporte",
+      "insights": "Perspectivas",
+      "privacyPolicy": "Política de Privacidad",
+      "termsOfService": "Términos de Servicio",
+      "security": "Seguridad",
+      "contentSecurityPolicy": "Política de Seguridad de Contenido",
+      "compliance": "Cumplimiento",
+      "cookiePolicy": "Política de Cookies",
+      "manageCookies": "Gestionar Cookies"
+    },
+    "copyright": "© 2025 Forger Digital. Todos los derechos reservados.",
+    "social": {
+      "linkedin": "Visita nuestro perfil de LinkedIn",
+      "twitter": "Visita nuestro perfil de Twitter",
+      "github": "Visita nuestro perfil de GitHub"
+    }
+  },
+  "language": {
+    "switch": "Cambiar idioma",
+    "current": "Idioma actual"
+  },
+  "features": {
+    "title": "Soluciones Digitales Integrales",
+    "subtitle": "Desde consultoría estratégica hasta implementación de vanguardia, ofrecemos servicios de transformación digital de extremo a extremo.",
+    "learnMore": "Saber Más",
+    "seeMore": "Ver Más Servicios",
+    "seeLess": "Ver Menos Servicios",
+    "services": {
+      "customSoftwareDevelopment": {
+        "title": "Desarrollo de Software Personalizado",
+        "description": "Soluciones de software a medida adaptadas a sus requisitos comerciales únicos y necesidades de escalabilidad.",
+        "features": ["Desarrollo full-stack", "Integración de API", "Arquitectura nativa en la nube"],
+        "category": "Servicios Principales",
+        "detailedContent": "Nos especializamos en construir soluciones de software personalizadas que se alinean perfectamente con sus objetivos comerciales. Nuestro enfoque combina experiencia técnica profunda con conocimiento comercial para entregar soluciones que generan un ROI real. Desde el diseño inicial de la arquitectura hasta el despliegue y el soporte continuo, nos aseguramos de que su software personalizado crezca con su negocio.",
+        "benefits": [
+          "Soluciones personalizadas que coinciden con sus requisitos exactos",
+          "Arquitectura escalable para el crecimiento futuro",
+          "Control completo sobre características y funcionalidad",
+          "Integración con sistemas existentes"
+        ],
+        "useCases": [
+          "Desarrollo de aplicaciones empresariales",
+          "Automatización de procesos comerciales",
+          "Sistemas ERP personalizados",
+          "Soluciones específicas de la industria"
+        ],
+        "technologies": ["Desarrollo full-stack", "Integración de API", "Arquitectura nativa en la nube"]
+      },
+      "webApplicationDevelopment": {
+        "title": "Desarrollo de Aplicaciones Web",
+        "description": "Aplicaciones web de alto rendimiento construidas con frameworks modernos y mejores prácticas.",
+        "features": ["React/Next.js", "Aplicaciones Web Progresivas", "Soluciones E-commerce"],
+        "category": "Servicios Principales",
+        "detailedContent": "Nuestra experiencia en desarrollo de aplicaciones web abarca frameworks y tecnologías modernas. Construimos aplicaciones que no solo se ven hermosas, sino que también funcionan excepcionalmente bien. Desde aplicaciones de una sola página hasta plataformas multi-tenant complejas, entregamos soluciones web que escalan e inspiran.",
+        "benefits": [
+          "Rendimiento ultrarrápido",
+          "Diseño responsivo en todos los dispositivos",
+          "Aplicaciones optimizadas para SEO",
+          "Experiencias de usuario modernas"
+        ],
+        "useCases": [
+          "Plataformas SaaS",
+          "Aplicaciones E-commerce",
+          "Herramientas de colaboración",
+          "Plataformas de datos en tiempo real"
+        ],
+        "technologies": ["React/Next.js", "Aplicaciones Web Progresivas", "Soluciones E-commerce"]
+      },
+      "mobileAppDevelopment": {
+        "title": "Desarrollo de Aplicaciones Móviles",
+        "description": "Aplicaciones móviles nativas y multiplataforma que ofrecen experiencias de usuario excepcionales.",
+        "features": ["iOS y Android", "React Native", "Desarrollo Flutter"],
+        "category": "Servicios Principales",
+        "detailedContent": "Desarrollamos aplicaciones móviles que los usuarios adoran usar. Ya sea que necesite una aplicación iOS nativa, una aplicación Android o una solución multiplataforma, tenemos la experiencia para entregar. Nuestro proceso de desarrollo móvil prioriza la experiencia del usuario, el rendimiento y la escalabilidad.",
+        "benefits": [
+          "Rendimiento nativo en iOS y Android",
+          "Reutilización de código entre plataformas",
+          "Funcionalidad offline",
+          "Optimización de tiendas de aplicaciones"
+        ],
+        "useCases": [
+          "Aplicaciones móviles de consumo",
+          "Soluciones móviles empresariales",
+          "Servicios basados en ubicación",
+          "Startups mobile-first"
+        ],
+        "technologies": ["iOS y Android", "React Native", "Desarrollo Flutter"]
+      },
+      "enterpriseSolutions": {
+        "title": "Soluciones Empresariales",
+        "description": "Sistemas e integraciones empresariales escalables que optimizan las operaciones comerciales.",
+        "features": ["Integración de sistemas", "Modernización de sistemas heredados", "Migración de datos"],
+        "category": "Servicios Principales",
+        "detailedContent": "Nuestras soluciones empresariales unen sistemas y flujos de trabajo dispares en operaciones cohesivas y eficientes. Entendemos la complejidad de los entornos empresariales y traemos estrategias probadas para una integración y modernización exitosas.",
+        "benefits": [
+          "Operaciones comerciales unificadas",
+          "Complejidad operativa reducida",
+          "Consistencia de datos mejorada",
+          "Infraestructura escalable"
+        ],
+        "useCases": [
+          "Iniciativas de transformación digital",
+          "Modernización de sistemas heredados",
+          "Integración multi-sistema",
+          "Consolidación empresarial"
+        ],
+        "technologies": ["Integración de sistemas", "Modernización de sistemas heredados", "Migración de datos"]
+      },
+      "emergingTechnologies": {
+        "title": "Tecnologías Emergentes",
+        "description": "Soluciones de IA, blockchain e IoT que posicionan su negocio a la vanguardia de la innovación.",
+        "features": ["Implementación de IA/ML", "Desarrollo blockchain", "Soluciones IoT"],
+        "category": "Servicios Principales",
+        "detailedContent": "Manténgase a la vanguardia con nuestra experiencia en tecnologías emergentes. Ayudamos a las empresas a aprovechar la IA, blockchain e IoT para crear nuevas oportunidades e impulsar la innovación. Nuestro equipo experimentado puede guiar a su organización a través de la adopción de tecnologías emergentes con estrategias probadas.",
+        "benefits": [
+          "Ventaja competitiva a través de la innovación",
+          "Toma de decisiones automatizada",
+          "Nuevas fuentes de ingresos",
+          "Arquitectura a prueba de futuro"
+        ],
+        "useCases": [
+          "Analítica predictiva",
+          "Contratos inteligentes y DeFi",
+          "Redes de dispositivos conectados",
+          "Sistemas autónomos"
+        ],
+        "technologies": ["Implementación de IA/ML", "Desarrollo blockchain", "Soluciones IoT"]
+      },
+      "digitalTransformation": {
+        "title": "Transformación Digital",
+        "description": "Orientación estratégica e implementación para digitalizar y optimizar sus procesos comerciales.",
+        "features": ["Automatización de procesos", "Estrategia digital", "Gestión del cambio"],
+        "category": "Servicios Principales",
+        "detailedContent": "La transformación digital no se trata solo de tecnología: se trata de reimaginar su negocio. Guiamos a las organizaciones a través de viajes completos de transformación digital, asegurando un cambio sostenible y resultados medibles.",
+        "benefits": [
+          "Procesos comerciales optimizados",
+          "Experiencias de cliente mejoradas",
+          "Costos y desperdicios reducidos",
+          "Toma de decisiones basada en datos"
+        ],
+        "useCases": [
+          "Modelos de negocio digital-first",
+          "Mejora de la experiencia del cliente",
+          "Eficiencia operativa",
+          "Cambio organizacional"
+        ],
+        "technologies": ["Automatización de procesos", "Estrategia digital", "Gestión del cambio"]
+      },
+      "kubernetesClusterDesign": {
+        "title": "Diseño e Implementación de Clústeres Kubernetes",
+        "description": "Arquitectura e implementación de clústeres Kubernetes listos para producción adaptados a sus requisitos de escalabilidad. Garantice la asignación óptima de recursos y alta disponibilidad.",
+        "features": ["Kubernetes, Helm, Kustomize", "AWS EKS, GCP GKE, Azure AKS", "Orquestación de contenedores escalable"],
+        "category": "Infraestructura en la Nube",
+        "detailedContent": "Diseñamos e implementamos clústeres Kubernetes de nivel empresarial optimizados para sus cargas de trabajo específicas. Desde la arquitectura del clúster hasta el despliegue en producción, nos aseguramos de que sus aplicaciones containerizadas funcionen de manera confiable a escala.",
+        "benefits": [
+          "Escalado automático de aplicaciones",
+          "Alta disponibilidad y resiliencia",
+          "Utilización eficiente de recursos",
+          "Pipelines de despliegue simplificados"
+        ],
+        "useCases": [
+          "Arquitecturas de microservicios",
+          "Aplicaciones containerizadas",
+          "Despliegues multi-nube",
+          "Pipelines CI/CD"
+        ],
+        "technologies": ["Kubernetes, Helm, Kustomize", "AWS EKS, GCP GKE, Azure AKS", "Orquestación de contenedores escalable"]
+      },
+      "infrastructureAsCode": {
+        "title": "Infraestructura como Código (IaC) y Terraform",
+        "description": "Provisión y gestión de infraestructura en la nube mediante programación con control de versiones e implementaciones automatizadas.",
+        "features": ["Módulos Terraform", "AWS CloudFormation, Azure RM", "Entornos consistentes"],
+        "category": "Infraestructura en la Nube",
+        "detailedContent": "Nuestra experiencia en Infrastructure as Code permite a las organizaciones gestionar la infraestructura en la nube con el mismo rigor que el código de aplicación. Implementamos flujos de trabajo basados en Terraform que garantizan consistencia, trazabilidad y eficiencia.",
+        "benefits": [
+          "Infraestructura reproducible",
+          "Configuración controlada por versiones",
+          "Ciclos de despliegue más rápidos",
+          "Deriva de configuración reducida"
+        ],
+        "useCases": [
+          "Gestión multi-entorno",
+          "Escalado de infraestructura",
+          "Recuperación ante desastres",
+          "Automatización de desarrollo"
+        ],
+        "technologies": ["Módulos Terraform", "AWS CloudFormation, Azure RM", "Entornos consistentes"]
+      },
+      "cloudPlatformSpecialization": {
+        "title": "Especialización en Plataformas en la Nube",
+        "description": "Navegue por paisajes multi-nube con diseño de arquitectura experto para AWS, GCP y Azure.",
+        "features": ["Optimización AWS", "Soluciones GCP", "Servicios en la nube Azure"],
+        "category": "Infraestructura en la Nube",
+        "detailedContent": "Navegue el panorama de la nube con confianza gracias a nuestra experiencia multi-nube. Ayudamos a las organizaciones a elegir las plataformas en la nube correctas y diseñar soluciones que aprovechen las mejores capacidades de AWS, GCP y Azure.",
+        "benefits": [
+          "Costos en la nube optimizados",
+          "Flexibilidad multi-nube",
+          "Prevención de vendor lock-in",
+          "Servicios best-of-breed"
+        ],
+        "useCases": [
+          "Estrategias de migración a la nube",
+          "Arquitecturas multi-nube",
+          "Optimización de costos",
+          "Despliegues de nube híbrida"
+        ],
+        "technologies": ["Optimización AWS", "Soluciones GCP", "Servicios en la nube Azure"]
+      },
+      "serverlessEventDriven": {
+        "title": "Arquitectura Serverless e Impulsada por Eventos",
+        "description": "Diseñe soluciones serverless escalables y rentables que se escalan automáticamente según la demanda.",
+        "features": ["AWS Lambda, Google Functions", "Azure Functions", "Escalado automático"],
+        "category": "Infraestructura en la Nube",
+        "detailedContent": "Cree aplicaciones escalables y rentables utilizando arquitecturas serverless e impulsadas por eventos. Diseñamos soluciones que eliminan la sobrecarga de gestión de servidores mientras mantienen alta confiabilidad y rendimiento.",
+        "benefits": [
+          "Sobrecarga operativa reducida",
+          "Precios pay-per-use",
+          "Escalado automático",
+          "Tiempo de comercialización más rápido"
+        ],
+        "useCases": [
+          "Procesamiento de datos en tiempo real",
+          "Backends de API",
+          "Tareas programadas",
+          "Flujos de trabajo impulsados por eventos"
+        ],
+        "technologies": ["AWS Lambda, Google Functions", "Azure Functions", "Escalado automático"]
+      },
+      "restfulGraphqlApi": {
+        "title": "Desarrollo de API RESTful y GraphQL",
+        "description": "Construya APIs de alto rendimiento y bien documentadas que sirvan como columna vertebral de su plataforma.",
+        "features": ["Diseño REST y GraphQL", "Versionado y documentación de API", "APIs amigables para desarrolladores"],
+        "category": "Desarrollo de API",
+        "detailedContent": "Arquitecturamos e implementamos APIs que impulsan aplicaciones modernas. Ya sea REST o GraphQL, nuestras APIs están diseñadas para rendimiento, usabilidad y escalabilidad.",
+        "benefits": [
+          "Obtención eficiente de datos",
+          "Fuerte seguridad de tipos",
+          "APIs auto-documentadas",
+          "Experiencias amigables para desarrolladores"
+        ],
+        "useCases": [
+          "Backends de aplicaciones móviles",
+          "Integraciones de terceros",
+          "Comunicación de microservicios",
+          "Capas de agregación de datos"
+        ],
+        "technologies": ["Diseño REST y GraphQL", "Versionado y documentación de API", "APIs amigables para desarrolladores"]
+      },
+      "enterpriseIntegrationMiddleware": {
+        "title": "Integración Empresarial y Middleware",
+        "description": "Conecte sin problemas sistemas heredados con aplicaciones modernas a través de soluciones de integración robustas.",
+        "features": ["RabbitMQ, Apache Kafka", "Enrutamiento de mensajes", "Sincronización en tiempo real"],
+        "category": "Desarrollo de API",
+        "detailedContent": "Integre sistemas empresariales complejos con soluciones de middleware sofisticadas. Conectamos sistemas heredados y modernos, permitiendo un flujo de datos fluido y sincronización en tiempo real en toda su organización.",
+        "benefits": [
+          "Procesos comerciales unificados",
+          "Sincronización de datos en tiempo real",
+          "Modernización de sistemas heredados",
+          "Comunicación escalable"
+        ],
+        "useCases": [
+          "Consolidación multi-sistema",
+          "Pipelines de datos en tiempo real",
+          "Integración ERP",
+          "Plataformas de streaming de eventos"
+        ],
+        "technologies": ["RabbitMQ, Apache Kafka", "Enrutamiento de mensajes", "Sincronización en tiempo real"]
+      },
+      "thirdPartySaaSIntegrations": {
+        "title": "Integraciones de Terceros y SaaS",
+        "description": "Integre con plataformas SaaS líderes y pasarelas de pago para ampliar la funcionalidad.",
+        "features": ["Integración Stripe, PayPal", "Salesforce, HubSpot", "Automatización de flujos de trabajo"],
+        "category": "Desarrollo de API",
+        "detailedContent": "Mejore sus aplicaciones integrando con plataformas SaaS de primer nivel. Conectamos sin problemas sus sistemas con herramientas líderes como Stripe, Salesforce, HubSpot y más.",
+        "benefits": [
+          "Funcionalidad extendida",
+          "Tiempo de desarrollo reducido",
+          "Automatización de flujos de trabajo",
+          "Ecosistema de datos unificado"
+        ],
+        "useCases": [
+          "Procesamiento de pagos",
+          "Integración CRM",
+          "Automatización de marketing",
+          "Integración de sistemas contables"
+        ],
+        "technologies": ["Integración Stripe, PayPal", "Salesforce, HubSpot", "Automatización de flujos de trabajo"]
+      },
+      "apiSecurityCompliance": {
+        "title": "Seguridad y Cumplimiento de API",
+        "description": "Proteja sus APIs con seguridad de nivel empresarial, incluyendo OAuth 2.0, limitación de velocidad y cumplimiento.",
+        "features": ["OAuth 2.0, JWT", "GDPR, HIPAA, PCI-DSS", "Protección DDoS"],
+        "category": "Desarrollo de API",
+        "detailedContent": "Proteja sus APIs contra amenazas modernas con medidas de seguridad integrales. Implementamos autenticación, autorización, limitación de velocidad y controles de cumplimiento adaptados a sus requisitos.",
+        "benefits": [
+          "Datos sensibles protegidos",
+          "Cumplimiento regulatorio",
+          "Violaciones de seguridad reducidas",
+          "Confianza y confianza del usuario"
+        ],
+        "useCases": [
+          "Cumplimiento regulatorio",
+          "Protección de datos sensibles",
+          "Seguridad de API pública",
+          "Sistemas multi-tenant"
+        ],
+        "technologies": ["OAuth 2.0, JWT", "GDPR, HIPAA, PCI-DSS", "Protección DDoS"]
+      },
+      "applicationPerformanceOptimization": {
+        "title": "Optimización del Rendimiento de Aplicaciones",
+        "description": "Acelere su aplicación con almacenamiento en caché estratégico, compresión y optimización frontend.",
+        "features": ["Almacenamiento en caché Redis, Memcached", "Integración CDN", "Optimización Core Web Vitals"],
+        "category": "Rendimiento",
+        "detailedContent": "Cada milisegundo cuenta. Optimizamos aplicaciones en toda la pila—frontend, backend e infraestructura—para entregar experiencias ultrarrápidas que deleitan a los usuarios.",
+        "benefits": [
+          "Tiempos de carga más rápidos",
+          "Experiencia de usuario mejorada",
+          "Mejores clasificaciones SEO",
+          "Costos de infraestructura reducidos"
+        ],
+        "useCases": [
+          "Plataformas E-commerce",
+          "Entrega de contenido",
+          "Aplicaciones en tiempo real",
+          "Aplicaciones móviles"
+        ],
+        "technologies": ["Almacenamiento en caché Redis, Memcached", "Integración CDN", "Optimización Core Web Vitals"]
+      },
+      "databasePerformanceScaling": {
+        "title": "Rendimiento y Escalado de Base de Datos",
+        "description": "Optimice las consultas de base de datos y escale las bases de datos horizontalmente para soportar millones de usuarios concurrentes.",
+        "features": ["Optimización de consultas", "Fragmentación e indexación", "Réplicas de lectura"],
+        "category": "Rendimiento",
+        "detailedContent": "Transforme el rendimiento de la base de datos con estrategias expertas de optimización y escalado. Diseñamos bases de datos que manejan escala masiva mientras mantienen tiempos de respuesta ultrarrápidos.",
+        "benefits": [
+          "Tiempos de respuesta submilisegundos",
+          "Escalabilidad horizontal",
+          "Alta disponibilidad",
+          "Tiempo de inactividad reducido"
+        ],
+        "useCases": [
+          "Plataformas de alto tráfico",
+          "Analítica en tiempo real",
+          "Datos de series temporales",
+          "Aplicaciones multi-tenant"
+        ],
+        "technologies": ["Optimización de consultas", "Fragmentación e indexación", "Réplicas de lectura"]
+      },
+      "loadTestingCapacityPlanning": {
+        "title": "Pruebas de Carga y Planificación de Capacidad",
+        "description": "Valide el rendimiento del sistema en condiciones realistas y planifique el crecimiento de la infraestructura.",
+        "features": ["JMeter, Locust, k6", "Identificación de cuellos de botella", "Pronóstico de capacidad"],
+        "category": "Rendimiento",
+        "detailedContent": "Conozca los límites de su sistema antes de que sean probados por usuarios reales. Nuestras pruebas de carga y planificación de capacidad integrales aseguran que sus sistemas manejen la demanda máxima de manera confiable.",
+        "benefits": [
+          "Rendimiento predecible",
+          "Escalado proactivo",
+          "Confianza en la confiabilidad",
+          "Optimización de costos"
+        ],
+        "useCases": [
+          "Preparación para lanzamiento",
+          "Preparación para Black Friday",
+          "Planificación de capacidad",
+          "Líneas base de rendimiento"
+        ],
+        "technologies": ["JMeter, Locust, k6", "Identificación de cuellos de botella", "Pronóstico de capacidad"]
+      },
+      "monitoringObservabilityAnalytics": {
+        "title": "Monitoreo, Observabilidad y Análisis",
+        "description": "Obtenga visibilidad completa del rendimiento del sistema con monitoreo integral y análisis en tiempo real.",
+        "features": ["Prometheus, ELK Stack", "Rastreo distribuido", "Alertas en tiempo real"],
+        "category": "Rendimiento",
+        "detailedContent": "Vea todo lo que sucede en sus sistemas con monitoreo y observabilidad integrales. Implementamos soluciones que proporcionan visibilidad completa, permitiendo una detección y resolución rápida de problemas.",
+        "benefits": [
+          "Detección proactiva de problemas",
+          "Tiempo medio de recuperación reducido",
+          "Optimización basada en datos",
+          "Insights del sistema"
+        ],
+        "useCases": [
+          "Monitoreo de producción",
+          "Respuesta a incidentes",
+          "Analítica de rendimiento",
+          "Analítica de uso"
+        ],
+        "technologies": ["Prometheus, ELK Stack", "Rastreo distribuido", "Alertas en tiempo real"]
+      },
+      "applicationSecurityAppSec": {
+        "title": "Seguridad de Aplicaciones (AppSec)",
+        "description": "Proteja las aplicaciones de vulnerabilidades con revisión de código segura y pruebas de penetración.",
+        "features": ["Escaneo SAST/DAST", "Remediación OWASP", "Pruebas de seguridad"],
+        "category": "Seguridad",
+        "detailedContent": "Construya seguridad en aplicaciones desde el primer día. Nuestros servicios AppSec incluyen revisión de código segura, escaneo de vulnerabilidades, pruebas de penetración y orientación de remediación.",
+        "benefits": [
+          "Menos vulnerabilidades",
+          "Riesgo de violación reducido",
+          "Certificación de cumplimiento",
+          "Confianza del cliente"
+        ],
+        "useCases": [
+          "Seguridad pre-lanzamiento",
+          "Preparación para auditoría de cumplimiento",
+          "Gestión de vulnerabilidades",
+          "Certificaciones de seguridad"
+        ],
+        "technologies": ["Escaneo SAST/DAST", "Remediación OWASP", "Pruebas de seguridad"]
+      },
+      "identityAccessManagement": {
+        "title": "Gestión de Identidad y Acceso (IAM)",
+        "description": "Controle el acceso en toda su organización con gestión de identidad centralizada y autenticación multifactor.",
+        "features": ["OAuth 2.0, SAML", "Implementación RBAC", "Autenticación multifactor"],
+        "category": "Seguridad",
+        "detailedContent": "Implemente sistemas robustos de gestión de identidad y acceso que equilibren la seguridad con la usabilidad. Desplegamos soluciones IAM que protegen sus recursos mientras permiten el acceso autorizado.",
+        "benefits": [
+          "Control de acceso centralizado",
+          "Seguridad mejorada",
+          "Conveniencia del usuario",
+          "Satisfacción de cumplimiento"
+        ],
+        "useCases": [
+          "SSO empresarial",
+          "Gestión de acceso de empleados",
+          "Plataformas de identidad de clientes",
+          "Gestión de acceso privilegiado"
+        ],
+        "technologies": ["OAuth 2.0, SAML", "Implementación RBAC", "Autenticación multifactor"]
+      },
+      "dataProtectionPrivacy": {
+        "title": "Protección de Datos y Privacidad",
+        "description": "Proteja datos sensibles con cifrado en reposo y en tránsito, implementación de privacidad por diseño.",
+        "features": ["Cifrado AES-256", "TLS/SSL, HSM", "Cumplimiento GDPR"],
+        "category": "Seguridad",
+        "detailedContent": "Proteja datos sensibles con medidas integrales de cifrado y privacidad. Implementamos principios de privacidad por diseño y aseguramos el cumplimiento con GDPR, HIPAA y otras regulaciones.",
+        "benefits": [
+          "Información sensible protegida",
+          "Cumplimiento regulatorio",
+          "Privacidad del usuario",
+          "Protección de marca"
+        ],
+        "useCases": [
+          "Aplicaciones de atención médica",
+          "Servicios financieros",
+          "Plataformas de datos de clientes",
+          "Manejo de información personal"
+        ],
+        "technologies": ["Cifrado AES-256", "TLS/SSL, HSM", "Cumplimiento GDPR"]
+      },
+      "complianceAuditFrameworks": {
+        "title": "Marcos de Cumplimiento y Auditoría",
+        "description": "Cumpla con los requisitos regulatorios con marcos de cumplimiento integrales, incluyendo SOC 2 e ISO 27001.",
+        "features": ["SOC 2, ISO 27001", "PCI-DSS, GDPR", "Informes de auditoría"],
+        "category": "Seguridad",
+        "detailedContent": "Navegue paisajes regulatorios complejos con confianza. Implementamos marcos de cumplimiento y preparamos organizaciones para auditorías y certificaciones.",
+        "benefits": [
+          "Cumplimiento regulatorio",
+          "Preparación para auditoría",
+          "Reducción de riesgos",
+          "Confianza del cliente"
+        ],
+        "useCases": [
+          "Certificación SOC 2",
+          "Cumplimiento HIPAA",
+          "Certificación PCI-DSS",
+          "Preparación para auditoría"
+        ],
+        "technologies": ["SOC 2, ISO 27001", "PCI-DSS, GDPR", "Informes de auditoría"]
+      },
+      "securityAsAService": {
+        "title": "Seguridad como Servicio (SaaS)",
+        "description": "Sistemas de cámaras de seguridad y soluciones de monitoreo integrales adaptadas a organizaciones sin fines de lucro, PYME y empresas.",
+        "features": ["Sistemas de cámaras", "Monitoreo en la nube", "Detección IA", "Soporte 24/7"],
+        "category": "Seguridad",
+        "detailedContent": "Ofrecemos soluciones de Seguridad como Servicio escalonadas diseñadas para organizaciones de todos los tamaños. Desde configuraciones básicas SimpliSafe para organizaciones sin fines de lucro hasta sistemas de nivel empresarial ADT + Nest con monitoreo profesional, proporcionamos soluciones de seguridad escalables que protegen sus activos e instalaciones.",
+        "benefits": [
+          "Soluciones de seguridad escalables",
+          "Opciones de monitoreo profesional",
+          "Detección de amenazas impulsada por IA",
+          "Almacenamiento compatible con cumplimiento"
+        ],
+        "useCases": [
+          "Protección de instalaciones sin fines de lucro",
+          "Seguridad minorista PYME",
+          "Monitoreo multi-sitio empresarial",
+          "Cumplimiento de instalaciones sanitarias"
+        ],
+        "technologies": ["SimpliSafe, Arlo Secure", "Cámaras ADT + Nest", "Almacenamiento en la nube", "Detección IA"]
+      },
+      "dedicatedDevelopmentTeams": {
+        "title": "Equipos de Desarrollo Dedicados",
+        "description": "Escale su capacidad de ingeniería con equipos de desarrollo dedicados y verificados integrados con su organización.",
+        "features": ["Desarrolladores full-stack", "Ingenieros DevOps", "Expertos en ML y seguridad"],
+        "category": "Aumento de Equipo",
+        "detailedContent": "Escale su equipo con desarrolladores experimentados que trabajan sin problemas dentro de su organización. Nuestros equipos dedicados aportan experiencia especializada y contribuyen a su éxito a largo plazo.",
+        "benefits": [
+          "Capacidad expandida",
+          "Experiencia especializada",
+          "Eficiencia de costos",
+          "Rampa rápida"
+        ],
+        "useCases": [
+          "Aceleración de proyectos",
+          "Necesidades de habilidades especializadas",
+          "Capacidad temporal",
+          "Operaciones 24/7"
+        ],
+        "technologies": ["Desarrolladores full-stack", "Ingenieros DevOps", "Expertos en ML y seguridad"]
+      },
+      "technicalLeadershipArchitecture": {
+        "title": "Liderazgo Técnico y Arquitectura",
+        "description": "Aproveche la experiencia de nivel CTO y la orientación de arquitectura de soluciones para decisiones tecnológicas críticas.",
+        "features": ["Diseño de arquitectura", "Estrategia tecnológica", "Gobernanza técnica"],
+        "category": "Aumento de Equipo",
+        "detailedContent": "Obtenga acceso a experiencia de nivel CTO para decisiones tecnológicas críticas. Nuestros líderes técnicos proporcionan orientación estratégica, diseño de arquitectura y gobernanza tecnológica.",
+        "benefits": [
+          "Decisiones tecnológicas estratégicas",
+          "Excelencia arquitectónica",
+          "Mitigación de riesgos",
+          "A prueba de futuro"
+        ],
+        "useCases": [
+          "Servicios CTO",
+          "Decisiones de arquitectura",
+          "Selección de stack tecnológico",
+          "Planificación estratégica"
+        ],
+        "technologies": ["Diseño de arquitectura", "Estrategia tecnológica", "Gobernanza técnica"]
+      },
+      "mentorshipSkillsDevelopment": {
+        "title": "Mentoría y Desarrollo de Habilidades",
+        "description": "Acelere la capacidad del equipo con mentoría personalizada y orientación de mejores prácticas.",
+        "features": ["Coaching técnico", "Programas de capacitación", "Transferencia de conocimiento"],
+        "category": "Aumento de Equipo",
+        "detailedContent": "Invierta en el crecimiento de su equipo con programas integrales de mentoría y capacitación. Ayudamos a sus ingenieros a desarrollar habilidades en tecnologías emergentes y mejores prácticas.",
+        "benefits": [
+          "Capacidades del equipo mejoradas",
+          "Retención de conocimiento",
+          "Productividad aumentada",
+          "Desarrollo profesional"
+        ],
+        "useCases": [
+          "Mejora de habilidades del equipo",
+          "Implementación de mejores prácticas",
+          "Transferencia de conocimiento",
+          "Mentoría profesional"
+        ],
+        "technologies": ["Coaching técnico", "Programas de capacitación", "Transferencia de conocimiento"]
+      },
+      "projectManagementDelivery": {
+        "title": "Gestión de Proyectos y Entrega",
+        "description": "Asegure la entrega exitosa de proyectos con gestión de proyectos experta y coaching ágil.",
+        "features": ["Coaching Agile/Scrum", "Aseguramiento de calidad", "Gestión de riesgos"],
+        "category": "Aumento de Equipo",
+        "detailedContent": "Entregue proyectos a tiempo y dentro del presupuesto con gestión de proyectos experta. Empleamos metodologías probadas, prácticas ágiles y aseguramiento de calidad para garantizar el éxito del proyecto.",
+        "benefits": [
+          "Entrega a tiempo",
+          "Resultados de calidad",
+          "Mitigación de riesgos",
+          "Alineación del equipo"
+        ],
+        "useCases": [
+          "Transformación ágil",
+          "Supervisión de proyectos",
+          "Aseguramiento de calidad",
+          "Excelencia en entrega"
+        ],
+        "technologies": ["Coaching Agile/Scrum", "Aseguramiento de calidad", "Gestión de riesgos"]
+      }
+    }
+  },
+  "about": {
+    "title": "Forjando el Futuro de la Excelencia Digital",
+    "paragraph1": "En Forger Digital, creemos en la fusión perfecta de tecnología de vanguardia y artesanía magistral. Nuestro equipo de desarrolladores, diseñadores y estrategas expertos trabajan juntos para crear soluciones digitales que no solo cumplen las expectativas, sino que las superan.",
+    "paragraph2": "Fundados en el principio de que cada línea de código importa, abordamos cada proyecto con la precisión de un artesano y la visión de un innovador. Nuestro enfoque de salto cuántico hacia la transformación digital ha ayudado a empresas de todas las industrias a lograr un crecimiento notable.",
+    "features": {
+      "architecture": {
+        "title": "Arquitectura",
+        "description": "Diseño de sistemas escalables"
+      },
+      "security": {
+        "title": "Seguridad",
+        "description": "Protección de nivel empresarial"
+      },
+      "performance": {
+        "title": "Rendimiento",
+        "description": "Soluciones ultrarrápidas"
+      },
+      "innovation": {
+        "title": "Innovación",
+        "description": "Tecnología de vanguardia"
+      }
+    },
+    "stats": {
+      "awards": "Premios de la Industria",
+      "team": "Miembros del Equipo"
+    },
+    "cards": {
+      "architecture": {
+        "title": "Arquitectura",
+        "description": "Diseño de sistemas escalables",
+        "detailedContent": "Diseñamos e implementamos arquitecturas de sistemas escalables que crecen con su negocio. Nuestro enfoque arquitectónico enfatiza la modularidad, mantenibilidad y principios de diseño a prueba de futuro. Ya sea que necesite arquitectura de microservicios, soluciones cloud-native o diseño de sistemas a escala empresarial, entregamos arquitecturas que manejan la complejidad mientras permanecen ágiles y adaptables.",
+        "keyBenefits": [
+          "Infraestructura escalable que crece con su negocio",
+          "Arquitectura modular para fácil mantenimiento y actualizaciones",
+          "Principios y patrones de diseño a prueba de futuro",
+          "Experiencia en sistemas cloud-native y distribuidos",
+          "Optimización de rendimiento a través de arquitectura inteligente",
+          "Estrategias de escalado rentables"
+        ],
+        "useCases": [
+          "Arquitecturas de microservicios y orientadas a servicios",
+          "Estrategias de migración a la nube y multi-nube",
+          "Modernización de sistemas heredados",
+          "Arquitectura de aplicaciones de alto tráfico",
+          "Arquitecturas impulsadas por eventos y serverless",
+          "Orquestación de contenedores y diseño Kubernetes"
+        ],
+        "technologies": [
+          "Arquitectura de Microservicios",
+          "Plataformas en la Nube (AWS, GCP, Azure)",
+          "Kubernetes y Docker",
+          "API Gateway y Service Mesh",
+          "Arquitectura Impulsada por Eventos",
+          "Computación Serverless"
+        ],
+        "methodologies": [
+          "Domain-Driven Design (DDD)",
+          "Arquitectura Limpia",
+          "Principios SOLID",
+          "CQRS y Event Sourcing",
+          "Diseño API-First",
+          "Infraestructura como Código (IaC)"
+        ]
+      },
+      "security": {
+        "title": "Seguridad",
+        "description": "Protección de nivel empresarial",
+        "detailedContent": "La seguridad de nivel empresarial está en el centro de todo lo que construimos. Implementamos medidas de seguridad integrales que incluyen autenticación, autorización, cifrado y controles de cumplimiento. Nuestro enfoque de seguridad primero asegura que las aplicaciones estén protegidas contra amenazas modernas mientras mantienen usabilidad y rendimiento.",
+        "keyBenefits": [
+          "Marcos de seguridad de nivel empresarial",
+          "Implementación de arquitectura zero-trust",
+          "Cumplimiento con estándares de la industria (SOC 2, GDPR, HIPAA)",
+          "Detección y prevención proactiva de amenazas",
+          "Sistemas seguros de autenticación y autorización",
+          "Cifrado de datos en reposo y en tránsito"
+        ],
+        "useCases": [
+          "Implementación de Seguridad de Aplicaciones (AppSec)",
+          "Gestión de Identidad y Acceso (IAM)",
+          "Seguridad de API y limitación de velocidad",
+          "Auditorías de seguridad y pruebas de penetración",
+          "Soporte para certificación de cumplimiento",
+          "Monitoreo de seguridad y respuesta a incidentes"
+        ],
+        "technologies": [
+          "OAuth 2.0 y OpenID Connect",
+          "JWT y Gestión de Sesiones",
+          "SSL/TLS y Cifrado",
+          "Herramientas de Escaneo de Seguridad (SAST/DAST)",
+          "Gestión de Secretos",
+          "WAF y Protección DDoS"
+        ],
+        "methodologies": [
+          "Cumplimiento OWASP Top 10",
+          "SDLC Seguro",
+          "Modelado de Amenazas",
+          "Seguridad por Diseño",
+          "Arquitectura Zero-Trust",
+          "Defensa en Profundidad"
+        ]
+      },
+      "performance": {
+        "title": "Rendimiento",
+        "description": "Soluciones ultrarrápidas",
+        "detailedContent": "El rendimiento no es una idea tardía: está integrado en cada solución que creamos. Optimizamos aplicaciones para velocidad, escalabilidad y eficiencia, asegurando que sus usuarios experimenten tiempos de respuesta ultrarrápidos incluso bajo carga pesada. Nuestro enfoque de ingeniería de rendimiento combina perfilado, optimización y monitoreo continuo.",
+        "keyBenefits": [
+          "Tiempos de respuesta de aplicaciones ultrarrápidos",
+          "Consultas de base de datos y acceso a datos optimizados",
+          "Utilización eficiente de recursos y ahorro de costos",
+          "Rendimiento escalable bajo alta carga",
+          "Monitoreo de rendimiento en tiempo real y alertas",
+          "Optimización CDN para entrega de contenido global"
+        ],
+        "useCases": [
+          "Optimización del rendimiento de aplicaciones",
+          "Ajuste y escalado del rendimiento de bases de datos",
+          "Pruebas de carga y validación de rendimiento",
+          "Estrategias e implementación de caché",
+          "Optimización de red de entrega de contenido (CDN)",
+          "Monitoreo de rendimiento en tiempo real"
+        ],
+        "technologies": [
+          "Redis y Memcached",
+          "Servicios CDN (CloudFlare, AWS CloudFront)",
+          "Herramientas de Optimización de Base de Datos",
+          "Monitoreo de Rendimiento (New Relic, Datadog)",
+          "Herramientas de Pruebas de Carga (JMeter, k6)",
+          "Herramientas de Perfilado de Aplicaciones"
+        ],
+        "methodologies": [
+          "Pruebas de Rendimiento",
+          "Planificación de Capacidad",
+          "Estrategias de Caché",
+          "Optimización de Base de Datos",
+          "Perfilado de Código",
+          "Presupuestos de Rendimiento"
+        ]
+      },
+      "innovation": {
+        "title": "Innovación",
+        "description": "Tecnología de vanguardia",
+        "detailedContent": "Nos mantenemos a la vanguardia de la innovación tecnológica, explorando y adoptando continuamente tecnologías emergentes que pueden transformar su negocio. Desde IA y aprendizaje automático hasta blockchain e IoT, lo ayudamos a aprovechar soluciones de vanguardia para obtener ventajas competitivas y crear nuevas oportunidades.",
+        "keyBenefits": [
+          "Acceso a las últimas tendencias tecnológicas",
+          "Ventaja competitiva a través de la innovación",
+          "Soluciones tecnológicas a prueba de futuro",
+          "Prototipado rápido y experimentación",
+          "Orientación experta sobre adopción de tecnología",
+          "Transformación empresarial impulsada por la innovación"
+        ],
+        "useCases": [
+          "Integración de IA y aprendizaje automático",
+          "Blockchain y soluciones descentralizadas",
+          "IoT y redes de dispositivos conectados",
+          "Exploración de tecnologías emergentes",
+          "Laboratorios de innovación y pruebas de concepto",
+          "Estrategia tecnológica y planificación de hoja de ruta"
+        ],
+        "technologies": [
+          "Inteligencia Artificial y ML",
+          "Blockchain y Web3",
+          "IoT y Edge Computing",
+          "Tecnologías AR/VR",
+          "Computación Cuántica (Exploración)",
+          "Marcos y Herramientas Emergentes"
+        ],
+        "methodologies": [
+          "Design Thinking",
+          "Prototipado Rápido",
+          "Innovación Ágil",
+          "Búsqueda de Tecnología",
+          "Desarrollo de Pruebas de Concepto",
+          "Talleres de Innovación"
+        ]
+      }
+    }
+  },
+  "testimonials": {
+    "title": "Lo Que Dicen Nuestros Clientes",
+    "subtitle": "Confiado por líderes de la industria que valoran la excelencia y la innovación",
+    "testimonial1": {
+      "quote": "Forger Digital transformó toda nuestra infraestructura digital. Su atención al detalle y enfoque innovador superó todas las expectativas.",
+      "name": "Sarah Johnson",
+      "position": "CTO, TechStart Inc."
+    },
+    "testimonial2": {
+      "quote": "La experiencia del equipo en tecnologías emergentes nos ayudó a mantenernos por delante de la competencia. Verdaderamente una artesanía excepcional.",
+      "name": "Michael Chen",
+      "position": "CEO, InnovateCorp"
+    },
+    "testimonial3": {
+      "quote": "Desde el concepto hasta el despliegue, Forger Digital entregó una solución que se alineó perfectamente con nuestros objetivos comerciales. ¡Trabajo excepcional!",
+      "name": "Emily Rodriguez",
+      "position": "Gerente de Producto, ScaleUp"
+    }
+  },
+  "portfolio": {
+    "title": "Historias de Éxito",
+    "subtitle": "Descubre cómo hemos ayudado a las empresas a transformar su presencia digital y lograr resultados notables.",
+    "learnMore": "Saber Más",
+    "challenge": "Desafío",
+    "solution": "Solución",
+    "results": "Resultados",
+    "caseStudy": "Estudio de Caso",
+    "overview": "Resumen",
+    "timeline": "Cronograma",
+    "outcomes": "Resultados",
+    "projectTimeline": "Cronograma del Proyecto",
+    "keyOutcomesMetrics": "Resultados y Métricas Clave",
+    "technologyStack": "Stack Tecnológico",
+    "readyToTransform": "¿Listo para Transformar Tu Negocio?",
+    "readyToTransformDescription": "Hablemos de cómo podemos ayudarte a lograr resultados similares.",
+    "getInTouch": "Ponerse en Contacto",
+    "methodologiesBestPractices": "Metodologías y Mejores Prácticas",
+    "stories": {
+      "ecommerce": {
+        "title": "Transformación de Plataforma E-commerce",
+        "client": "TechRetail Corp",
+        "challenge": "Sistema heredado causando 40% de abandono de carrito",
+        "solution": "Plataforma moderna basada en React con recomendaciones de IA",
+        "results": [
+          "300% de aumento en conversiones",
+          "50% de reducción en tiempo de carga",
+          "95% de satisfacción del cliente"
+        ],
+        "tags": ["E-commerce", "React", "IA/ML"],
+        "overview": "TechRetail Corp estaba luchando con su plataforma e-commerce obsoleta, experimentando tasas significativas de abandono de carrito y una mala experiencia de usuario. Transformamos completamente su presencia digital con una plataforma moderna impulsada por IA que mejoró significativamente las tasas de conversión y la satisfacción del cliente.",
+        "detailedChallenge": "La plataforma e-commerce heredada de TechRetail Corp estaba construida sobre una pila tecnológica obsoleta, resultando en tiempos de carga lentos, mala experiencia móvil y altas tasas de abandono de carrito (40%). El sistema no podía escalar durante las temporadas de compras pico y carecía de características de personalización que los consumidores modernos esperan.",
+        "detailedSolution": "Arquitecturamos y construimos una plataforma completamente nueva usando React y Next.js para el frontend con un backend Node.js escalable. Implementamos recomendaciones de productos basadas en aprendizaje automático, optimizado para experiencia mobile-first, integrado con los principales procesadores de pago, y desplegado en AWS con capacidades de auto-escalado.",
+        "timeline": [
+          {
+            "phase": "Descubrimiento y Análisis",
+            "description": "Analizamos el sistema existente, identificamos puntos de dolor y recopilamos requisitos de las partes interesadas",
+            "duration": "2 semanas"
+          },
+          {
+            "phase": "Diseño de Arquitectura",
+            "description": "Diseñamos una nueva arquitectura de microservicios con frontend React y backend Node.js",
+            "duration": "3 semanas"
+          },
+          {
+            "phase": "Desarrollo",
+            "description": "Construimos frontend responsivo, integramos motor de recomendaciones IA e implementamos procesamiento de pagos",
+            "duration": "8 semanas"
+          },
+          {
+            "phase": "Pruebas y Optimización",
+            "description": "Pruebas exhaustivas, optimización de rendimiento y endurecimiento de seguridad",
+            "duration": "2 semanas"
+          },
+          {
+            "phase": "Despliegue y Migración",
+            "description": "Desplegado a producción y migrado más de 2M de registros de clientes con cero tiempo de inactividad",
+            "duration": "1 semana"
+          }
+        ],
+        "outcomes": [
+          {
+            "metric": "Tasa de Conversión",
+            "value": "↑ 300%"
+          },
+          {
+            "metric": "Tiempo de Carga",
+            "value": "↓ 50%"
+          },
+          {
+            "metric": "Abandono de Carrito",
+            "value": "↓ 40%"
+          },
+          {
+            "metric": "Satisfacción del Cliente",
+            "value": "↑ 95%"
+          },
+          {
+            "metric": "Impacto en Ingresos",
+            "value": "+$2.5M anualmente"
+          }
+        ],
+        "technology": ["React", "Next.js", "Node.js", "PostgreSQL", "Redis", "AWS", "Docker", "IA/ML", "API Stripe"]
+      },
+      "mobile": {
+        "title": "Aplicación Móvil Empresarial",
+        "client": "LogiFlow Industries",
+        "challenge": "Procesos manuales causando ineficiencias operativas",
+        "solution": "Aplicación móvil multiplataforma con seguimiento en tiempo real",
+        "results": [
+          "60% de reducción en tiempo de procesamiento",
+          "90% de tasa de adopción de usuarios",
+          "$2M de ahorro anual"
+        ],
+        "tags": ["Móvil", "React Native", "IoT"],
+        "overview": "LogiFlow Industries enfrentó desafíos operativos significativos debido a procesos manuales basados en papel en sus operaciones logísticas. Desarrollamos una aplicación móvil multiplataforma integral que permitió seguimiento en tiempo real, flujos de trabajo automatizados y mejoró dramáticamente la eficiencia operativa.",
+        "detailedChallenge": "LogiFlow Industries operaba con procesos manuales basados en papel en más de 500 equipos de campo, resultando en ineficiencias, informes retrasados, falta de visibilidad en tiempo real y costos operativos. Los gerentes no tenían forma de rastrear entregas en tiempo real, y los errores de entrada de datos eran comunes.",
+        "detailedSolution": "Desarrollamos una aplicación móvil multiplataforma usando React Native, permitiendo despliegue iOS y Android desde una sola base de código. La aplicación cuenta con arquitectura offline-first para confiabilidad en campo, seguimiento GPS en tiempo real, captura de datos automatizada e integración perfecta con sus sistemas backend a través de APIs GraphQL.",
+        "timeline": [
+          {
+            "phase": "Recopilación de Requisitos",
+            "description": "Entrevistamos equipos de campo, gerentes logísticos y partes interesadas para entender puntos de dolor del flujo de trabajo",
+            "duration": "2 semanas"
+          },
+          {
+            "phase": "Diseño UI/UX",
+            "description": "Creamos diseño intuitivo mobile-first optimizado para entornos de trabajo de campo",
+            "duration": "2 semanas"
+          },
+          {
+            "phase": "Desarrollo",
+            "description": "Construimos aplicación React Native para iOS/Android con capacidades offline y seguimiento GPS en tiempo real",
+            "duration": "10 semanas"
+          },
+          {
+            "phase": "Integración Backend",
+            "description": "Integrado con sistemas empresariales existentes y dispositivos IoT para sincronización de datos en tiempo real",
+            "duration": "3 semanas"
+          },
+          {
+            "phase": "Lanzamiento y Capacitación",
+            "description": "Despliegue por fases en más de 500 equipos de campo con programa de capacitación integral",
+            "duration": "2 semanas"
+          }
+        ],
+        "outcomes": [
+          {
+            "metric": "Tiempo de Procesamiento",
+            "value": "↓ 60%"
+          },
+          {
+            "metric": "Adopción de Usuarios",
+            "value": "↑ 90%"
+          },
+          {
+            "metric": "Costo Operativo",
+            "value": "↓ 35%"
+          },
+          {
+            "metric": "Precisión de Entrega",
+            "value": "↑ 98%"
+          },
+          {
+            "metric": "Ahorros Anuales",
+            "value": "$2M"
+          }
+        ],
+        "technology": ["React Native", "Node.js", "GraphQL", "MongoDB", "IoT", "Seguimiento GPS", "Offline-First", "Firebase", "AWS"]
+      }
+    },
+    "page": {
+      "title": "Proyectos de Portafolio",
+      "subtitle": "Exhibición Interactiva",
+      "description": "• Explora 12 proyectos integrales que muestran experiencia en redes, infraestructura en la nube, integración de IA y desarrollo full-stack. Haz clic en cualquier proyecto para ver una demostración detallada.",
+      "tabs": {
+        "allProjects": "Todos los Proyectos",
+        "infrastructure": "Infraestructura",
+        "aiAutomation": "IA y Automatización",
+        "webBlockchain": "Web y Blockchain"
+      },
+      "categories": {
+        "infrastructureNetworking": "Infraestructura y Redes",
+        "aiAutomation": "IA y Automatización",
+        "webUtilitiesBlockchain": "Web y Utilidades / Blockchain"
+      },
+      "projects": {
+        "enterpriseNetworkMonitoring": {
+          "title": "Panel de Monitoreo de Red Empresarial",
+          "subtitle": "Seguimiento de salud VLAN en tiempo real",
+          "category": "Infraestructura y Redes",
+          "description": "Seguimiento de salud VLAN en tiempo real con integración de Prometheus y Grafana"
+        },
+        "cloudMigrationPortal": {
+          "title": "Portal de Gestión de Migración a la Nube",
+          "subtitle": "Flujos de trabajo en la nube automatizados",
+          "category": "Infraestructura y Redes",
+          "description": "Flujos de trabajo de migración a la nube automatizados con infraestructura como código"
+        },
+        "secureIotPlatform": {
+          "title": "Plataforma de Gestión de Dispositivos IoT Segura",
+          "subtitle": "Autenticación de dispositivos de confianza cero",
+          "category": "Infraestructura y Redes",
+          "description": "Autenticación de dispositivos de confianza cero con cifrado TLS/DTLS"
+        },
+        "predictiveMaintenance": {
+          "title": "Sistema de Mantenimiento Predictivo de Red",
+          "subtitle": "Análisis predictivo impulsado por IA",
+          "category": "Infraestructura y Redes",
+          "description": "Análisis predictivo impulsado por IA que reduce el tiempo de inactividad en un 30%"
+        },
+        "aiChatbot": {
+          "title": "Chatbot de Soporte al Cliente Inteligente",
+          "subtitle": "Asistencia impulsada por OpenAI",
+          "category": "IA y Automatización",
+          "description": "Chatbot impulsado por OpenAI con RAG y procesamiento en tiempo real"
+        },
+        "threatDetection": {
+          "title": "Detección de Amenazas de Seguridad Impulsada por IA",
+          "subtitle": "Detección de anomalías basada en PyTorch",
+          "category": "IA y Automatización",
+          "description": "Detección de anomalías basada en PyTorch con integración de Wireshark"
+        },
+        "dataGraphsConverter": {
+          "title": "Convertidor de Gráficos de Datos",
+          "subtitle": "Visualizaciones de datos interactivas",
+          "category": "IA y Automatización",
+          "description": "Transformar datos CSV en visualizaciones interactivas"
+        },
+        "financialDashboard": {
+          "title": "Panel Financiero",
+          "subtitle": "Seguimiento de saldo en tiempo real",
+          "category": "Web y Utilidades",
+          "description": "Seguimiento de saldo de cripto y fiat en tiempo real con integración de Plaid"
+        },
+        "urlShorterYuupi": {
+          "title": "Acortador de URL - Yuupi",
+          "subtitle": "Acortador de alto rendimiento",
+          "category": "Web y Utilidades",
+          "description": "Acortador de URL de alto rendimiento con latencia de redirección de 2ms"
+        },
+        "videoConverter": {
+          "title": "Convertidor de Video en Línea",
+          "subtitle": "Procesamiento de video solo en navegador",
+          "category": "Web y Utilidades",
+          "description": "Procesamiento de video solo en navegador con FFmpeg WebAssembly"
+        },
+        "wepayCryptoWallet": {
+          "title": "WePay - Billetera Cripto",
+          "subtitle": "Billetera multi-firma",
+          "category": "Blockchain e IoT",
+          "description": "Billetera de criptomonedas multi-firma con integración de MetaMask"
+        },
+        "iotDashboard": {
+          "title": "Panel IoT",
+          "subtitle": "Visualización de sensores en tiempo real",
+          "category": "Blockchain e IoT",
+          "description": "Visualización de datos de sensores en tiempo real con renderizado Three.js"
+        }
+      }
+    }
+  },
+  "getStarted": {
+    "title": "Transforma Tu Visión Digital en Realidad",
+    "description": "Conéctate con un Ingeniero Principal para discutir tu proyecto y descubrir cómo Forger Digital puede ayudarte a alcanzar tus objetivos comerciales con tecnología de vanguardia y artesanía experta.",
+    "trustSignals": {
+      "team": "25+ Miembros del Equipo Experto",
+      "response": "Horas de Tiempo de Respuesta",
+      "security": "Seguridad Empresarial",
+      "satisfaction": "98% Satisfacción del Cliente"
+    },
+    "steps": {
+      "personalInfo": "Información Personal",
+      "projectDetails": "Detalles del Proyecto",
+      "contactPreference": "Preferencia de Contacto"
+    },
+    "sections": {
+      "aboutYourself": "Cuéntanos Sobre Ti",
+      "projectDetails": "Detalles del Proyecto",
+      "contactPreference": "¿Cómo Te Gustaría Que Te Contactemos?"
+    },
+    "fields": {
+      "firstName": "Nombre",
+      "lastName": "Apellido",
+      "company": "Empresa",
+      "role": "Tu Rol",
+      "email": "Dirección de Correo",
+      "phone": "Número de Teléfono",
+      "projectDescription": "Describe Tu Visión Digital",
+      "serviceInterests": "Áreas de Servicio de Interés",
+      "timeline": "Cronograma del Proyecto",
+      "budget": "Rango de Presupuesto"
+    },
+    "placeholders": {
+      "firstName": "Juan",
+      "lastName": "Pérez",
+      "company": "Acme Corp",
+      "role": "CTO, Gerente de Producto, etc.",
+      "email": "juan@acme.com",
+      "phone": "+1 (347) 829-4952",
+      "projectDescription": "Cuéntanos sobre los objetivos de tu proyecto, desafíos y lo que esperas lograr..."
+    },
+    "helpText": {
+      "firstName": "Ingresa tu nombre tal como aparece en documentos oficiales",
+      "lastName": "Ingresa tu apellido tal como aparece en documentos oficiales",
+      "company": "El nombre de tu empresa u organización",
+      "role": "Tu título o rol en la organización",
+      "email": "Usaremos esto para contactarte. Asegúrate de que esté activo y accesible.",
+      "emailPrivacy": "Nunca compartiremos tu correo con terceros",
+      "phone": "Opcional. Incluye el código de país para números internacionales",
+      "projectDescription": "Proporciona detalles sobre los objetivos de tu proyecto, desafíos, cronograma y resultados esperados",
+      "serviceInterests": "Selecciona todas las áreas de servicio que se apliquen a tu proyecto. Puedes seleccionar múltiples opciones.",
+      "timeline": "¿Cuándo necesitas que se complete este proyecto?",
+      "budget": "Rango de presupuesto estimado para este proyecto",
+      "contactPreference": "Elige tu método preferido para nuestra consulta inicial"
+    },
+    "services": {
+      "customSoftware": "Desarrollo de Software Personalizado",
+      "webApp": "Desarrollo de Aplicaciones Web",
+      "mobileApp": "Desarrollo de Aplicaciones Móviles",
+      "enterprise": "Soluciones Empresariales",
+      "cloudDevOps": "Infraestructura en la Nube y DevOps",
+      "aiMl": "Inteligencia Artificial y Aprendizaje Automático",
+      "blockchain": "Soluciones Blockchain",
+      "digitalTransformation": "Transformación Digital",
+      "teamAugmentation": "Aumento de Equipo",
+      "technicalConsulting": "Consultoría Técnica"
+    },
+    "contactMethods": {
+      "email": {
+        "label": "Correo Electrónico",
+        "description": "Te enviaremos una respuesta detallada"
+      },
+      "phone": {
+        "label": "Llamada Telefónica",
+        "description": "Llamada de descubrimiento de horas"
+      },
+      "video": {
+        "label": "Llamada de Video",
+        "description": "Sesión de estrategia de horas"
+      }
+    },
+    "timelineOptions": {
+      "select": "Seleccionar cronograma",
+      "asap": "Lo Antes Posible (Proyecto urgente)",
+      "1-3months": "1-3 meses",
+      "3-6months": "3-6 meses",
+      "6-12months": "6-12 meses",
+      "flexible": "Flexible"
+    },
+    "budgetOptions": {
+      "select": "Seleccionar rango de presupuesto",
+      "under25k": "Menos de $25,000",
+      "25k-50k": "$25,000 - $50,000",
+      "50k-100k": "$50,000 - $100,000",
+      "100k-250k": "$100,000 - $250,000",
+      "250kPlus": "$250,000+",
+      "discuss": "Hablemos"
+    },
+    "validation": {
+      "firstNameRequired": "El nombre es requerido",
+      "lastNameRequired": "El apellido es requerido",
+      "companyRequired": "El nombre de la empresa es requerido",
+      "emailRequired": "El correo es requerido",
+      "emailInvalid": "Por favor ingresa una dirección de correo válida",
+      "projectDescriptionRequired": "La descripción del proyecto es requerida",
+      "serviceInterestsRequired": "Por favor selecciona al menos un área de servicio"
+    },
+    "submit": {
+      "button": "Inicia Tu Proyecto",
+      "submitting": "Enviando...",
+      "draftSaved": "Borrador guardado automáticamente",
+      "characters": "caracteres",
+      "servicesSelected": "servicio seleccionado",
+      "servicesSelectedPlural": "servicios seleccionados",
+      "error": "Algo salió mal. Por favor intenta de nuevo."
+    },
+    "success": {
+      "title": "¡Gracias por Tu Interés!",
+      "description": "Hemos recibido tu solicitud de consulta y te conectaremos con un Ingeniero Principal en 1 hora hábil.",
+      "whatHappensNext": "¿Qué Sigue?",
+      "step1": {
+        "title": "Revisión Inicial",
+        "description": "Nuestro equipo revisa los requisitos de tu proyecto y prepara recomendaciones personalizadas."
+      },
+      "step2": {
+        "title": "Consultoría de Expertos",
+        "description": "Un Ingeniero Principal te contactará por tu método preferido para discutir tu visión."
+      },
+      "step3": {
+        "title": "Propuesta Personalizada",
+        "description": "Proporcionaremos una propuesta detallada adaptada a tus necesidades específicas y cronograma."
+      },
+      "returnHome": "Volver al Inicio",
+      "viewWork": "Ver Nuestro Trabajo"
+    },
+    "legal": {
+      "agreement": "Al enviar este formulario, aceptas nuestra",
+      "privacyPolicy": "Política de Privacidad",
+      "and": "y",
+      "termsOfService": "Términos de Servicio"
+    }
+  },
+  "cookie": {
+    "title": "Preferencias de Cookies",
+    "description": "Este sitio web utiliza cookies para garantizarle la mejor experiencia en nuestro sitio web. Obtenga más información en nuestra",
+    "cookiePolicyLink": "Política de Cookies",
+    "strictlyNecessary": {
+      "title": "ESTRICTAMENTE NECESARIAS",
+      "description": "Los servicios estrictamente necesarios son absolutamente necesarios para funciones esenciales como navegar por la página o acceder a áreas seguras. El sitio web no puede funcionar correctamente sin estas cookies.",
+      "ariaLabel": "Cookies estrictamente necesarias (siempre habilitadas)"
+    },
+    "analytics": {
+      "title": "ANALÍTICAS",
+      "description": "Las cookies analíticas nos ayudan a entender cómo los visitantes interactúan con nuestro sitio web recopilando e informando información de forma anónima. Esto nos ayuda a mejorar el rendimiento y la experiencia del usuario de nuestro sitio web.",
+      "ariaLabel": "Cookies analíticas"
+    },
+    "marketing": {
+      "title": "MARKETING",
+      "description": "Las cookies de marketing se utilizan para entregar anuncios que son relevantes para usted y sus intereses. También pueden usarse para limitar la cantidad de veces que ve un anuncio y medir la efectividad de las campañas publicitarias.",
+      "ariaLabel": "Cookies de marketing"
+    },
+    "allowAll": "Permitir Todo",
+    "decline": "Rechazar",
+    "acceptSelected": "Aceptar Selección",
+    "poweredBy": "Desarrollado por Forger Digital",
+    "manageCookies": "Gestionar Cookies"
+  }
+}
+
