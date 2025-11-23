@@ -125,7 +125,7 @@ export function CookieConsent() {
       }}
     >
       <DialogContent
-        className="max-w-2xl bg-gray-900 border-gray-700 text-white"
+        className="max-w-2xl bg-gray-900 border-gray-700 text-white p-4 sm:p-6"
         onEscapeKeyDown={(e) => {
           // Prevent closing on Escape - user must make a choice
           e.preventDefault()
@@ -142,10 +142,10 @@ export function CookieConsent() {
         showCloseButton={false}
       >
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-white mb-2">
+          <DialogTitle className="text-xl sm:text-2xl font-bold text-white mb-2">
             {t("title")}
           </DialogTitle>
-          <DialogDescription id="cookie-description" className="text-gray-300">
+          <DialogDescription id="cookie-description" className="text-sm sm:text-base text-gray-300">
             {t("description")}{" "}
             <Link
               href={cookiePolicyUrl}
@@ -159,35 +159,35 @@ export function CookieConsent() {
           </DialogDescription>
         </DialogHeader>
 
-        <div className="space-y-6 py-4">
+        <div className="space-y-3 sm:space-y-4 py-3 sm:py-4">
           {/* Strictly Necessary Cookies */}
-          <div className="flex items-start justify-between gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <Label htmlFor="strictly-necessary" className="text-base font-semibold text-white">
+          <div className="flex items-start justify-between gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1 sm:mb-2">
+                <Label htmlFor="strictly-necessary" className="text-sm sm:text-base font-semibold text-white">
                   {t("strictlyNecessary.title")}
                 </Label>
               </div>
-              <p className="text-sm text-gray-400">{t("strictlyNecessary.description")}</p>
+              <p className="text-xs sm:text-sm text-gray-400">{t("strictlyNecessary.description")}</p>
             </div>
             <Switch
               id="strictly-necessary"
               checked={preferences.strictlyNecessary}
               disabled
-              className="opacity-50 cursor-not-allowed"
+              className="opacity-50 cursor-not-allowed flex-shrink-0"
               aria-label={t("strictlyNecessary.ariaLabel")}
             />
           </div>
 
           {/* Analytics Cookies */}
-          <div className="flex items-start justify-between gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <Label htmlFor="analytics" className="text-base font-semibold text-white">
+          <div className="flex items-start justify-between gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1 sm:mb-2">
+                <Label htmlFor="analytics" className="text-sm sm:text-base font-semibold text-white">
                   {t("analytics.title")}
                 </Label>
               </div>
-              <p className="text-sm text-gray-400">{t("analytics.description")}</p>
+              <p className="text-xs sm:text-sm text-gray-400">{t("analytics.description")}</p>
             </div>
             <Switch
               id="analytics"
@@ -195,19 +195,20 @@ export function CookieConsent() {
               onCheckedChange={(checked) =>
                 setPreferences((prev) => ({ ...prev, analytics: checked }))
               }
+              className="flex-shrink-0"
               aria-label={t("analytics.ariaLabel")}
             />
           </div>
 
           {/* Marketing Cookies */}
-          <div className="flex items-start justify-between gap-4 p-4 bg-gray-800/50 rounded-lg border border-gray-700">
-            <div className="flex-1">
-              <div className="flex items-center gap-2 mb-2">
-                <Label htmlFor="marketing" className="text-base font-semibold text-white">
+          <div className="flex items-start justify-between gap-3 sm:gap-4 p-3 sm:p-4 bg-gray-800/50 rounded-lg border border-gray-700">
+            <div className="flex-1 min-w-0">
+              <div className="flex items-center gap-2 mb-1 sm:mb-2">
+                <Label htmlFor="marketing" className="text-sm sm:text-base font-semibold text-white">
                   {t("marketing.title")}
                 </Label>
               </div>
-              <p className="text-sm text-gray-400">{t("marketing.description")}</p>
+              <p className="text-xs sm:text-sm text-gray-400">{t("marketing.description")}</p>
             </div>
             <Switch
               id="marketing"
@@ -215,33 +216,34 @@ export function CookieConsent() {
               onCheckedChange={(checked) =>
                 setPreferences((prev) => ({ ...prev, marketing: checked }))
               }
+              className="flex-shrink-0"
               aria-label={t("marketing.ariaLabel")}
             />
           </div>
         </div>
 
-        <DialogFooter className="flex flex-col sm:flex-row gap-3 sm:justify-between">
-          <div className="text-xs text-gray-400 order-2 sm:order-1">
+        <DialogFooter className="flex flex-col sm:flex-row gap-3 sm:justify-between pt-4 border-t border-gray-700">
+          <div className="text-xs text-gray-400 order-2 sm:order-1 text-center sm:text-left">
             {t("poweredBy")}
           </div>
-          <div className="flex flex-col sm:flex-row gap-3 order-1 sm:order-2 w-full sm:w-auto">
+          <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 order-1 sm:order-2 w-full sm:w-auto">
             <Button
               onClick={handleDecline}
               variant="outline"
-              className="bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:text-white"
+              className="bg-transparent border-gray-600 text-white hover:bg-gray-800 hover:text-white text-sm sm:text-base py-2"
             >
               {t("decline")}
             </Button>
             <Button
               onClick={handleAcceptSelected}
               variant="outline"
-              className="bg-gray-800 border-gray-600 text-white hover:bg-gray-700 hover:text-white"
+              className="bg-gray-800 border-gray-600 text-white hover:bg-gray-700 hover:text-white text-sm sm:text-base py-2"
             >
               {t("acceptSelected")}
             </Button>
             <Button
               onClick={handleAllowAll}
-              className="bg-orange-500 hover:bg-orange-600 text-white"
+              className="bg-orange-500 hover:bg-orange-600 text-white text-sm sm:text-base py-2"
             >
               {t("allowAll")}
             </Button>
