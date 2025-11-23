@@ -64,7 +64,7 @@ export function SplineHeroComponent({
   }, [heroSubtitle])
 
   return (
-    <section className="relative h-screen w-full overflow-hidden bg-gray-900">
+    <section className="relative min-h-[85vh] md:h-screen w-full overflow-hidden bg-gray-900">
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
       
@@ -92,8 +92,8 @@ export function SplineHeroComponent({
       </div>
 
       {/* Content Overlay */}
-      <div className="relative z-10 flex h-full items-center justify-start">
-        <div className="container mx-auto px-4">
+      <div className="relative z-10 flex h-full items-center justify-start py-8 md:py-0">
+        <div className="container mx-auto px-4 sm:px-6 md:px-8">
           <motion.div 
             className="mx-auto max-w-4xl text-left"
             variants={staggerContainer}
@@ -112,7 +112,7 @@ export function SplineHeroComponent({
             {/* Animated Subtitle */}
             <motion.h2 
               variants={staggerItem}
-              className="mb-6 min-h-[120px] text-2xl text-white/90 md:min-h-[160px] md:text-4xl"
+              className="mb-6 min-h-[80px] text-2xl text-white/90 md:min-h-[160px] md:text-4xl"
             >
               {text.length > 0 && text.startsWith('Forger Digital:') ? (
                 <>
@@ -147,26 +147,26 @@ export function SplineHeroComponent({
             {/* Action Buttons */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col items-start justify-start gap-4 sm:flex-row"
+              className="flex flex-col items-stretch justify-start gap-4 sm:flex-row sm:items-start w-full sm:w-auto"
             >
-              <Link href="/get-started">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/get-started" className="w-full sm:w-auto">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button 
                     variant="primary-action"
                     size="xl"
-                    className="group gap-2"
+                    className="group gap-2 w-full sm:w-auto"
                   >
                     {heroPrimaryButton}
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/portfolio" className="w-full sm:w-auto">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button 
                     variant="secondary-action"
                     size="xl"
-                    className="gap-2"
+                    className="gap-2 w-full sm:w-auto"
                   >
                     <Play className="h-5 w-5" />
                     {heroSecondaryButton}
@@ -178,7 +178,7 @@ export function SplineHeroComponent({
             {/* Statistics Section - Animated Counters */}
             <motion.div 
               variants={staggerItem}
-              className="flex items-center space-x-8 md:space-x-12 pt-12"
+              className="flex items-center justify-center space-x-6 sm:space-x-8 md:space-x-12 pt-8 md:pt-12"
             >
               <motion.div 
                 className="text-center"
@@ -186,10 +186,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
                   <AnimatedCounter value={50} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-sm md:text-base text-white/80 font-medium">{t('stats.projects')}</div>
+                <div className="text-xs sm:text-sm md:text-base text-white/80 font-medium">{t('stats.projects')}</div>
               </motion.div>
               <motion.div 
                 className="text-center"
@@ -197,10 +197,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
                   <AnimatedCounter value={98} suffix="%" duration={2.5} />
                 </div>
-                <div className="text-sm md:text-base text-white/80 font-medium">{t('stats.satisfaction')}</div>
+                <div className="text-xs sm:text-sm md:text-base text-white/80 font-medium">{t('stats.satisfaction')}</div>
               </motion.div>
               <motion.div 
                 className="text-center"
@@ -208,10 +208,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
               >
-                <div className="text-3xl md:text-4xl font-bold text-white mb-1">
+                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
                   <AnimatedCounter value={21} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-sm md:text-base text-white/80 font-medium">{t('stats.experience')}</div>
+                <div className="text-xs sm:text-sm md:text-base text-white/80 font-medium">{t('stats.experience')}</div>
               </motion.div>
             </motion.div>
 

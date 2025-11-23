@@ -246,16 +246,16 @@ export function FeatureGrid() {
           whileInView="visible"
           viewport={defaultViewport}
           variants={fadeInUp}
-          className="flex justify-center mt-12"
+          className="flex justify-center mt-12 px-4 sm:px-0"
         >
-          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full sm:w-auto">
             <Button
               variant="primary-action"
               size="xl"
               onClick={() => setAccordionOpen(!accordionOpen)}
               aria-expanded={accordionOpen}
               aria-controls="remaining-services"
-              className="group gap-2"
+              className="group gap-2 w-full sm:w-auto"
             >
               {accordionOpen ? t('seeLess') : `See +${additionalServices.length} Services`}
               <ChevronRight 
