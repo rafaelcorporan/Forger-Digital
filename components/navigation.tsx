@@ -48,10 +48,10 @@ export function Navigation() {
       aria-label="Main navigation"
     >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between">
+        <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
-          <Link href="/" className="flex items-center gap-3">
-            <div className="text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent">
+          <Link href="/" className="flex items-center gap-3 flex-shrink-0 z-10">
+            <div className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent whitespace-nowrap">
               Forger Digital
             </div>
           </Link>

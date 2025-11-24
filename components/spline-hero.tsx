@@ -92,7 +92,7 @@ export function SplineHeroComponent({
       </div>
 
       {/* Mobile Layout - Column with text top, 3D centered bottom */}
-      <div className="relative z-10 md:hidden flex flex-col h-full py-8">
+      <div className="relative z-10 md:hidden flex flex-col h-full pt-20 pb-8">
         <div className="container mx-auto px-4">
           <motion.div 
             className="text-left mb-8"
@@ -154,7 +154,7 @@ export function SplineHeroComponent({
                   <Button 
                     variant="primary-action"
                     size="lg"
-                    className="group gap-2 w-full sm:w-auto text-sm sm:text-base"
+                    className="group gap-2 w-full sm:w-auto text-sm sm:text-base !rounded-full"
                   >
                     {heroPrimaryButton}
                     <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
@@ -166,7 +166,7 @@ export function SplineHeroComponent({
                   <Button 
                     variant="secondary-action"
                     size="lg"
-                    className="gap-2 w-full sm:w-auto text-sm sm:text-base"
+                    className="gap-2 w-full sm:w-auto text-sm sm:text-base !rounded-full"
                   >
                     <Play className="h-4 w-4 sm:h-5 sm:w-5" />
                     {heroSecondaryButton}
@@ -219,8 +219,8 @@ export function SplineHeroComponent({
         </div>
 
         {/* Centered 3D Animation for Mobile */}
-        <div className="flex-1 flex items-center justify-center min-h-[300px]">
-          <div className="relative w-full h-full max-w-md mx-auto">
+        <div className="flex-1 flex items-center justify-center min-h-[350px] py-4">
+          <div className="relative w-full h-[350px] max-w-lg mx-auto px-4">
             <iframe 
               src={sceneUrl} 
               frameBorder="0" 
@@ -228,8 +228,9 @@ export function SplineHeroComponent({
               height="100%"
               className="rounded-lg"
               style={{
-                minHeight: '300px',
-                border: 'none'
+                minHeight: '350px',
+                border: 'none',
+                display: 'block'
               }}
             />
           </div>
@@ -342,7 +343,7 @@ export function SplineHeroComponent({
                   <Button 
                     variant="primary-action"
                     size="xl"
-                    className="group gap-2"
+                    className="group gap-2 !rounded-full"
                   >
                     {heroPrimaryButton}
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -354,7 +355,7 @@ export function SplineHeroComponent({
                   <Button 
                     variant="secondary-action"
                     size="xl"
-                    className="gap-2"
+                    className="gap-2 !rounded-full"
                   >
                     <Play className="h-5 w-5" />
                     {heroSecondaryButton}
