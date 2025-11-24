@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Menu, ArrowRight, ChevronDown, Search } from "lucide-react"
+import { Menu, X, ArrowRight, ChevronDown, Search } from "lucide-react"
 import { useState } from "react"
 import { VideoModal } from "@/components/video-modal"
 import { SearchModal } from "@/components/search-modal"
@@ -174,8 +174,12 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button className="md:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
-            <Menu className="h-6 w-6" />
+          <button 
+            className="md:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors" 
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
+          >
+            {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </button>
         </div>
 
