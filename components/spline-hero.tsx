@@ -64,7 +64,7 @@ export function SplineHeroComponent({
   }, [heroSubtitle])
 
   return (
-    <section className="relative min-h-[85vh] md:h-screen w-full overflow-hidden bg-gray-900">
+    <section className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900">
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
       
@@ -91,29 +91,11 @@ export function SplineHeroComponent({
         />
       </div>
 
-      {/* Mobile Layout - NEW ORDER: 3D First, Then Text Content */}
-      <div className="relative z-10 md:hidden flex flex-col h-full pt-16 pb-8">
+      {/* Mobile Layout - Text Content Only (NO 3D Animation) */}
+      <div className="relative z-10 md:hidden flex flex-col min-h-fit pt-20 pb-12">
         
-        {/* 3D Animation at TOP - 70% Larger and Centered */}
-        <div className="flex items-center justify-center min-h-[595px] py-6">
-          <div className="relative w-full h-[595px] max-w-2xl mx-auto px-4">
-            <iframe 
-              src={sceneUrl} 
-              frameBorder="0" 
-              width="100%" 
-              height="100%"
-              className="rounded-lg"
-              style={{
-                minHeight: '595px',
-                border: 'none',
-                display: 'block'
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Text Content Below 3D Animation */}
-        <div className="container mx-auto px-4 mt-6">
+        {/* Text Content First on Mobile */}
+        <div className="container mx-auto px-4">
           <motion.div 
             className="text-center"
             variants={staggerContainer}
@@ -164,29 +146,29 @@ export function SplineHeroComponent({
               )}
             </motion.p>
 
-            {/* Action Buttons */}
+            {/* Action Buttons - 50% Width, 25% Taller on Mobile */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col items-stretch justify-center gap-3 sm:gap-4 w-full sm:w-auto mb-8"
+              className="flex flex-col items-center justify-center gap-3 sm:gap-4 w-full mb-8"
             >
-              <Link href="/get-started" className="w-full sm:w-auto">
+              <Link href="/get-started" className="w-1/2 sm:w-auto min-w-[200px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button 
                     variant="primary-action"
                     size="lg"
-                    className="group gap-2 w-full sm:w-auto text-sm sm:text-base !rounded-full"
+                    className="group gap-2 w-full h-12 sm:h-10 text-sm sm:text-base !rounded-full"
                   >
                     {heroPrimaryButton}
                     <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio" className="w-full sm:w-auto">
+              <Link href="/portfolio" className="w-1/2 sm:w-auto min-w-[200px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button 
                     variant="secondary-action"
                     size="lg"
-                    className="gap-2 w-full sm:w-auto text-sm sm:text-base !rounded-full"
+                    className="gap-2 w-full h-12 sm:h-10 text-sm sm:text-base !rounded-full"
                   >
                     <Play className="h-4 w-4 sm:h-5 sm:w-5" />
                     {heroSecondaryButton}
