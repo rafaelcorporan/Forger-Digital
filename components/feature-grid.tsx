@@ -4,7 +4,7 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { Code, Smartphone, Globe, Database, ChevronRight, CheckCircle, Cpu, TrendingUp, Layers, Cloud, Zap, Network, Link as LinkIcon, Plug, Shield, Database as DatabaseIcon, BarChart3, Lock, Users, Compass, Lightbulb, Camera } from "lucide-react"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import { useTranslation } from "@/lib/i18n/context"
 import { motion, AnimatePresence } from "framer-motion"
 import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/animations"
@@ -177,8 +177,8 @@ export function FeatureGrid() {
   }
 
   return (
-    <section id="services" className="border-b border-gray-800 bg-gray-950 py-16 md:py-24">
-      <div className="container mx-auto px-4">
+    <section id="services" className="border-b border-gray-800 bg-gray-950 py-16 md:py-24 relative z-10">
+      <div className="container mx-auto px-4 w-full max-w-7xl">
         <motion.div 
           initial="hidden"
           whileInView="visible"
@@ -189,12 +189,16 @@ export function FeatureGrid() {
           <motion.h2 
             variants={fadeInUp}
             className="mb-4 text-balance text-3xl font-bold bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent md:text-4xl"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
           >
             {t('title')}
           </motion.h2>
           <motion.p 
             variants={fadeInUp}
-            className="text-pretty text-lg text-gray-600 max-w-3xl mx-auto"
+            className="text-pretty text-lg text-gray-300 max-w-3xl mx-auto"
+            initial={{ opacity: 1 }}
+            animate={{ opacity: 1 }}
           >
             {t('subtitle')}
           </motion.p>
@@ -202,30 +206,41 @@ export function FeatureGrid() {
 
         {/* TOP 6 PRIORITY SERVICES */}
         <motion.div 
-          initial="hidden"
-          whileInView="visible"
-          viewport={defaultViewport}
+          initial={{ opacity: 1 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true, amount: 0 }}
           variants={staggerContainer}
+          animate={{ opacity: 1 }}
           className="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          style={{ opacity: 1 }}
         >
           {priorityServices.map((feature, index) => {
             const Icon = feature.icon
             const serviceData = getServiceData(feature)
             return (
-              <motion.div key={index} variants={staggerItem}>
-                <Card className="group hover:shadow-2xl transition-all duration-500 border-0 shadow-lg hover:-translate-y-2">
+              <motion.div 
+                key={index} 
+                variants={staggerItem}
+                initial={{ opacity: 1, y: 0 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0 }}
+                animate={{ opacity: 1 }}
+                className="opacity-100 !block"
+                style={{ opacity: 1, display: 'block' }}
+              >
+                <Card className="group hover:shadow-2xl transition-all duration-500 border border-gray-800 shadow-lg hover:-translate-y-2 bg-gray-900">
                   <div className="p-6">
                   <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-orange-500/10 text-orange-500 transition-colors group-hover:bg-orange-500/20">
                     <Icon className="h-6 w-6" />
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold text-foreground group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
+                  <h3 className="mb-2 text-xl font-semibold text-white group-hover:bg-gradient-to-r group-hover:from-orange-500 group-hover:to-orange-600 group-hover:bg-clip-text group-hover:text-transparent transition-all duration-300">
                     {serviceData.title}
                   </h3>
-                  <p className="mb-4 text-muted-foreground">{serviceData.description}</p>
+                  <p className="mb-4 text-gray-300">{serviceData.description}</p>
                   <ul className="space-y-2 mb-4">
                     {serviceData.features.map((item, idx) => (
-                      <li key={idx} className="flex items-center text-sm text-muted-foreground">
-                        <CheckCircle className="h-4 w-4 text-orange-500 mr-2" />
+                      <li key={idx} className="flex items-center text-sm text-gray-400">
+                        <CheckCircle className="h-4 w-4 text-orange-500 mr-2 flex-shrink-0" />
                         {item}
                       </li>
                     ))}
