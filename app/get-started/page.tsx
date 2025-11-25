@@ -674,7 +674,7 @@ export default function GetStartedPage() {
                     variant="primary-action"
                     size="xl"
                     disabled={isSubmitting}
-                    className="w-full group gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="w-full group gap-2 disabled:opacity-50 disabled:cursor-not-allowed h-14 sm:h-auto !rounded-full"
                   >
                     {isSubmitting ? (
                       <>

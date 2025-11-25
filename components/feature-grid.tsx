@@ -177,7 +177,7 @@ export function FeatureGrid() {
   }
 
   return (
-    <section id="services" className="border-b border-border bg-background py-24">
+    <section id="services" className="border-b border-gray-800 bg-gray-950 py-16 md:py-24">
       <div className="container mx-auto px-4">
         <motion.div 
           initial="hidden"
@@ -255,7 +255,7 @@ export function FeatureGrid() {
               onClick={() => setAccordionOpen(!accordionOpen)}
               aria-expanded={accordionOpen}
               aria-controls="remaining-services"
-              className="group gap-2 w-full sm:w-auto"
+              className="group gap-2 w-full sm:w-auto h-14 sm:h-auto !rounded-full"
             >
               {accordionOpen ? t('seeLess') : `See +${additionalServices.length} Services`}
               <ChevronRight 

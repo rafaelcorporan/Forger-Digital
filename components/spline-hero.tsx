@@ -146,7 +146,7 @@ export function SplineHeroComponent({
               )}
             </motion.p>
 
-            {/* Action Buttons - 50% Width, 25% Taller on Mobile */}
+            {/* Action Buttons - 50% Width, 14% Increase from Previous on Mobile */}
             <motion.div 
               variants={staggerItem}
               className="flex flex-col items-center justify-center gap-3 sm:gap-4 w-full mb-8"
@@ -156,7 +156,7 @@ export function SplineHeroComponent({
                   <Button 
                     variant="primary-action"
                     size="lg"
-                    className="group gap-2 w-full h-12 sm:h-10 text-sm sm:text-base !rounded-full"
+                    className="group gap-2 w-full h-14 sm:h-10 text-sm sm:text-base !rounded-full"
                   >
                     {heroPrimaryButton}
                     <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
@@ -168,7 +168,7 @@ export function SplineHeroComponent({
                   <Button 
                     variant="secondary-action"
                     size="lg"
-                    className="gap-2 w-full h-12 sm:h-10 text-sm sm:text-base !rounded-full"
+                    className="gap-2 w-full h-14 sm:h-10 text-sm sm:text-base !rounded-full"
                   >
                     <Play className="h-4 w-4 sm:h-5 sm:w-5" />
                     {heroSecondaryButton}
