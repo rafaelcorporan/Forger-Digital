@@ -91,11 +91,31 @@ export function SplineHeroComponent({
         />
       </div>
 
-      {/* Mobile Layout - Column with text top, 3D centered bottom */}
-      <div className="relative z-10 md:hidden flex flex-col h-full pt-20 pb-8">
-        <div className="container mx-auto px-4">
+      {/* Mobile Layout - NEW ORDER: 3D First, Then Text Content */}
+      <div className="relative z-10 md:hidden flex flex-col h-full pt-16 pb-8">
+        
+        {/* 3D Animation at TOP - 70% Larger and Centered */}
+        <div className="flex items-center justify-center min-h-[595px] py-6">
+          <div className="relative w-full h-[595px] max-w-2xl mx-auto px-4">
+            <iframe 
+              src={sceneUrl} 
+              frameBorder="0" 
+              width="100%" 
+              height="100%"
+              className="rounded-lg"
+              style={{
+                minHeight: '595px',
+                border: 'none',
+                display: 'block'
+              }}
+            />
+          </div>
+        </div>
+
+        {/* Text Content Below 3D Animation */}
+        <div className="container mx-auto px-4 mt-6">
           <motion.div 
-            className="text-left mb-8"
+            className="text-center"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -104,7 +124,7 @@ export function SplineHeroComponent({
             {/* Main Title */}
             <motion.h1 
               variants={staggerItem}
-              className="mb-3 text-3xl sm:text-4xl md:text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-orange-500"
+              className="mb-3 text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-orange-500"
             >
               {heroTitle}
             </motion.h1>
@@ -112,7 +132,7 @@ export function SplineHeroComponent({
             {/* Animated Subtitle */}
             <motion.h2 
               variants={staggerItem}
-              className="mb-4 min-h-[60px] sm:min-h-[70px] md:min-h-[80px] lg:min-h-[160px] text-lg sm:text-xl md:text-2xl lg:text-4xl text-white/90"
+              className="mb-4 min-h-[60px] sm:min-h-[70px] text-lg sm:text-xl text-white/90"
             >
               {text.length > 0 && text.startsWith('Forger Digital:') ? (
                 <>
@@ -132,7 +152,7 @@ export function SplineHeroComponent({
             {/* Description */}
             <motion.p 
               variants={staggerItem}
-              className="mb-6 text-base sm:text-lg md:text-xl text-orange-500"
+              className="mb-6 text-base sm:text-lg text-orange-500"
             >
               {heroDescription.startsWith('Forge Digital:') ? (
                 <>
@@ -144,10 +164,10 @@ export function SplineHeroComponent({
               )}
             </motion.p>
 
-            {/* Action Buttons - Smaller on mobile */}
+            {/* Action Buttons */}
             <motion.div 
               variants={staggerItem}
-              className="flex flex-col items-stretch justify-start gap-3 sm:gap-4 w-full sm:w-auto"
+              className="flex flex-col items-stretch justify-center gap-3 sm:gap-4 w-full sm:w-auto mb-8"
             >
               <Link href="/get-started" className="w-full sm:w-auto">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
@@ -175,69 +195,11 @@ export function SplineHeroComponent({
               </Link>
             </motion.div>
 
-            {/* Statistics Section - Hidden on mobile, shown on desktop */}
-            <motion.div 
-              variants={staggerItem}
-              className="hidden md:flex items-center justify-center space-x-6 sm:space-x-8 md:space-x-12 pt-8 md:pt-12"
-            >
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-              >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
-                  <AnimatedCounter value={50} suffix="+" duration={2.5} />
-                </div>
-                <div className="text-xs sm:text-sm md:text-base text-white/80 font-medium">{t('stats.projects')}</div>
-              </motion.div>
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2, duration: 0.5 }}
-              >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
-                  <AnimatedCounter value={98} suffix="%" duration={2.5} />
-                </div>
-                <div className="text-xs sm:text-sm md:text-base text-white/80 font-medium">{t('stats.satisfaction')}</div>
-              </motion.div>
-              <motion.div 
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.4, duration: 0.5 }}
-              >
-                <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-1">
-                  <AnimatedCounter value={21} suffix="+" duration={2.5} />
-                </div>
-                <div className="text-xs sm:text-sm md:text-base text-white/80 font-medium">{t('stats.experience')}</div>
-              </motion.div>
-            </motion.div>
-
           </motion.div>
         </div>
 
-        {/* Centered 3D Animation for Mobile */}
-        <div className="flex-1 flex items-center justify-center min-h-[350px] py-4">
-          <div className="relative w-full h-[350px] max-w-lg mx-auto px-4">
-            <iframe 
-              src={sceneUrl} 
-              frameBorder="0" 
-              width="100%" 
-              height="100%"
-              className="rounded-lg"
-              style={{
-                minHeight: '350px',
-                border: 'none',
-                display: 'block'
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Statistics Section for Mobile */}
-        <div className="container mx-auto px-4 pt-6">
+        {/* Statistics Section at Bottom */}
+        <div className="container mx-auto px-4 pt-4">
           <motion.div 
             variants={staggerContainer}
             initial="hidden"
