@@ -58,9 +58,9 @@ export function AboutSection() {
   ]
 
   return (
-    <section id="about" className="py-24 bg-background">
+    <section id="about" className="py-16 sm:py-24 bg-gray-950">
       <div className="container mx-auto px-4 lg:px-6">
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 items-start">
           {/* Left Column - Content */}
           <div>
             <motion.h2 
@@ -68,7 +68,7 @@ export function AboutSection() {
               whileInView="visible"
               viewport={defaultViewport}
               variants={fadeInLeft}
-              className="text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent"
+              className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 bg-clip-text text-transparent text-center sm:text-left"
             >
               {t('title')}
             </motion.h2>
@@ -78,13 +78,13 @@ export function AboutSection() {
               whileInView="visible"
               viewport={defaultViewport}
               variants={staggerContainer}
-              className="space-y-6 text-gray-600"
+              className="space-y-4 sm:space-y-6 text-gray-300"
             >
-              <motion.p variants={staggerItem} className="text-lg md:text-xl leading-relaxed">
+              <motion.p variants={staggerItem} className="text-base sm:text-lg md:text-xl leading-relaxed text-center sm:text-left">
                 {t('paragraph1')}
               </motion.p>
               
-              <motion.p variants={staggerItem} className="text-lg md:text-xl leading-relaxed">
+              <motion.p variants={staggerItem} className="text-base sm:text-lg md:text-xl leading-relaxed text-center sm:text-left">
                 {t('paragraph2')}
               </motion.p>
             </motion.div>
@@ -95,7 +95,7 @@ export function AboutSection() {
               whileInView="visible"
               viewport={defaultViewport}
               variants={staggerContainer}
-              className="grid grid-cols-2 gap-6 mt-10"
+              className="grid grid-cols-2 gap-4 sm:gap-6 mt-8 sm:mt-10"
             >
               {stats.map((stat, index) => {
                 const Icon = stat.icon
@@ -131,7 +131,7 @@ export function AboutSection() {
             whileInView="visible"
             viewport={defaultViewport}
             variants={staggerContainer}
-            className="grid grid-cols-2 gap-6"
+            className="grid grid-cols-1 sm:grid-cols-2 gap-6"
           >
             {features.map((feature, index) => {
               const Icon = feature.icon
@@ -146,22 +146,22 @@ export function AboutSection() {
                         {/* Gradient Background on Hover */}
                         <div className={`absolute inset-0 bg-gradient-to-br ${feature.color} opacity-0 group-hover:opacity-100 transition-all duration-500`}></div>
                         
-                        {/* Card Content */}
-                        <div className="relative p-8">
+                        {/* Card Content - Centered on Mobile */}
+                        <div className="relative p-6 sm:p-8 flex flex-col items-center text-center sm:items-start sm:text-left">
                           {/* Icon Container */}
-                          <div className="mb-6">
-                            <div className={`inline-flex w-20 h-20 bg-gradient-to-br ${feature.color} rounded-2xl items-center justify-center shadow-xl group-hover:bg-white/20 group-hover:shadow-2xl transition-all duration-500`}>
-                              <Icon className="h-10 w-10 text-white" />
+                          <div className="mb-4 sm:mb-6">
+                            <div className={`inline-flex w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br ${feature.color} rounded-2xl items-center justify-center shadow-xl group-hover:bg-white/20 group-hover:shadow-2xl transition-all duration-500`}>
+                              <Icon className="h-8 w-8 sm:h-10 sm:w-10 text-white" />
                             </div>
                           </div>
                           
                           {/* Title */}
-                          <h3 className="text-2xl font-bold text-gray-900 mb-3 group-hover:text-white transition-colors duration-300">
+                          <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-white transition-colors duration-300">
                             {feature.title}
                           </h3>
                           
                           {/* Description */}
-                          <p className="text-gray-600 text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">
+                          <p className="text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-white/90 transition-colors duration-300">
                             {feature.description}
                           </p>
                         </div>

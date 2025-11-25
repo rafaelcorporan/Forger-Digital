@@ -243,7 +243,9 @@ export function CookieConsent() {
             </Button>
             <Button
               onClick={handleAllowAll}
-              className="bg-orange-500 hover:bg-orange-600 text-white text-sm sm:text-base py-2"
+              variant="primary-action"
+              size="lg"
+              className="bg-[#FF4500] hover:bg-[#E63E00] text-white text-sm sm:text-base h-14 sm:h-auto !rounded-full shadow-[0_8px_30px_rgba(255,69,0,0.3)] hover:shadow-[0_8px_40px_rgba(255,69,0,0.5)] font-semibold"
             >
               {t("allowAll")}
             </Button>
