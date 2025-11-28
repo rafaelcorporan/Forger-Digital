@@ -50,8 +50,8 @@ export default async function RootLayout({
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="format-detection" content="telephone=yes" />
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+        <link rel="icon" href="/favicon.png" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body className={`font-sans antialiased`}>
         <SkipLinks />

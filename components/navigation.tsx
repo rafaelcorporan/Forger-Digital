@@ -41,7 +41,7 @@ export function Navigation() {
   const [searchOpen, setSearchOpen] = useState(false)
 
   return (
-    <nav 
+    <nav
       id="navigation"
       className="fixed top-0 left-0 right-0 z-50 bg-gray-900/95 backdrop-blur-xl border-b border-gray-800"
       role="navigation"
@@ -51,8 +51,12 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0 z-10">
-            <div className="text-base sm:text-lg md:text-xl font-bold bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent whitespace-nowrap">
-              Forger Digital
+            <div className="relative h-16 w-auto aspect-[3/1]">
+              <img
+                src="/logo.png"
+                alt="Forger Digital"
+                className="h-full w-auto object-contain"
+              />
             </div>
           </Link>
 
@@ -67,24 +71,24 @@ export function Navigation() {
             >
               <Search className="h-4 w-4" aria-hidden="true" />
             </button>
-            
-            <Link 
-              href="/#services" 
+
+            <Link
+              href="/#services"
               className="text-sm text-white transition-colors hover:text-orange-500 scroll-smooth focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded px-2 py-1"
               aria-label={`Navigate to ${t('services')} section`}
             >
               {t('services')}
             </Link>
-            
+
             <LanguageSwitcher />
-            
+
             {/* Work Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setWorkDropdownOpen(true)}
               onMouseLeave={() => setWorkDropdownOpen(false)}
             >
-              <button 
+              <button
                 className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded px-2 py-1"
                 aria-expanded={workDropdownOpen}
                 aria-haspopup="true"
@@ -97,12 +101,12 @@ export function Navigation() {
                 }}
               >
                 Work
-                <ChevronDown 
+                <ChevronDown
                   className={`h-4 w-4 transition-transform ${workDropdownOpen ? 'rotate-180' : ''}`}
                   aria-hidden="true"
                 />
               </button>
-              
+
               {/* Dropdown Menu */}
               {workDropdownOpen && (
                 <div className="absolute left-0 mt-0 w-96 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50 p-4 grid grid-cols-2 gap-3">
@@ -125,21 +129,21 @@ export function Navigation() {
                 </div>
               )}
             </div>
-            
+
             {/* Portfolio Dropdown */}
-            <div 
+            <div
               className="relative"
               onMouseEnter={() => setPortfolioDropdownOpen(true)}
               onMouseLeave={() => setPortfolioDropdownOpen(false)}
             >
-              <Link 
+              <Link
                 href="/portfolio"
                 className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500"
               >
                 Portfolio
                 <ChevronDown className={`h-4 w-4 transition-transform ${portfolioDropdownOpen ? 'rotate-180' : ''}`} />
               </Link>
-              
+
               {/* Dropdown Menu */}
               {portfolioDropdownOpen && (
                 <div className="absolute left-0 mt-0 w-72 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50 p-4 flex flex-col gap-2">
@@ -157,7 +161,7 @@ export function Navigation() {
                 </div>
               )}
             </div>
-            
+
             <Link href="/#contact" className="text-sm text-white transition-colors hover:text-orange-500 scroll-smooth">
               Contact
             </Link>
@@ -174,8 +178,8 @@ export function Navigation() {
           </div>
 
           {/* Mobile Menu Button */}
-          <button 
-            className="md:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors" 
+          <button
+            className="md:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
           >
@@ -190,10 +194,10 @@ export function Navigation() {
               <Link href="/#services" className="text-sm text-white transition-colors hover:text-orange-500" onClick={() => setMobileMenuOpen(false)}>
                 {t('services')}
               </Link>
-              
+
               {/* Mobile Work Dropdown */}
               <div>
-                <button 
+                <button
                   onClick={() => setWorkDropdownOpen(!workDropdownOpen)}
                   className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 w-full"
                 >
@@ -219,10 +223,10 @@ export function Navigation() {
                   </div>
                 )}
               </div>
-              
+
               {/* Mobile Portfolio Dropdown */}
               <div>
-                <button 
+                <button
                   onClick={() => setPortfolioDropdownOpen(!portfolioDropdownOpen)}
                   className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 w-full"
                 >

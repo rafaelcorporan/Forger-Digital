@@ -9,9 +9,9 @@ import { fadeInUp, staggerContainer, staggerItem, defaultViewport } from "@/lib/
 export function Footer() {
   const { t } = useTranslation('footer')
   return (
-    <footer 
+    <footer
       id="footer"
-      className="text-white relative" 
+      className="text-white relative"
       style={{ backgroundColor: '#000000' }}
       role="contentinfo"
       aria-label="Site footer"
@@ -19,7 +19,7 @@ export function Footer() {
       {/* Thin gradient line at top edge - pink to purple */}
       <div className="absolute top-0 left-0 right-0 h-[1px] bg-gradient-to-r from-pink-500 to-purple-600"></div>
       <div className="container mx-auto px-4 pt-16 pb-6">
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={defaultViewport}
@@ -28,14 +28,18 @@ export function Footer() {
         >
           {/* Brand Section */}
           <motion.div variants={staggerItem} className="lg:col-span-1">
-            <div className="mb-4 text-2xl font-bold">
-              <span className="bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 bg-clip-text text-transparent">Forger Digital</span>
+            <div className="mb-4">
+              <img
+                src="/logo.png"
+                alt="Forger Digital"
+                className="h-16 w-auto object-contain"
+              />
             </div>
             <div className="mb-6 text-sm text-gray-400 leading-relaxed">
               <p>{t('common.tagline.line1')}</p>
               <p>{t('common.tagline.line2')}</p>
             </div>
-            
+
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
               <div className="flex items-center gap-2 text-sm text-gray-400">
@@ -54,8 +58,8 @@ export function Footer() {
 
             {/* Social Links - White symbols on dark background, bordered in white, gradient on hover */}
             <div className="flex gap-3">
-              <Link 
-                href="#" 
+              <Link
+                href="#"
                 className="group w-10 h-10 bg-gray-900 border border-white rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-500 hover:via-orange-600 hover:to-pink-500 active:bg-gradient-to-r active:from-orange-500 active:via-orange-600 active:to-pink-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
                 aria-label={(Array.isArray(t('social.twitter')) ? t('social.twitter')[0] : t('social.twitter')) as string}
               >
@@ -64,8 +68,8 @@ export function Footer() {
                   <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
                 </svg>
               </Link>
-              <Link 
-                href="#" 
+              <Link
+                href="#"
                 className="group w-10 h-10 bg-gray-900 border border-white rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-500 hover:via-orange-600 hover:to-pink-500 active:bg-gradient-to-r active:from-orange-500 active:via-orange-600 active:to-pink-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
                 aria-label={(Array.isArray(t('social.github')) ? t('social.github')[0] : t('social.github')) as string}
               >
@@ -78,8 +82,8 @@ export function Footer() {
                   />
                 </svg>
               </Link>
-              <Link 
-                href="#" 
+              <Link
+                href="#"
                 className="group w-10 h-10 bg-gray-900 border border-white rounded-lg flex items-center justify-center transition-all duration-300 hover:bg-gradient-to-r hover:from-orange-500 hover:via-orange-600 hover:to-pink-500 active:bg-gradient-to-r active:from-orange-500 active:via-orange-600 active:to-pink-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2"
                 aria-label={(Array.isArray(t('social.linkedin')) ? t('social.linkedin')[0] : t('social.linkedin')) as string}
               >
@@ -122,7 +126,7 @@ export function Footer() {
               </li>
             </ul>
           </motion.div>
-          
+
           <motion.div variants={staggerItem}>
             <h3 className="mb-4 text-base font-bold text-white">{t('resources')}</h3>
             <ul className="space-y-3">
@@ -153,7 +157,7 @@ export function Footer() {
               </li>
             </ul>
           </motion.div>
-          
+
           <motion.div variants={staggerItem}>
             <h3 className="mb-4 text-base font-bold text-white">{t('legal')}</h3>
             <ul className="space-y-3">
@@ -187,7 +191,7 @@ export function Footer() {
         </motion.div>
 
         {/* Bottom Bar */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.1 }}
