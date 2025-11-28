@@ -67,13 +67,13 @@ export function SplineHeroComponent({
     <section className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900">
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
-      
+
       {/* Spline 3D Background - Hidden on mobile, shown on desktop */}
       <div className="hidden md:block absolute inset-0 z-1">
-        <iframe 
-          src={sceneUrl} 
-          frameBorder="0" 
-          width="100%" 
+        <iframe
+          src={sceneUrl}
+          frameBorder="0"
+          width="100%"
           height="100%"
           style={{
             position: 'absolute',
@@ -84,7 +84,7 @@ export function SplineHeroComponent({
           }}
         />
         {/* Overlay to hide Spline watermark badge */}
-        <div 
+        <div
           className="absolute bottom-0 left-0 w-48 h-16 bg-gray-900 pointer-events-none"
           style={{ zIndex: 2 }}
           aria-hidden="true"
@@ -93,26 +93,26 @@ export function SplineHeroComponent({
 
       {/* Mobile Layout - Text Content Only (NO 3D Animation) */}
       <div className="relative z-10 md:hidden flex flex-col min-h-fit pt-20 pb-12">
-        
+
         {/* Text Content First on Mobile */}
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             className="text-center"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
 
-            {/* Main Title */}
-            <motion.h1 
+            {/* Main Title - Hidden on mobile, shown on desktop */}
+            <motion.h1
               variants={staggerItem}
-              className="mb-3 text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-orange-500"
+              className="hidden md:block mb-3 text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-orange-500"
             >
               {heroTitle}
             </motion.h1>
 
             {/* Animated Subtitle */}
-            <motion.h2 
+            <motion.h2
               variants={staggerItem}
               className="mb-4 min-h-[60px] sm:min-h-[70px] text-lg sm:text-xl text-white/90"
             >
@@ -132,7 +132,7 @@ export function SplineHeroComponent({
             </motion.h2>
 
             {/* Description */}
-            <motion.p 
+            <motion.p
               variants={staggerItem}
               className="mb-6 text-base sm:text-lg text-orange-500"
             >
@@ -147,13 +147,13 @@ export function SplineHeroComponent({
             </motion.p>
 
             {/* Action Buttons - 50% Width, 14% Increase from Previous on Mobile */}
-            <motion.div 
+            <motion.div
               variants={staggerItem}
               className="flex flex-col items-center justify-center gap-3 sm:gap-4 w-full mb-8"
             >
               <Link href="/get-started" className="w-1/2 sm:w-auto min-w-[200px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
-                  <Button 
+                  <Button
                     variant="primary-action"
                     size="lg"
                     className="group gap-2 w-full h-14 sm:h-10 text-sm sm:text-base !rounded-full"
@@ -165,7 +165,7 @@ export function SplineHeroComponent({
               </Link>
               <Link href="/portfolio" className="w-1/2 sm:w-auto min-w-[200px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
-                  <Button 
+                  <Button
                     variant="secondary-action"
                     size="lg"
                     className="gap-2 w-full h-14 sm:h-10 text-sm sm:text-base !rounded-full"
@@ -182,13 +182,13 @@ export function SplineHeroComponent({
 
         {/* Statistics Section at Bottom */}
         <div className="container mx-auto px-4 pt-4">
-          <motion.div 
+          <motion.div
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
             className="flex items-center justify-center space-x-4 sm:space-x-6"
           >
-            <motion.div 
+            <motion.div
               className="text-center"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -199,7 +199,7 @@ export function SplineHeroComponent({
               </div>
               <div className="text-xs text-white/80 font-medium">{t('stats.projects')}</div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="text-center"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -210,7 +210,7 @@ export function SplineHeroComponent({
               </div>
               <div className="text-xs text-white/80 font-medium">{t('stats.satisfaction')}</div>
             </motion.div>
-            <motion.div 
+            <motion.div
               className="text-center"
               initial={{ opacity: 0, scale: 0.5 }}
               animate={{ opacity: 1, scale: 1 }}
@@ -228,14 +228,14 @@ export function SplineHeroComponent({
       {/* Desktop Layout - Overlay style (text over 3D background) */}
       <div className="hidden md:flex relative z-10 h-full items-center justify-start py-0">
         <div className="container mx-auto px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="mx-auto max-w-4xl text-left"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
             {/* Main Title */}
-            <motion.h1 
+            <motion.h1
               variants={staggerItem}
               className="mb-4 text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-orange-500"
             >
@@ -243,7 +243,7 @@ export function SplineHeroComponent({
             </motion.h1>
 
             {/* Animated Subtitle */}
-            <motion.h2 
+            <motion.h2
               variants={staggerItem}
               className="mb-6 min-h-[160px] text-2xl lg:text-4xl text-white/90"
             >
@@ -263,7 +263,7 @@ export function SplineHeroComponent({
             </motion.h2>
 
             {/* Description */}
-            <motion.p 
+            <motion.p
               variants={staggerItem}
               className="mb-8 text-lg lg:text-xl text-orange-500"
             >
@@ -278,13 +278,13 @@ export function SplineHeroComponent({
             </motion.p>
 
             {/* Action Buttons */}
-            <motion.div 
+            <motion.div
               variants={staggerItem}
               className="flex flex-row items-start gap-4 lg:gap-6"
             >
               <Link href="/get-started">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
+                  <Button
                     variant="primary-action"
                     size="xl"
                     className="group gap-2 !rounded-full"
@@ -296,7 +296,7 @@ export function SplineHeroComponent({
               </Link>
               <Link href="/portfolio">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button 
+                  <Button
                     variant="secondary-action"
                     size="xl"
                     className="gap-2 !rounded-full"
@@ -309,11 +309,11 @@ export function SplineHeroComponent({
             </motion.div>
 
             {/* Statistics Section - Desktop */}
-            <motion.div 
+            <motion.div
               variants={staggerItem}
               className="flex items-center justify-center space-x-8 lg:space-x-12 pt-12"
             >
-              <motion.div 
+              <motion.div
                 className="text-center"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -324,7 +324,7 @@ export function SplineHeroComponent({
                 </div>
                 <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.projects')}</div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="text-center"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
@@ -335,7 +335,7 @@ export function SplineHeroComponent({
                 </div>
                 <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.satisfaction')}</div>
               </motion.div>
-              <motion.div 
+              <motion.div
                 className="text-center"
                 initial={{ opacity: 0, scale: 0.5 }}
                 animate={{ opacity: 1, scale: 1 }}
