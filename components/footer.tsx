@@ -32,7 +32,7 @@ export function Footer() {
               <img
                 src="/logo.png"
                 alt="Forger Digital"
-                className="h-12 w-auto object-contain"
+                className="h-16 md:h-20 w-auto object-contain"
               />
             </div>
             <div className="mb-6 text-sm text-gray-400 leading-relaxed">
