@@ -68,8 +68,8 @@ export function SplineHeroComponent({
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
 
-      {/* Spline 3D Background - Now shown on all devices, behind content */}
-      <div className="absolute inset-0 z-1">
+      {/* Spline 3D Background - Desktop only (mobile has centered version) */}
+      <div className="hidden md:block absolute inset-0 z-1">
         <iframe
           src={sceneUrl}
           frameBorder="0"
@@ -91,11 +91,11 @@ export function SplineHeroComponent({
         />
       </div>
 
-      {/* Mobile Layout - Text Content with 3D Animation Behind */}
-      <div className="relative z-10 md:hidden flex flex-col min-h-fit pt-20 pb-12">
+      {/* Mobile Layout - Centered Spline with Content Distribution */}
+      <div className="relative z-10 md:hidden flex flex-col min-h-screen pt-20 pb-12">
 
-        {/* Text Content First on Mobile */}
-        <div className="container mx-auto px-4">
+        {/* Top Content Section */}
+        <div className="container mx-auto px-4 mb-6">
           <motion.div
             className="text-center"
             variants={staggerContainer}
@@ -146,12 +146,44 @@ export function SplineHeroComponent({
               )}
             </motion.p>
 
-            {/* Action Buttons - 50% Width, 14% Increase from Previous on Mobile */}
+          </motion.div>
+        </div>
+
+        {/* Centered Spline Animation Container - Takes up significant screen space */}
+        <div className="relative w-full flex-1 min-h-[300px] max-h-[400px] mb-6">
+          <div className="absolute inset-0 flex items-center justify-center">
+            <div className="relative w-full h-full">
+              <iframe
+                src={sceneUrl}
+                frameBorder="0"
+                width="100%"
+                height="100%"
+                style={{
+                  position: 'absolute',
+                  top: 0,
+                  left: 0,
+                  border: 'none',
+                  zIndex: 1
+                }}
+              />
+            </div>
+          </div>
+        </div>
+
+        {/* Bottom Content Section - Buttons */}
+        <div className="container mx-auto px-4">
+          <motion.div
+            className="text-center"
+            variants={staggerContainer}
+            initial="hidden"
+            animate="visible"
+          >
+            {/* Action Buttons */}
             <motion.div
               variants={staggerItem}
               className="flex flex-col items-center justify-center gap-3 sm:gap-4 w-full mb-8"
             >
-              <Link href="/get-started" className="w-1/2 sm:w-auto min-w-[200px]">
+              <Link href="/get-started" className="w-full sm:w-auto max-w-[300px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="primary-action"
@@ -163,7 +195,7 @@ export function SplineHeroComponent({
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio" className="w-1/2 sm:w-auto min-w-[200px]">
+              <Link href="/portfolio" className="w-full sm:w-auto max-w-[300px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="secondary-action"
@@ -176,7 +208,6 @@ export function SplineHeroComponent({
                 </motion.div>
               </Link>
             </motion.div>
-
           </motion.div>
         </div>
 
