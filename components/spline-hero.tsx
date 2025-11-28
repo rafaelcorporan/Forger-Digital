@@ -35,10 +35,10 @@ export function SplineHeroComponent({
   const [showCursor, setShowCursor] = useState(true)
 
   // Use translations or fallback to props/defaults
-  const heroTitle = title || t('title')
-  const heroSubtitle = subtitle || t('subtitle')
-  const heroDescription = description || t('description')
-  const heroPrimaryButton = primaryButtonText || t('primaryButton')
+  const heroTitle = title || "Forger Digital: Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality."
+  const heroSubtitle = subtitle || ""
+  const heroDescription = description || "Forge Digital: Evokes craftsmanship, creation, & building robust solutions. Digital: Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles."
+  const heroPrimaryButton = primaryButtonText || "Start a Project"
   const heroSecondaryButton = secondaryButtonText || t('secondaryButton')
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export function SplineHeroComponent({
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
 
       {/* Spline 3D Background - Full screen on ALL devices */}
-      <div className="absolute inset-0 z-1">
+      <div className="absolute inset-0 z-0">
         <iframe
           src={sceneUrl}
           frameBorder="0"
@@ -112,24 +112,26 @@ export function SplineHeroComponent({
             </motion.h1>
 
             {/* Animated Subtitle */}
-            <motion.h2
-              variants={staggerItem}
-              className="mb-4 text-base sm:text-lg text-white/90 px-2"
-            >
-              {text.length > 0 && text.startsWith('Forger Digital:') ? (
-                <>
-                  <span className="font-bold">Forger Digital:</span>
-                  {text.length > 'Forger Digital:'.length && (
-                    <span className="font-normal"> {text.substring('Forger Digital:'.length)}</span>
-                  )}
-                </>
-              ) : text.length > 0 && text.length <= 'Forger Digital:'.length ? (
-                <span className="font-bold">{text}</span>
-              ) : (
-                text
-              )}
-              {showCursor && <span className="text-orange-500">|</span>}
-            </motion.h2>
+            {heroSubtitle && (
+              <motion.h2
+                variants={staggerItem}
+                className="mb-4 text-base sm:text-lg text-white/90 px-2"
+              >
+                {text.length > 0 && text.startsWith('Forger Digital:') ? (
+                  <>
+                    <span className="font-bold">Forger Digital:</span>
+                    {text.length > 'Forger Digital:'.length && (
+                      <span className="font-normal"> {text.substring('Forger Digital:'.length)}</span>
+                    )}
+                  </>
+                ) : text.length > 0 && text.length <= 'Forger Digital:'.length ? (
+                  <span className="font-bold">{text}</span>
+                ) : (
+                  text
+                )}
+                {showCursor && <span className="text-orange-500">|</span>}
+              </motion.h2>
+            )}
 
             {/* Description */}
             <motion.p
@@ -238,7 +240,7 @@ export function SplineHeroComponent({
       <div className="hidden md:flex relative z-10 h-full items-center justify-start py-0">
         <div className="container mx-auto px-6 lg:px-8">
           <motion.div
-            className="mx-auto max-w-4xl text-left"
+            className="mr-auto max-w-2xl text-left"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -246,44 +248,25 @@ export function SplineHeroComponent({
             {/* Main Title */}
             <motion.h1
               variants={staggerItem}
-              className="mb-4 text-5xl lg:text-7xl font-bold leading-tight tracking-tight text-orange-500"
+              className="mb-2 text-6xl lg:text-8xl font-bold leading-tight tracking-tight text-orange-500"
             >
-              {heroTitle}
+              Forger Digital
             </motion.h1>
 
-            {/* Animated Subtitle */}
+            {/* Subtitle */}
             <motion.h2
               variants={staggerItem}
-              className="mb-6 min-h-[160px] text-2xl lg:text-4xl text-white/90"
+              className="mb-6 text-2xl lg:text-4xl text-white font-medium leading-snug"
             >
-              {text.length > 0 && text.startsWith('Forger Digital:') ? (
-                <>
-                  <span className="font-bold">Forger Digital:</span>
-                  {text.length > 'Forger Digital:'.length && (
-                    <span className="font-normal"> {text.substring('Forger Digital:'.length)}</span>
-                  )}
-                </>
-              ) : text.length > 0 && text.length <= 'Forger Digital:'.length ? (
-                <span className="font-bold">{text}</span>
-              ) : (
-                text
-              )}
-              {showCursor && <span className="text-orange-500">|</span>}
+              <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
             </motion.h2>
 
             {/* Description */}
             <motion.p
               variants={staggerItem}
-              className="mb-8 text-lg lg:text-xl text-orange-500"
+              className="mb-8 text-lg lg:text-xl text-orange-500 font-medium leading-relaxed"
             >
-              {heroDescription.startsWith('Forge Digital:') ? (
-                <>
-                  <span className="font-bold">Forge Digital:</span>
-                  <span className="font-normal"> {heroDescription.replace('Forge Digital:', '')}</span>
-                </>
-              ) : (
-                heroDescription
-              )}
+              <span className="font-bold">Forge Digital:</span> Evokes craftsmanship, creation, & building robust solutions. <span className="font-bold">Digital:</span> Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.
             </motion.p>
 
             {/* Action Buttons */}

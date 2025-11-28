@@ -51,7 +51,7 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0 z-10">
-            <div className="relative h-48 md:h-60 w-auto aspect-[3/1]">
+            <div className="relative h-12 md:h-14 w-auto">
               <img
                 src="/logo.png"
                 alt="Forger Digital"
