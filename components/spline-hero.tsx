@@ -92,102 +92,71 @@ export function SplineHeroComponent({
       </div>
 
       {/* Mobile Layout - Content OVERLAID on Spline background */}
-      <div className="relative z-10 md:hidden flex flex-col justify-between min-h-screen pt-20 pb-8 px-4">
-
-        {/* Top Content Section */}
-        <div className="container mx-auto">
+      <div className="relative z-10 md:hidden flex flex-col justify-center items-center min-h-screen px-4 text-center bg-black/40 backdrop-blur-[2px]">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-8 py-20">
           <motion.div
-            className="text-center"
+            className="flex flex-col gap-6"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-
-            {/* Main Title - Hidden on mobile, shown on desktop */}
-            <motion.h1
-              variants={staggerItem}
-              className="hidden md:block mb-3 text-3xl sm:text-4xl font-bold leading-tight tracking-tight text-orange-500"
-            >
-              {heroTitle}
-            </motion.h1>
-
-            {/* Animated Subtitle */}
-            {heroSubtitle && (
+            {/* Main Headline Text - Matching Image */}
+            <div className="space-y-4">
               <motion.h2
                 variants={staggerItem}
-                className="mb-4 text-base sm:text-lg text-white/90 px-2"
+                className="text-3xl sm:text-4xl font-medium leading-tight text-white drop-shadow-lg"
               >
-                {text.length > 0 && text.startsWith('Forger Digital:') ? (
-                  <>
-                    <span className="font-bold">Forger Digital:</span>
-                    {text.length > 'Forger Digital:'.length && (
-                      <span className="font-normal"> {text.substring('Forger Digital:'.length)}</span>
-                    )}
-                  </>
-                ) : text.length > 0 && text.length <= 'Forger Digital:'.length ? (
-                  <span className="font-bold">{text}</span>
-                ) : (
-                  text
-                )}
-                {showCursor && <span className="text-orange-500">|</span>}
+                Cutting-edge, advanced,
+                <br />
+                and forward-thinking tech.
               </motion.h2>
-            )}
 
-            {/* Description */}
+              <motion.h2
+                variants={staggerItem}
+                className="text-3xl sm:text-4xl font-medium leading-tight text-white drop-shadow-lg"
+              >
+                We transform your
+                <br />
+                digital vision into robust,
+                <br />
+                scalable reality.
+              </motion.h2>
+            </div>
+
+            {/* Description - Orange */}
             <motion.p
               variants={staggerItem}
-              className="mb-6 text-sm sm:text-base text-orange-500 px-2"
+              className="mt-2 text-sm sm:text-base text-orange-500 font-medium leading-relaxed max-w-md mx-auto drop-shadow-md"
             >
-              {heroDescription.startsWith('Forge Digital:') ? (
-                <>
-                  <span className="font-bold">Forge Digital:</span>
-                  <span className="font-normal"> {heroDescription.replace('Forge Digital:', '')}</span>
-                </>
-              ) : (
-                heroDescription
-              )}
+              <span className="font-bold">Forge Digital:</span> Evokes craftsmanship, creation, & building robust solutions. <span className="font-bold">Digital:</span> Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.
             </motion.p>
 
-          </motion.div>
-        </div>
-
-        {/* Middle Section - Spline takes up space naturally */}
-        <div className="flex-1"></div>
-
-        {/* Bottom Content Section - Buttons and Stats */}
-        <div className="container mx-auto">
-          <motion.div
-            className="text-center"
-            variants={staggerContainer}
-            initial="hidden"
-            animate="visible"
-          >
             {/* Action Buttons */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-col items-center justify-center gap-3 mb-8"
+              className="flex flex-row flex-wrap items-center justify-center gap-4 mt-6"
             >
-              <Link href="/get-started" className="w-full max-w-[320px]">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
+              <Link href="/get-started">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button
                     variant="primary-action"
                     size="lg"
-                    className="group gap-2 w-full h-14 text-base !rounded-full"
+                    className="group gap-2 h-12 px-8 text-base !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
                   >
                     {heroPrimaryButton}
-                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio" className="w-full max-w-[320px]">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
+              <Link href="/portfolio">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button
-                    variant="secondary-action"
+                    variant="outline"
                     size="lg"
-                    className="gap-2 w-full h-14 text-base !rounded-full"
+                    className="gap-2 h-12 px-8 text-base !rounded-full bg-transparent border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
                   >
-                    <Play className="h-5 w-5" />
-                    {heroSecondaryButton}
+                    <Play className="h-4 w-4 fill-current" />
+                    View Our Work
                   </Button>
                 </motion.div>
               </Link>
@@ -196,7 +165,7 @@ export function SplineHeroComponent({
             {/* Statistics Section */}
             <motion.div
               variants={staggerItem}
-              className="flex items-center justify-center space-x-6"
+              className="flex items-center justify-center space-x-8 mt-10 border-t border-white/10 pt-8"
             >
               <motion.div
                 className="text-center"
