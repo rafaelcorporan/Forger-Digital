@@ -68,8 +68,8 @@ export function SplineHeroComponent({
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
 
-      {/* Spline 3D Background - Hidden on mobile, shown on desktop */}
-      <div className="hidden md:block absolute inset-0 z-1">
+      {/* Spline 3D Background - Now shown on all devices, behind content */}
+      <div className="absolute inset-0 z-1">
         <iframe
           src={sceneUrl}
           frameBorder="0"
@@ -91,7 +91,7 @@ export function SplineHeroComponent({
         />
       </div>
 
-      {/* Mobile Layout - Text Content Only (NO 3D Animation) */}
+      {/* Mobile Layout - Text Content with 3D Animation Behind */}
       <div className="relative z-10 md:hidden flex flex-col min-h-fit pt-20 pb-12">
 
         {/* Text Content First on Mobile */}
