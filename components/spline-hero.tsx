@@ -100,33 +100,26 @@ export function SplineHeroComponent({
             initial="hidden"
             animate="visible"
           >
-            {/* Main Headline Text - Matching Image */}
-            <div className="space-y-4">
-              <motion.h2
-                variants={staggerItem}
-                className="text-3xl sm:text-4xl font-medium leading-tight text-white drop-shadow-lg"
-              >
-                Cutting-edge, advanced,
-                <br />
-                and forward-thinking tech.
-              </motion.h2>
+            {/* Main Headline - Orange */}
+            <motion.h1
+              variants={staggerItem}
+              className="text-4xl sm:text-5xl font-bold tracking-tight text-orange-500 drop-shadow-lg"
+            >
+              Forger Digital
+            </motion.h1>
 
-              <motion.h2
-                variants={staggerItem}
-                className="text-3xl sm:text-4xl font-medium leading-tight text-white drop-shadow-lg"
-              >
-                We transform your
-                <br />
-                digital vision into robust,
-                <br />
-                scalable reality.
-              </motion.h2>
-            </div>
+            {/* Subtitle Text - White */}
+            <motion.h2
+              variants={staggerItem}
+              className="text-lg sm:text-xl font-medium leading-relaxed text-white drop-shadow-md max-w-lg mx-auto"
+            >
+              <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
+            </motion.h2>
 
             {/* Description - Orange */}
             <motion.p
               variants={staggerItem}
-              className="mt-2 text-sm sm:text-base text-orange-500 font-medium leading-relaxed max-w-md mx-auto drop-shadow-md"
+              className="text-sm sm:text-base text-orange-500 font-medium leading-relaxed max-w-md mx-auto drop-shadow-md"
             >
               <span className="font-bold">Forge Digital:</span> Evokes craftsmanship, creation, & building robust solutions. <span className="font-bold">Digital:</span> Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.
             </motion.p>
