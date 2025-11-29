@@ -51,7 +51,7 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0 z-10">
-            <div className="relative h-12 md:h-14 w-auto">
+            <div className="relative h-10 md:h-14 w-auto">
               <img
                 src="/logo.png"
                 alt="Forger Digital"
@@ -190,22 +190,39 @@ export function Navigation() {
         {/* Mobile Menu */}
         {mobileMenuOpen && (
           <div className="border-t border-gray-800 py-4 md:hidden bg-gray-900">
-            <div className="flex flex-col gap-4">
-              <Link href="/#services" className="text-sm text-white transition-colors hover:text-orange-500" onClick={() => setMobileMenuOpen(false)}>
+            <div className="flex flex-col gap-4 px-4">
+              {/* Search */}
+              <button
+                onClick={() => {
+                  setSearchOpen(true)
+                  setMobileMenuOpen(false)
+                }}
+                className="flex items-center gap-2 text-sm text-white transition-colors hover:text-orange-500 py-2"
+              >
+                <Search className="h-4 w-4" />
+                {t('search')}
+              </button>
+
+              <Link href="/#services" className="text-sm text-white transition-colors hover:text-orange-500 py-2" onClick={() => setMobileMenuOpen(false)}>
                 {t('services')}
               </Link>
+
+              {/* Language Switcher */}
+              <div className="py-2">
+                <LanguageSwitcher />
+              </div>
 
               {/* Mobile Work Dropdown */}
               <div>
                 <button
                   onClick={() => setWorkDropdownOpen(!workDropdownOpen)}
-                  className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 w-full"
+                  className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 w-full py-2"
                 >
                   Work
                   <ChevronDown className={`h-4 w-4 transition-transform ${workDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {workDropdownOpen && (
-                  <div className="mt-2 ml-4 flex flex-col gap-2">
+                  <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-800 pl-4">
                     {workItems.map((item, idx) => (
                       <button
                         key={idx}
@@ -215,7 +232,7 @@ export function Navigation() {
                           setMobileMenuOpen(false)
                           setWorkDropdownOpen(false)
                         }}
-                        className="text-xs text-gray-300 hover:text-orange-500 transition-colors text-left"
+                        className="text-xs text-gray-300 hover:text-orange-500 transition-colors text-left py-1"
                       >
                         <div className="font-semibold">{item.title}</div>
                       </button>
@@ -228,13 +245,13 @@ export function Navigation() {
               <div>
                 <button
                   onClick={() => setPortfolioDropdownOpen(!portfolioDropdownOpen)}
-                  className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 w-full"
+                  className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 w-full py-2"
                 >
                   Portfolio
                   <ChevronDown className={`h-4 w-4 transition-transform ${portfolioDropdownOpen ? 'rotate-180' : ''}`} />
                 </button>
                 {portfolioDropdownOpen && (
-                  <div className="mt-2 ml-4 flex flex-col gap-2">
+                  <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-800 pl-4">
                     {portfolioCategories.map((item, idx) => (
                       <Link
                         key={idx}
@@ -243,7 +260,7 @@ export function Navigation() {
                           setMobileMenuOpen(false)
                           setPortfolioDropdownOpen(false)
                         }}
-                        className="text-xs text-gray-300 hover:text-orange-500 transition-colors"
+                        className="text-xs text-gray-300 hover:text-orange-500 transition-colors py-1"
                       >
                         <div className="font-semibold">{item.title}</div>
                       </Link>
@@ -251,10 +268,12 @@ export function Navigation() {
                   </div>
                 )}
               </div>
-              <Link href="/#contact" className="text-sm text-white transition-colors hover:text-orange-500" onClick={() => setMobileMenuOpen(false)}>
+
+              <Link href="/#contact" className="text-sm text-white transition-colors hover:text-orange-500 py-2" onClick={() => setMobileMenuOpen(false)}>
                 Contact
               </Link>
-              <Link href="/get-started" className="w-[49%]">
+
+              <Link href="/get-started" className="w-[49%] mt-2">
                 <Button variant="primary-action" className="w-full group gap-2 h-11 px-6 text-base !rounded-full justify-center">
                   Get Started
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
