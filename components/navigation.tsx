@@ -254,7 +254,7 @@ export function Navigation() {
               <Link href="/#contact" className="text-sm text-white transition-colors hover:text-orange-500" onClick={() => setMobileMenuOpen(false)}>
                 Contact
               </Link>
-              <Link href="/get-started">
+              <Link href="/get-started" className="w-[49%]">
                 <Button variant="primary-action" className="w-full group gap-2 h-11 px-6 text-base !rounded-full justify-center">
                   Get Started
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
