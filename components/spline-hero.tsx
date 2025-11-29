@@ -35,7 +35,7 @@ export function SplineHeroComponent({
   const [showCursor, setShowCursor] = useState(true)
 
   // Use translations or fallback to props/defaults
-  const heroTitle = title || "Forger Digital: Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality."
+  const heroTitle = title || "Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality."
   const heroSubtitle = subtitle || ""
   const heroDescription = description || "Forge Digital: Evokes craftsmanship, creation, & building robust solutions. Digital: Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles."
   const heroPrimaryButton = primaryButtonText || "Start a Project"
@@ -100,12 +100,11 @@ export function SplineHeroComponent({
             initial="hidden"
             animate="visible"
           >
-            {/* Subtitle Text - White */}
             <motion.h2
               variants={staggerItem}
               className="text-lg sm:text-xl font-medium leading-relaxed text-white drop-shadow-md max-w-lg mx-auto"
             >
-              <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
+              Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
             </motion.h2>
 
             {/* Description - Orange */}
@@ -199,20 +198,12 @@ export function SplineHeroComponent({
             initial="hidden"
             animate="visible"
           >
-            {/* Main Title */}
-            <motion.h1
-              variants={staggerItem}
-              className="mb-2 text-6xl lg:text-8xl font-bold leading-tight tracking-tight text-orange-500"
-            >
-              Forger Digital
-            </motion.h1>
-
             {/* Subtitle */}
             <motion.h2
               variants={staggerItem}
               className="mb-6 text-2xl lg:text-4xl text-white font-medium leading-snug"
             >
-              <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
+              Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
             </motion.h2>
 
             {/* Description */}
