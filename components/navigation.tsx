@@ -188,8 +188,8 @@ export function Navigation() {
         </div>
 
         {/* Mobile Navigation Tabs - Always visible under top bar on mobile */}
-        <div className="md:hidden border-t border-gray-800 bg-gray-900/95 backdrop-blur-xl">
-          <div className="flex items-center gap-4 px-4 py-3 overflow-x-auto scrollbar-hide">
+        <div className="md:hidden border-t border-gray-800 bg-gray-900/95 backdrop-blur-xl overflow-visible">
+          <div className="flex items-center gap-4 px-4 py-3 overflow-x-auto overflow-y-visible scrollbar-hide">
             {/* Search Button */}
             <button
               onClick={() => setSearchOpen(true)}
@@ -220,7 +220,7 @@ export function Navigation() {
                 <ChevronDown className={`h-3 w-3 transition-transform ${workDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {workDropdownOpen && (
-                <div className="absolute left-0 top-full mt-2 w-64 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50 p-3 max-h-96 overflow-y-auto">
+                <div className="fixed left-4 right-4 mt-2 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-[9999] p-3 max-h-96 overflow-y-auto">
                   {workItems.map((item, idx) => (
                     <button
                       key={idx}
@@ -250,7 +250,7 @@ export function Navigation() {
                 <ChevronDown className={`h-3 w-3 transition-transform ${portfolioDropdownOpen ? 'rotate-180' : ''}`} />
               </button>
               {portfolioDropdownOpen && (
-                <div className="absolute left-0 top-full mt-2 w-56 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50 p-3">
+                <div className="fixed left-4 right-4 mt-2 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-[9999] p-3">
                   {portfolioCategories.map((item, idx) => (
                     <Link
                       key={idx}
