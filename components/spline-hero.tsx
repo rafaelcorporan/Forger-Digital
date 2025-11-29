@@ -198,12 +198,20 @@ export function SplineHeroComponent({
             initial="hidden"
             animate="visible"
           >
+            {/* Main Title */}
+            <motion.h1
+              variants={staggerItem}
+              className="mb-2 text-6xl lg:text-8xl font-bold leading-tight tracking-tight text-orange-500"
+            >
+              Forger Digital
+            </motion.h1>
+
             {/* Subtitle */}
             <motion.h2
               variants={staggerItem}
               className="mb-6 text-2xl lg:text-4xl text-white font-medium leading-snug"
             >
-              Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
+              <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
             </motion.h2>
 
             {/* Description */}
