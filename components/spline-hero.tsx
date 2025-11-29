@@ -135,7 +135,7 @@ export function SplineHeroComponent({
               <Link href="/portfolio" className="w-full max-w-xs">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
-                    variant="outline"
+                    variant="secondary-action"
                     size="lg"
                     className="gap-2 h-14 w-full text-base !rounded-full bg-transparent border-white text-white hover:bg-white/10 backdrop-blur-sm"
                   >

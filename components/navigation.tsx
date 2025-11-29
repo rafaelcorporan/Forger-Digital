@@ -255,9 +255,9 @@ export function Navigation() {
                 Contact
               </Link>
               <Link href="/get-started">
-                <Button className="bg-orange-500 hover:bg-orange-600 text-white font-semibold px-6 py-2 rounded-lg flex items-center gap-2 justify-center">
+                <Button variant="primary-action" className="w-full group gap-2 h-11 px-6 text-base !rounded-full justify-center">
                   Get Started
-                  <ArrowRight className="h-4 w-4" />
+                  <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </Button>
               </Link>
             </div>
