@@ -100,14 +100,6 @@ export function SplineHeroComponent({
             initial="hidden"
             animate="visible"
           >
-            {/* Main Headline - Orange */}
-            <motion.h1
-              variants={staggerItem}
-              className="text-4xl sm:text-5xl font-bold tracking-tight text-orange-500 drop-shadow-lg"
-            >
-              Forger Digital
-            </motion.h1>
-
             {/* Subtitle Text - White */}
             <motion.h2
               variants={staggerItem}
@@ -127,26 +119,26 @@ export function SplineHeroComponent({
             {/* Action Buttons */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-row flex-wrap items-center justify-center gap-4 mt-6"
+              className="flex flex-col items-center justify-center gap-4 mt-6 w-full"
             >
-              <Link href="/get-started">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/get-started" className="w-full max-w-xs">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="primary-action"
                     size="lg"
-                    className="group gap-2 h-12 px-8 text-base !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
+                    className="group gap-2 h-14 w-full text-base !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
                   >
                     {heroPrimaryButton}
                     <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link href="/portfolio" className="w-full max-w-xs">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="outline"
                     size="lg"
-                    className="gap-2 h-12 px-8 text-base !rounded-full bg-transparent border-white/30 text-white hover:bg-white/10 backdrop-blur-sm"
+                    className="gap-2 h-14 w-full text-base !rounded-full bg-transparent border-white text-white hover:bg-white/10 backdrop-blur-sm"
                   >
                     <Play className="h-4 w-4 fill-current" />
                     View Our Work
