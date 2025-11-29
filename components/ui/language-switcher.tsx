@@ -117,6 +117,10 @@ export function LanguageSwitcher() {
               <button
                 key={loc}
                 onClick={() => handleLocaleChange(loc)}
+                onMouseDown={(e) => {
+                  e.preventDefault() // Prevent focus loss/blur race condition
+                  handleLocaleChange(loc)
+                }}
                 onKeyDown={(e) => {
                   if (e.key === "Enter" || e.key === " ") {
                     e.preventDefault()
