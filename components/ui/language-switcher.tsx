@@ -102,7 +102,7 @@ export function LanguageSwitcher() {
       {/* Dropdown Menu - Responsive positioning for mobile/desktop */}
       {dropdownOpen && (
         <div
-          className="absolute md:absolute left-0 md:left-0 right-0 md:right-auto mt-2 md:w-72 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-[9999] p-4 flex flex-col gap-2"
+          className="fixed md:absolute left-4 right-4 md:left-0 md:right-auto mt-2 md:w-72 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-[9999] p-4 flex flex-col gap-2"
           role="menu"
           aria-label="Language selection"
         >
