@@ -63,7 +63,7 @@ export function LanguageSwitcher() {
   }, [dropdownOpen])
 
   return (
-    <div 
+    <div
       ref={dropdownRef}
       className="relative"
       onMouseEnter={() => setDropdownOpen(true)}
@@ -76,7 +76,7 @@ export function LanguageSwitcher() {
         }
       }}
     >
-      <button 
+      <button
         className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-orange-500 focus-visible:ring-offset-2 rounded px-2 py-1"
         aria-expanded={dropdownOpen}
         aria-haspopup="true"
@@ -93,16 +93,16 @@ export function LanguageSwitcher() {
         <span className="text-sm font-medium whitespace-nowrap">
           {currentLocaleConfig.nativeName}
         </span>
-        <ChevronDown 
+        <ChevronDown
           className={`h-4 w-4 transition-transform ${dropdownOpen ? 'rotate-180' : ''}`}
           aria-hidden="true"
         />
       </button>
-      
-      {/* Dropdown Menu - Matching Work dropdown style exactly */}
+
+      {/* Dropdown Menu - Responsive positioning for mobile/desktop */}
       {dropdownOpen && (
-        <div 
-          className="absolute left-0 mt-2 w-72 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-[100] p-4 flex flex-col gap-2"
+        <div
+          className="absolute md:absolute left-0 md:left-0 right-0 md:right-auto mt-2 md:w-72 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-[9999] p-4 flex flex-col gap-2"
           role="menu"
           aria-label="Language selection"
         >
@@ -151,8 +151,8 @@ export function LanguageSwitcher() {
                   <div className="flex-1">
                     <div className={cn(
                       "text-sm font-semibold transition-colors",
-                      isActive 
-                        ? "text-orange-500" 
+                      isActive
+                        ? "text-orange-500"
                         : "text-white group-hover:text-orange-500"
                     )}>
                       {config.nativeName}
