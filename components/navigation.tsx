@@ -51,7 +51,7 @@ export function Navigation() {
         <div className="flex h-16 items-center justify-between gap-4">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 flex-shrink-0 z-10">
-            <div className="relative h-10 md:h-14 w-auto">
+            <div className="relative h-8 md:h-14 w-auto mr-2">
               <img
                 src="/logo.png"
                 alt="Forger Digital"
@@ -177,7 +177,7 @@ export function Navigation() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Button - Only shows hamburger, not used for navigation */}
           <button
             className="md:hidden text-white p-2 rounded-lg hover:bg-gray-800 transition-colors"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -187,93 +187,100 @@ export function Navigation() {
           </button>
         </div>
 
-        {/* Mobile Menu */}
+        {/* Mobile Navigation Tabs - Always visible under top bar on mobile */}
+        <div className="md:hidden border-t border-gray-800 bg-gray-900/95 backdrop-blur-xl">
+          <div className="flex items-center gap-4 px-4 py-3 overflow-x-auto scrollbar-hide">
+            {/* Search Button */}
+            <button
+              onClick={() => setSearchOpen(true)}
+              className="flex items-center gap-1.5 text-xs text-white transition-colors hover:text-orange-500 whitespace-nowrap flex-shrink-0"
+              aria-label="Open search"
+            >
+              <Search className="h-4 w-4" aria-hidden="true" />
+            </button>
+
+            <Link
+              href="/#services"
+              className="text-xs text-white transition-colors hover:text-orange-500 whitespace-nowrap flex-shrink-0"
+            >
+              {t('services')}
+            </Link>
+
+            <div className="flex-shrink-0">
+              <LanguageSwitcher />
+            </div>
+
+            {/* Work Dropdown */}
+            <div className="relative flex-shrink-0">
+              <button
+                onClick={() => setWorkDropdownOpen(!workDropdownOpen)}
+                className="flex items-center gap-1 text-xs text-white transition-colors hover:text-orange-500 whitespace-nowrap"
+              >
+                Work
+                <ChevronDown className={`h-3 w-3 transition-transform ${workDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {workDropdownOpen && (
+                <div className="absolute left-0 top-full mt-2 w-64 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50 p-3 max-h-96 overflow-y-auto">
+                  {workItems.map((item, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => {
+                        setSelectedVideo({ url: item.videoUrl, title: item.title })
+                        setVideoModalOpen(true)
+                        setWorkDropdownOpen(false)
+                      }}
+                      className="w-full p-2 rounded-lg bg-gray-900/50 hover:bg-gray-700 transition-colors text-left mb-2 last:mb-0"
+                    >
+                      <div className="text-xs font-semibold text-white hover:text-orange-500 transition-colors">
+                        {item.title}
+                      </div>
+                    </button>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Portfolio Dropdown */}
+            <div className="relative flex-shrink-0">
+              <button
+                onClick={() => setPortfolioDropdownOpen(!portfolioDropdownOpen)}
+                className="flex items-center gap-1 text-xs text-white transition-colors hover:text-orange-500 whitespace-nowrap"
+              >
+                Portfolio
+                <ChevronDown className={`h-3 w-3 transition-transform ${portfolioDropdownOpen ? 'rotate-180' : ''}`} />
+              </button>
+              {portfolioDropdownOpen && (
+                <div className="absolute left-0 top-full mt-2 w-56 bg-gray-800 border border-gray-700 rounded-lg shadow-xl z-50 p-3">
+                  {portfolioCategories.map((item, idx) => (
+                    <Link
+                      key={idx}
+                      href={item.url}
+                      onClick={() => setPortfolioDropdownOpen(false)}
+                      className="block p-2 rounded-lg bg-gray-900/50 hover:bg-gray-700 transition-colors mb-2 last:mb-0"
+                    >
+                      <div className="text-xs font-semibold text-white hover:text-orange-500 transition-colors">
+                        {item.title}
+                      </div>
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            <Link
+              href="/#contact"
+              className="text-xs text-white transition-colors hover:text-orange-500 whitespace-nowrap flex-shrink-0"
+            >
+              Contact
+            </Link>
+          </div>
+        </div>
+
+        {/* Mobile Hamburger Menu - Only for Get Started button */}
         {mobileMenuOpen && (
           <div className="border-t border-gray-800 py-4 md:hidden bg-gray-900">
             <div className="flex flex-col gap-4 px-4">
-              {/* Search */}
-              <button
-                onClick={() => {
-                  setSearchOpen(true)
-                  setMobileMenuOpen(false)
-                }}
-                className="flex items-center gap-2 text-sm text-white transition-colors hover:text-orange-500 py-2"
-              >
-                <Search className="h-4 w-4" />
-                {t('search')}
-              </button>
-
-              <Link href="/#services" className="text-sm text-white transition-colors hover:text-orange-500 py-2" onClick={() => setMobileMenuOpen(false)}>
-                {t('services')}
-              </Link>
-
-              {/* Language Switcher */}
-              <div className="py-2">
-                <LanguageSwitcher />
-              </div>
-
-              {/* Mobile Work Dropdown */}
-              <div>
-                <button
-                  onClick={() => setWorkDropdownOpen(!workDropdownOpen)}
-                  className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 w-full py-2"
-                >
-                  Work
-                  <ChevronDown className={`h-4 w-4 transition-transform ${workDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {workDropdownOpen && (
-                  <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-800 pl-4">
-                    {workItems.map((item, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => {
-                          setSelectedVideo({ url: item.videoUrl, title: item.title })
-                          setVideoModalOpen(true)
-                          setMobileMenuOpen(false)
-                          setWorkDropdownOpen(false)
-                        }}
-                        className="text-xs text-gray-300 hover:text-orange-500 transition-colors text-left py-1"
-                      >
-                        <div className="font-semibold">{item.title}</div>
-                      </button>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Mobile Portfolio Dropdown */}
-              <div>
-                <button
-                  onClick={() => setPortfolioDropdownOpen(!portfolioDropdownOpen)}
-                  className="flex items-center gap-1 text-sm text-white transition-colors hover:text-orange-500 w-full py-2"
-                >
-                  Portfolio
-                  <ChevronDown className={`h-4 w-4 transition-transform ${portfolioDropdownOpen ? 'rotate-180' : ''}`} />
-                </button>
-                {portfolioDropdownOpen && (
-                  <div className="mt-2 ml-4 flex flex-col gap-2 border-l border-gray-800 pl-4">
-                    {portfolioCategories.map((item, idx) => (
-                      <Link
-                        key={idx}
-                        href={item.url}
-                        onClick={() => {
-                          setMobileMenuOpen(false)
-                          setPortfolioDropdownOpen(false)
-                        }}
-                        className="text-xs text-gray-300 hover:text-orange-500 transition-colors py-1"
-                      >
-                        <div className="font-semibold">{item.title}</div>
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              <Link href="/#contact" className="text-sm text-white transition-colors hover:text-orange-500 py-2" onClick={() => setMobileMenuOpen(false)}>
-                Contact
-              </Link>
-
-              <Link href="/get-started" className="w-[49%] mt-2">
+              <Link href="/get-started" className="w-full" onClick={() => setMobileMenuOpen(false)}>
                 <Button variant="primary-action" className="w-full group gap-2 h-11 px-6 text-base !rounded-full justify-center">
                   Get Started
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />

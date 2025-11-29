@@ -161,6 +161,17 @@ html {
   }
 }
 
+/* Utility: Hide scrollbar while maintaining scroll functionality */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
+
 /* Hide Next.js development overlay indicators - COMPREHENSIVE REMOVAL */
 /* VERIFIED TARGETS - Based on actual DOM structure */
 /* Target the outer container with inline styles */
