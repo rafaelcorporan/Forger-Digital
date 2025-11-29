@@ -69,7 +69,7 @@ export function SplineHeroComponent({
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
 
       {/* Spline 3D Background - Full screen on ALL devices */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 hidden md:block">
         <iframe
           src={sceneUrl}
           frameBorder="0"
