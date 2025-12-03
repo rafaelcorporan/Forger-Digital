@@ -105,9 +105,9 @@ export function SplineHeroComponent({
 
       {/* Mobile Layout - Content OVERLAID on Spline background */}
       <div className="relative z-10 md:hidden flex flex-col justify-between items-center min-h-screen px-4 text-center bg-black/40 backdrop-blur-[2px]">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-6 py-12 flex-grow">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-4 py-8 flex-grow">
           <motion.div
-            className="flex flex-col gap-6 w-full"
+            className="flex flex-col gap-4 w-full"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -115,52 +115,52 @@ export function SplineHeroComponent({
             {/* Mobile-only content with reduced size (30% smaller) and gradient background boxes */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-col gap-2 items-center"
+              className="flex flex-col gap-1.5 items-center"
             >
               {/* Line 1 - Slide from LEFT */}
               <motion.h2
-                className="text-[1.71rem] sm:text-[2.28rem] font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.6rem] sm:text-[2.1rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
                   CUTTING-EDGE,
                 </span>
               </motion.h2>
 
               {/* Line 2 - Slide from RIGHT */}
               <motion.h2
-                className="text-[1.71rem] sm:text-[2.28rem] font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.6rem] sm:text-[2.1rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
                   FORWARD-THINKING,
                 </span>
               </motion.h2>
 
               {/* Line 3 - Slide from LEFT */}
               <motion.h2
-                className="text-[1.71rem] sm:text-[2.28rem] font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.6rem] sm:text-[2.1rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
                   TO BUILD ROBUST
                 </span>
               </motion.h2>
 
               {/* Line 4 - Slide from RIGHT */}
               <motion.h2
-                className="text-[1.71rem] sm:text-[2.28rem] font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.6rem] sm:text-[2.1rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
                   SOLUTIONS.
                 </span>
               </motion.h2>
@@ -169,26 +169,26 @@ export function SplineHeroComponent({
             {/* Action Buttons */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-row items-center justify-center gap-3 mt-4 w-full"
+              className="flex flex-row items-center justify-center gap-3 mt-3 w-full"
             >
-              <Link href="/get-started" className="flex-1 max-w-[160px]">
+              <Link href="/get-started" className="flex-1 max-w-[150px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="primary-action"
                     size="lg"
-                    className="group gap-2 h-10 w-full text-sm !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
+                    className="group gap-1.5 h-9 w-full text-xs !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
                   >
                     {heroPrimaryButton}
                     <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio" className="flex-1 max-w-[160px]">
+              <Link href="/portfolio" className="flex-1 max-w-[150px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="secondary-action"
                     size="lg"
-                    className="gap-2 h-10 w-full text-sm !rounded-full bg-transparent border-white text-white hover:bg-white/10 backdrop-blur-sm"
+                    className="gap-1.5 h-9 w-full text-xs !rounded-full bg-transparent border-white text-white hover:bg-white/10 backdrop-blur-sm"
                   >
                     <Play className="h-3 w-3 fill-current" />
                     View Our Work
@@ -200,7 +200,7 @@ export function SplineHeroComponent({
             {/* Statistics Section - Moved closer to buttons */}
             <motion.div
               variants={staggerItem}
-              className="w-full flex items-center justify-center space-x-4 sm:space-x-8 pt-4 border-t border-white/10 mt-2"
+              className="w-full flex items-center justify-center space-x-4 sm:space-x-8 pt-3 border-t border-white/10 mt-2"
             >
               <motion.div
                 className="text-center"
@@ -208,10 +208,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
               >
-                <div className="text-xl sm:text-2xl font-bold text-white mb-1">
+                <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
                   <AnimatedCounter value={50} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-[10px] sm:text-xs text-white/80 font-medium">{t('stats.projects')}</div>
+                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">{t('stats.projects')}</div>
               </motion.div>
               <motion.div
                 className="text-center"
@@ -219,10 +219,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
               >
-                <div className="text-xl sm:text-2xl font-bold text-white mb-1">
+                <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
                   <AnimatedCounter value={98} suffix="%" duration={2.5} />
                 </div>
-                <div className="text-[10px] sm:text-xs text-white/80 font-medium">{t('stats.satisfaction')}</div>
+                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">{t('stats.satisfaction')}</div>
               </motion.div>
               <motion.div
                 className="text-center"
@@ -230,10 +230,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
               >
-                <div className="text-xl sm:text-2xl font-bold text-white mb-1">
+                <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
                   <AnimatedCounter value={21} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-[10px] sm:text-xs text-white/80 font-medium">{t('stats.experience')}</div>
+                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">{t('stats.experience')}</div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -244,9 +244,9 @@ export function SplineHeroComponent({
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white pb-4"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white pb-2"
         >
-          <ChevronDown className="h-8 w-8 animate-bounce" />
+          <ChevronDown className="h-7 w-7 animate-bounce" />
         </motion.div>
       </div>
 
