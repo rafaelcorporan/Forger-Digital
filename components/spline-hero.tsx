@@ -119,7 +119,7 @@ export function SplineHeroComponent({
             >
               {/* Line 1 - Slide from LEFT */}
               <motion.h2
-                className="text-3xl sm:text-4xl font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.71rem] sm:text-[2.28rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
@@ -131,7 +131,7 @@ export function SplineHeroComponent({
 
               {/* Line 2 - Slide from RIGHT */}
               <motion.h2
-                className="text-3xl sm:text-4xl font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.71rem] sm:text-[2.28rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
@@ -143,7 +143,7 @@ export function SplineHeroComponent({
 
               {/* Line 3 - Slide from LEFT */}
               <motion.h2
-                className="text-3xl sm:text-4xl font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.71rem] sm:text-[2.28rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
@@ -155,13 +155,13 @@ export function SplineHeroComponent({
 
               {/* Line 4 - Slide from RIGHT */}
               <motion.h2
-                className="text-3xl sm:text-4xl font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.71rem] sm:text-[2.28rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               >
                 <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
-                  SOLUTIONS
+                  SOLUTIONS.
                 </span>
               </motion.h2>
             </motion.div>
@@ -169,9 +169,9 @@ export function SplineHeroComponent({
             {/* Action Buttons */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-col items-center justify-center gap-4 mt-4 w-full"
+              className="flex flex-row items-center justify-center gap-3 mt-4 w-full"
             >
-              <Link href="/get-started" className="w-full max-w-[180px]">
+              <Link href="/get-started" className="flex-1 max-w-[160px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="primary-action"
@@ -183,7 +183,7 @@ export function SplineHeroComponent({
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio" className="w-full max-w-[180px]">
+              <Link href="/portfolio" className="flex-1 max-w-[160px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="secondary-action"
