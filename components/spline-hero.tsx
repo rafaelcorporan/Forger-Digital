@@ -2,7 +2,7 @@
 
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { ArrowRight, Play } from "lucide-react"
+import { ArrowRight, Play, ChevronDown } from "lucide-react"
 import { useEffect, useState } from "react"
 import { useTranslation } from "@/lib/i18n/context"
 import { motion } from "framer-motion"
@@ -91,11 +91,23 @@ export function SplineHeroComponent({
         />
       </div>
 
+      {/* Mobile Spline Background - Visible ONLY on mobile */}
+      <div className="absolute inset-0 z-0 md:hidden flex items-center justify-center overflow-hidden">
+        <iframe
+          src="https://my.spline.design/thresholddarkambientui-o8iwxEWaWPAztTbgXjkCOSHb/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          className="h-full w-full scale-125"
+          title="Mobile Spline 3D Background"
+        />
+      </div>
+
       {/* Mobile Layout - Content OVERLAID on Spline background */}
       <div className="relative z-10 md:hidden flex flex-col justify-between items-center min-h-screen px-4 text-center bg-black/40 backdrop-blur-[2px]">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-8 py-20 flex-grow">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-6 py-12 flex-grow">
           <motion.div
-            className="flex flex-col gap-6"
+            className="flex flex-col gap-6 w-full"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -154,10 +166,10 @@ export function SplineHeroComponent({
               </motion.h2>
             </motion.div>
 
-            {/* Action Buttons - Reduced width by 40% (max-w-xs = 320px, 40% reduction = 192px ≈ 180px) */}
+            {/* Action Buttons */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-col items-center justify-center gap-4 mt-6 w-full"
+              className="flex flex-col items-center justify-center gap-4 mt-4 w-full"
             >
               <Link href="/get-started" className="w-full max-w-[180px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
@@ -184,49 +196,57 @@ export function SplineHeroComponent({
                 </motion.div>
               </Link>
             </motion.div>
+
+            {/* Statistics Section - Moved closer to buttons */}
+            <motion.div
+              variants={staggerItem}
+              className="w-full flex items-center justify-center space-x-4 sm:space-x-8 pt-4 border-t border-white/10 mt-2"
+            >
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1, duration: 0.5 }}
+              >
+                <div className="text-xl sm:text-2xl font-bold text-white mb-1">
+                  <AnimatedCounter value={50} suffix="+" duration={2.5} />
+                </div>
+                <div className="text-[10px] sm:text-xs text-white/80 font-medium">{t('stats.projects')}</div>
+              </motion.div>
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+              >
+                <div className="text-xl sm:text-2xl font-bold text-white mb-1">
+                  <AnimatedCounter value={98} suffix="%" duration={2.5} />
+                </div>
+                <div className="text-[10px] sm:text-xs text-white/80 font-medium">{t('stats.satisfaction')}</div>
+              </motion.div>
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.4, duration: 0.5 }}
+              >
+                <div className="text-xl sm:text-2xl font-bold text-white mb-1">
+                  <AnimatedCounter value={21} suffix="+" duration={2.5} />
+                </div>
+                <div className="text-[10px] sm:text-xs text-white/80 font-medium">{t('stats.experience')}</div>
+              </motion.div>
+            </motion.div>
           </motion.div>
         </div>
 
-        {/* Statistics Section - Pushed to bottom */}
+        {/* Down Arrow - Indicating scroll */}
         <motion.div
-          variants={staggerItem}
-          initial="hidden"
-          animate="visible"
-          className="w-full flex items-center justify-center space-x-8 pb-8 border-t border-white/10 pt-6"
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white pb-4"
         >
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1, duration: 0.5 }}
-          >
-            <div className="text-2xl font-bold text-white mb-1">
-              <AnimatedCounter value={50} suffix="+" duration={2.5} />
-            </div>
-            <div className="text-xs text-white/80 font-medium">{t('stats.projects')}</div>
-          </motion.div>
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.2, duration: 0.5 }}
-          >
-            <div className="text-2xl font-bold text-white mb-1">
-              <AnimatedCounter value={98} suffix="%" duration={2.5} />
-            </div>
-            <div className="text-xs text-white/80 font-medium">{t('stats.satisfaction')}</div>
-          </motion.div>
-          <motion.div
-            className="text-center"
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 1.4, duration: 0.5 }}
-          >
-            <div className="text-2xl font-bold text-white mb-1">
-              <AnimatedCounter value={21} suffix="+" duration={2.5} />
-            </div>
-            <div className="text-xs text-white/80 font-medium">{t('stats.experience')}</div>
-          </motion.div>
+          <ChevronDown className="h-8 w-8 animate-bounce" />
         </motion.div>
       </div>
 

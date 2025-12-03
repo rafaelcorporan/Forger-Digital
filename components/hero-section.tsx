@@ -32,7 +32,7 @@ export function HeroSection() {
 
   return (
     <section className="relative overflow-hidden border-b border-border bg-background py-24 md:py-32">
-      <div className="container mx-auto px-4">
+      <div className="container relative z-10 mx-auto px-4">
         <div className="mx-auto max-w-4xl text-center">
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-2 text-sm text-muted-foreground">
             <span className="relative flex h-2 w-2">
@@ -82,6 +82,18 @@ export function HeroSection() {
 
       {/* Background grid effect */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+
+      {/* Mobile Spline Background */}
+      <div className="absolute inset-0 z-0 md:hidden">
+        <iframe
+          src="https://my.spline.design/interactiveaiwebsite-sLXepj130rzuiUREhojniSkN/"
+          frameBorder="0"
+          width="100%"
+          height="100%"
+          className="h-full w-full"
+          title="Spline 3D Background"
+        />
+      </div>
     </section>
   )
 }
