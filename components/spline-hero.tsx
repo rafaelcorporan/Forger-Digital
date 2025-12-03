@@ -92,101 +92,142 @@ export function SplineHeroComponent({
       </div>
 
       {/* Mobile Layout - Content OVERLAID on Spline background */}
-      <div className="relative z-10 md:hidden flex flex-col justify-center items-center min-h-screen px-4 text-center bg-black/40 backdrop-blur-[2px]">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-8 py-20">
+      <div className="relative z-10 md:hidden flex flex-col justify-between items-center min-h-screen px-4 text-center bg-black/40 backdrop-blur-[2px]">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-8 py-20 flex-grow">
           <motion.div
             className="flex flex-col gap-6"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-            <motion.h2
+            {/* Mobile-only content with reduced size (30% smaller) and gradient background boxes */}
+            <motion.div
               variants={staggerItem}
-              className="text-lg sm:text-xl font-medium leading-relaxed text-white drop-shadow-md max-w-lg mx-auto"
+              className="flex flex-col gap-2 items-center"
             >
-              Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
-            </motion.h2>
+              {/* Line 1 - Slide from LEFT */}
+              <motion.h2
+                className="text-3xl sm:text-4xl font-bold leading-tight text-white uppercase inline-block"
+                initial={{ x: -300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              >
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
+                  CUTTING-EDGE,
+                </span>
+              </motion.h2>
 
-            {/* Description - Orange */}
-            <motion.p
-              variants={staggerItem}
-              className="text-sm sm:text-base text-orange-500 font-medium leading-relaxed max-w-md mx-auto drop-shadow-md"
-            >
-              <span className="font-bold">Forge Digital:</span> Evokes craftsmanship, creation, & building robust solutions. <span className="font-bold">Digital:</span> Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.
-            </motion.p>
+              {/* Line 2 - Slide from RIGHT */}
+              <motion.h2
+                className="text-3xl sm:text-4xl font-bold leading-tight text-white uppercase inline-block"
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              >
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
+                  FORWARD-THINKING,
+                </span>
+              </motion.h2>
 
-            {/* Action Buttons */}
+              {/* Line 3 - Slide from LEFT */}
+              <motion.h2
+                className="text-3xl sm:text-4xl font-bold leading-tight text-white uppercase inline-block"
+                initial={{ x: -300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              >
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
+                  TO BUILD ROBUST
+                </span>
+              </motion.h2>
+
+              {/* Line 4 - Slide from RIGHT */}
+              <motion.h2
+                className="text-3xl sm:text-4xl font-bold leading-tight text-white uppercase inline-block"
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+              >
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block">
+                  SOLUTIONS
+                </span>
+              </motion.h2>
+            </motion.div>
+
+            {/* Action Buttons - Reduced width by 40% (max-w-xs = 320px, 40% reduction = 192px ≈ 180px) */}
             <motion.div
               variants={staggerItem}
               className="flex flex-col items-center justify-center gap-4 mt-6 w-full"
             >
-              <Link href="/get-started" className="w-full max-w-xs">
+              <Link href="/get-started" className="w-full max-w-[180px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="primary-action"
                     size="lg"
-                    className="group gap-2 h-14 w-full text-base !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
+                    className="group gap-2 h-10 w-full text-sm !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
                   >
                     {heroPrimaryButton}
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio" className="w-full max-w-xs">
+              <Link href="/portfolio" className="w-full max-w-[180px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="secondary-action"
                     size="lg"
-                    className="gap-2 h-14 w-full text-base !rounded-full bg-transparent border-white text-white hover:bg-white/10 backdrop-blur-sm"
+                    className="gap-2 h-10 w-full text-sm !rounded-full bg-transparent border-white text-white hover:bg-white/10 backdrop-blur-sm"
                   >
-                    <Play className="h-4 w-4 fill-current" />
+                    <Play className="h-3 w-3 fill-current" />
                     View Our Work
                   </Button>
                 </motion.div>
               </Link>
             </motion.div>
-
-            {/* Statistics Section */}
-            <motion.div
-              variants={staggerItem}
-              className="flex items-center justify-center space-x-8 mt-10 border-t border-white/10 pt-8"
-            >
-              <motion.div
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1, duration: 0.5 }}
-              >
-                <div className="text-2xl font-bold text-white mb-1">
-                  <AnimatedCounter value={50} suffix="+" duration={2.5} />
-                </div>
-                <div className="text-xs text-white/80 font-medium">{t('stats.projects')}</div>
-              </motion.div>
-              <motion.div
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.2, duration: 0.5 }}
-              >
-                <div className="text-2xl font-bold text-white mb-1">
-                  <AnimatedCounter value={98} suffix="%" duration={2.5} />
-                </div>
-                <div className="text-xs text-white/80 font-medium">{t('stats.satisfaction')}</div>
-              </motion.div>
-              <motion.div
-                className="text-center"
-                initial={{ opacity: 0, scale: 0.5 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: 1.4, duration: 0.5 }}
-              >
-                <div className="text-2xl font-bold text-white mb-1">
-                  <AnimatedCounter value={21} suffix="+" duration={2.5} />
-                </div>
-                <div className="text-xs text-white/80 font-medium">{t('stats.experience')}</div>
-              </motion.div>
-            </motion.div>
           </motion.div>
         </div>
+
+        {/* Statistics Section - Pushed to bottom */}
+        <motion.div
+          variants={staggerItem}
+          initial="hidden"
+          animate="visible"
+          className="w-full flex items-center justify-center space-x-8 pb-8 border-t border-white/10 pt-6"
+        >
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1, duration: 0.5 }}
+          >
+            <div className="text-2xl font-bold text-white mb-1">
+              <AnimatedCounter value={50} suffix="+" duration={2.5} />
+            </div>
+            <div className="text-xs text-white/80 font-medium">{t('stats.projects')}</div>
+          </motion.div>
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.2, duration: 0.5 }}
+          >
+            <div className="text-2xl font-bold text-white mb-1">
+              <AnimatedCounter value={98} suffix="%" duration={2.5} />
+            </div>
+            <div className="text-xs text-white/80 font-medium">{t('stats.satisfaction')}</div>
+          </motion.div>
+          <motion.div
+            className="text-center"
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 1.4, duration: 0.5 }}
+          >
+            <div className="text-2xl font-bold text-white mb-1">
+              <AnimatedCounter value={21} suffix="+" duration={2.5} />
+            </div>
+            <div className="text-xs text-white/80 font-medium">{t('stats.experience')}</div>
+          </motion.div>
+        </motion.div>
       </div>
 
       {/* Desktop Layout - Overlay style (text over 3D background) */}
