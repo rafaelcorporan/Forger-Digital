@@ -64,7 +64,7 @@ export function SplineHeroComponent({
   }, [heroSubtitle])
 
   return (
-    <section className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900">
+    <section id="hero" className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900">
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
 
@@ -244,7 +244,13 @@ export function SplineHeroComponent({
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white pb-2"
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white pb-2 z-20 cursor-pointer"
+          onClick={() => {
+            const nextSection = document.getElementById('about') || document.querySelector('section:not(#hero)')
+            if (nextSection) {
+              nextSection.scrollIntoView({ behavior: 'smooth' })
+            }
+          }}
         >
           <ChevronDown className="h-7 w-7 animate-bounce" />
         </motion.div>
@@ -252,22 +258,22 @@ export function SplineHeroComponent({
 
       {/* Desktop Layout - Overlay style (text over 3D background) */}
       <div className="hidden md:flex relative z-10 h-full items-center justify-start py-0">
-        <div className="container mx-auto px-6 lg:px-8">
+        <div className="container mx-auto px-6 lg:px-8 w-full">
           <motion.div
             className="mr-auto max-w-2xl text-left"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-            {/* Main Title */}
+            {/* Section 1: Main Title */}
             <motion.h1
               variants={staggerItem}
-              className="mb-2 text-6xl lg:text-8xl font-bold leading-tight tracking-tight text-orange-500"
+              className="mb-6 text-6xl lg:text-8xl font-bold leading-tight tracking-tight text-orange-500"
             >
               Forger Digital
             </motion.h1>
 
-            {/* Subtitle */}
+            {/* Section 2: Primary Description */}
             <motion.h2
               variants={staggerItem}
               className="mb-6 text-2xl lg:text-4xl text-white font-medium leading-snug"
@@ -275,7 +281,7 @@ export function SplineHeroComponent({
               <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
             </motion.h2>
 
-            {/* Description */}
+            {/* Section 3: Secondary Description */}
             <motion.p
               variants={staggerItem}
               className="mb-8 text-lg lg:text-xl text-orange-500 font-medium leading-relaxed"
@@ -283,78 +289,94 @@ export function SplineHeroComponent({
               <span className="font-bold">Forge Digital:</span> Evokes craftsmanship, creation, & building robust solutions. <span className="font-bold">Digital:</span> Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.
             </motion.p>
 
-            {/* Action Buttons and Statistics Section - Desktop */}
+            {/* Section 4: Action Buttons */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-col gap-6"
+              className="mb-8 flex flex-row items-start gap-4 lg:gap-6"
             >
-              {/* Buttons Row */}
-              <div className="flex flex-row items-start gap-4 lg:gap-6">
-                <Link href="/get-started">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button
-                      variant="primary-action"
-                      size="xl"
-                      className="group gap-2 !rounded-full"
-                    >
-                      {heroPrimaryButton}
-                      <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                    </Button>
-                  </motion.div>
-                </Link>
-                <Link href="/portfolio">
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button
-                      variant="secondary-action"
-                      size="xl"
-                      className="gap-2 !rounded-full"
-                    >
-                      <Play className="h-5 w-5" />
-                      {heroSecondaryButton}
-                    </Button>
-                  </motion.div>
-                </Link>
-              </div>
+              <Link href="/get-started">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    variant="primary-action"
+                    size="xl"
+                    className="group gap-2 !rounded-full"
+                  >
+                    {heroPrimaryButton}
+                    <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                  </Button>
+                </motion.div>
+              </Link>
+              <Link href="/portfolio">
+                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+                  <Button
+                    variant="secondary-action"
+                    size="xl"
+                    className="gap-2 !rounded-full"
+                  >
+                    <Play className="h-5 w-5" />
+                    {heroSecondaryButton}
+                  </Button>
+                </motion.div>
+              </Link>
+            </motion.div>
 
-              {/* Statistics Row - Aligned with buttons */}
-              <div className="flex items-center justify-start space-x-8 lg:space-x-12">
-                <motion.div
-                  className="text-center"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1, duration: 0.5 }}
-                >
-                  <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
-                    <AnimatedCounter value={50} suffix="+" duration={2.5} />
-                  </div>
-                  <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.projects')}</div>
-                </motion.div>
-                <motion.div
-                  className="text-center"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.2, duration: 0.5 }}
-                >
-                  <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
-                    <AnimatedCounter value={98} suffix="%" duration={2.5} />
-                  </div>
-                  <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.satisfaction')}</div>
-                </motion.div>
-                <motion.div
-                  className="text-center"
-                  initial={{ opacity: 0, scale: 0.5 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ delay: 1.4, duration: 0.5 }}
-                >
-                  <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
-                    <AnimatedCounter value={21} suffix="+" duration={2.5} />
-                  </div>
-                  <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.experience')}</div>
-                </motion.div>
-              </div>
+            {/* Section 5: Statistics */}
+            <motion.div
+              variants={staggerItem}
+              className="flex items-center justify-start space-x-8 lg:space-x-12"
+            >
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1, duration: 0.5 }}
+              >
+                <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
+                  <AnimatedCounter value={50} suffix="+" duration={2.5} />
+                </div>
+                <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.projects')}</div>
+              </motion.div>
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.2, duration: 0.5 }}
+              >
+                <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
+                  <AnimatedCounter value={98} suffix="%" duration={2.5} />
+                </div>
+                <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.satisfaction')}</div>
+              </motion.div>
+              <motion.div
+                className="text-center"
+                initial={{ opacity: 0, scale: 0.5 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 1.4, duration: 0.5 }}
+              >
+                <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
+                  <AnimatedCounter value={21} suffix="+" duration={2.5} />
+                </div>
+                <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.experience')}</div>
+              </motion.div>
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Down Arrow - Desktop */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white z-20 cursor-pointer"
+          onClick={() => {
+            const nextSection = document.getElementById('about') || document.querySelector('section:not(#hero)')
+            if (nextSection) {
+              nextSection.scrollIntoView({ behavior: 'smooth' })
+            }
+          }}
+        >
+          <ChevronDown className="h-8 w-8 animate-bounce" />
+        </motion.div>
       </div>
 
       {/* Gradient Overlay for better text readability - Desktop only */}
