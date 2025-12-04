@@ -327,10 +327,10 @@ export function SplineHeroComponent({
               </Link>
             </motion.div>
 
-            {/* Section 5: Statistics */}
+            {/* Statistics Section - Desktop - Aligned with primary button */}
             <motion.div
               variants={staggerItem}
-              className="flex items-center justify-start space-x-8 lg:space-x-12"
+              className="flex items-center justify-start space-x-8 lg:space-x-12 pt-12"
             >
               <motion.div
                 className="text-center"
