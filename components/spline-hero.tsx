@@ -68,8 +68,8 @@ export function SplineHeroComponent({
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
 
-      {/* Spline 3D Background - Full screen on ALL devices */}
-      <div className="absolute inset-0 z-0 hidden md:block">
+      {/* Spline 3D Background - Right side only, not overlapping content */}
+      <div className="absolute top-0 right-0 w-1/2 h-full z-0 hidden md:block overflow-hidden">
         <iframe
           src="https://my.spline.design/thresholddarkambientui-o8iwxEWaWPAztTbgXjkCOSHb/"
           frameBorder="0"
@@ -78,14 +78,14 @@ export function SplineHeroComponent({
           style={{
             position: 'absolute',
             top: 0,
-            left: 0,
+            right: 0,
             border: 'none',
             zIndex: 1
           }}
         />
         {/* Overlay to hide Spline watermark badge */}
         <div
-          className="absolute bottom-0 left-0 w-48 h-16 bg-gray-900 pointer-events-none"
+          className="absolute bottom-0 right-0 w-48 h-16 bg-gray-900 pointer-events-none"
           style={{ zIndex: 2 }}
           aria-hidden="true"
         />
@@ -256,11 +256,11 @@ export function SplineHeroComponent({
         </motion.div>
       </div>
 
-      {/* Desktop Layout - Overlay style (text over 3D background) */}
+      {/* Desktop Layout - Content on left, Spline on right */}
       <div className="hidden md:flex relative z-10 h-full items-center justify-start py-0">
         <div className="container mx-auto px-6 lg:px-8 w-full">
           <motion.div
-            className="mr-auto max-w-2xl text-left"
+            className="mr-auto max-w-2xl text-left relative z-10"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
@@ -379,8 +379,8 @@ export function SplineHeroComponent({
         </motion.div>
       </div>
 
-      {/* Gradient Overlay for better text readability - Desktop only */}
-      <div className="hidden md:block absolute inset-0 z-5 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
+      {/* Gradient Overlay for better text readability - Right side only (where Spline is) */}
+      <div className="hidden md:block absolute top-0 right-0 w-1/2 h-full z-5 bg-gradient-to-l from-black/30 via-transparent to-transparent pointer-events-none"></div>
     </section>
   )
 }
