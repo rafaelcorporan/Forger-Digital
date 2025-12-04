@@ -21,7 +21,7 @@ interface SplineHeroComponentProps {
 }
 
 export function SplineHeroComponent({
-  sceneUrl = 'https://my.spline.design/interactiveaiwebsite-gw3lJHGF2qx53ppUFnzgeyWM/',
+  sceneUrl = 'https://my.spline.design/interactiveaiwebsite-3lum05amhbPWBKUXhwxEzA1I/',
   title,
   subtitle,
   description,
@@ -64,36 +64,29 @@ export function SplineHeroComponent({
   }, [heroSubtitle])
 
   return (
-    <section id="hero" className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900" style={{ maxHeight: '100vh' }}>
+    <section className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900">
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
 
-      {/* Spline 3D Background - Right side only, strictly contained within section */}
-      <div className="absolute top-0 right-0 w-1/2 h-screen z-0 hidden md:block overflow-hidden" style={{ maxHeight: '100vh' }}>
+      {/* Spline 3D Background - Full screen on ALL devices */}
+      <div className="absolute inset-0 z-0 hidden md:block">
         <iframe
-          src="https://my.spline.design/interactiveaiwebsite-gw3lJHGF2qx53ppUFnzgeyWM/"
+          src={sceneUrl}
           frameBorder="0"
           width="100%"
           height="100%"
           style={{
             position: 'absolute',
             top: 0,
-            right: 0,
+            left: 0,
             border: 'none',
-            zIndex: 1,
-            maxHeight: '100vh'
+            zIndex: 1
           }}
         />
         {/* Overlay to hide Spline watermark badge */}
         <div
-          className="absolute bottom-0 right-0 w-48 h-16 bg-gray-900 pointer-events-none"
+          className="absolute bottom-0 left-0 w-48 h-16 bg-gray-900 pointer-events-none"
           style={{ zIndex: 2 }}
-          aria-hidden="true"
-        />
-        {/* Bottom boundary to prevent overflow */}
-        <div
-          className="absolute bottom-0 right-0 w-full h-0 bg-gray-900 pointer-events-none"
-          style={{ zIndex: 3 }}
           aria-hidden="true"
         />
       </div>
@@ -101,7 +94,7 @@ export function SplineHeroComponent({
       {/* Mobile Spline Background - Visible ONLY on mobile */}
       <div className="absolute inset-0 z-0 md:hidden flex items-center justify-center overflow-hidden">
         <iframe
-          src="https://my.spline.design/interactiveaiwebsite-gw3lJHGF2qx53ppUFnzgeyWM/"
+          src="https://my.spline.design/thresholddarkambientui-o8iwxEWaWPAztTbgXjkCOSHb/"
           frameBorder="0"
           width="100%"
           height="100%"
@@ -251,36 +244,30 @@ export function SplineHeroComponent({
           initial={{ opacity: 0, y: -10 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white pb-2 z-20 cursor-pointer"
-          onClick={() => {
-            const nextSection = document.getElementById('about') || document.querySelector('section:not(#hero)')
-            if (nextSection) {
-              nextSection.scrollIntoView({ behavior: 'smooth' })
-            }
-          }}
+          className="absolute bottom-4 left-1/2 -translate-x-1/2 text-white pb-2"
         >
           <ChevronDown className="h-7 w-7 animate-bounce" />
         </motion.div>
       </div>
 
-      {/* Desktop Layout - Content on left, Spline on right */}
-      <div className="hidden md:flex relative z-10 h-screen items-center justify-start py-0" style={{ maxHeight: '100vh' }}>
-        <div className="container mx-auto px-6 lg:px-8 w-full">
+      {/* Desktop Layout - Overlay style (text over 3D background) */}
+      <div className="hidden md:flex relative z-10 h-full items-center justify-start py-0">
+        <div className="container mx-auto px-6 lg:px-8">
           <motion.div
-            className="mr-auto max-w-2xl text-left relative z-10"
+            className="mr-auto max-w-2xl text-left"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-            {/* Section 1: Main Title */}
+            {/* Main Title */}
             <motion.h1
               variants={staggerItem}
-              className="mb-6 text-6xl lg:text-8xl font-bold leading-tight tracking-tight text-orange-500"
+              className="mb-2 text-6xl lg:text-8xl font-bold leading-tight tracking-tight text-orange-500"
             >
               Forger Digital
             </motion.h1>
 
-            {/* Section 2: Primary Description */}
+            {/* Subtitle */}
             <motion.h2
               variants={staggerItem}
               className="mb-6 text-2xl lg:text-4xl text-white font-medium leading-snug"
@@ -288,7 +275,7 @@ export function SplineHeroComponent({
               <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
             </motion.h2>
 
-            {/* Section 3: Secondary Description */}
+            {/* Description */}
             <motion.p
               variants={staggerItem}
               className="mb-8 text-lg lg:text-xl text-orange-500 font-medium leading-relaxed"
@@ -296,10 +283,10 @@ export function SplineHeroComponent({
               <span className="font-bold">Forge Digital:</span> Evokes craftsmanship, creation, & building robust solutions. <span className="font-bold">Digital:</span> Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.
             </motion.p>
 
-            {/* Section 4: Action Buttons */}
+            {/* Action Buttons */}
             <motion.div
               variants={staggerItem}
-              className="mb-8 flex flex-row items-start gap-4 lg:gap-6"
+              className="flex flex-row items-start gap-4 lg:gap-6"
             >
               <Link href="/get-started">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -327,10 +314,10 @@ export function SplineHeroComponent({
               </Link>
             </motion.div>
 
-            {/* Statistics Section - Desktop - Aligned with primary button */}
+            {/* Statistics Section - Desktop */}
             <motion.div
               variants={staggerItem}
-              className="flex items-center justify-start space-x-8 lg:space-x-12 pt-12"
+              className="flex items-center justify-center space-x-8 lg:space-x-12 pt-12"
             >
               <motion.div
                 className="text-center"
@@ -368,29 +355,10 @@ export function SplineHeroComponent({
             </motion.div>
           </motion.div>
         </div>
-
-        {/* Down Arrow - Desktop */}
-        <motion.div
-          initial={{ opacity: 0, y: -10 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-white z-20 cursor-pointer"
-          onClick={() => {
-            const nextSection = document.getElementById('about') || document.querySelector('section:not(#hero)')
-            if (nextSection) {
-              nextSection.scrollIntoView({ behavior: 'smooth' })
-            }
-          }}
-        >
-          <ChevronDown className="h-8 w-8 animate-bounce" />
-        </motion.div>
       </div>
 
-      {/* Gradient Overlay for better text readability - Right side only (where Spline is) */}
-      <div className="hidden md:block absolute top-0 right-0 w-1/2 h-screen z-5 bg-gradient-to-l from-black/30 via-transparent to-transparent pointer-events-none" style={{ maxHeight: '100vh' }}></div>
-      
-      {/* Bottom boundary line to prevent any overflow */}
-      <div className="absolute bottom-0 left-0 w-full h-px bg-gray-900 z-20 pointer-events-none"></div>
+      {/* Gradient Overlay for better text readability - Desktop only */}
+      <div className="hidden md:block absolute inset-0 z-5 bg-gradient-to-b from-black/20 via-transparent to-black/40"></div>
     </section>
   )
 }
