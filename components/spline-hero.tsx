@@ -64,12 +64,12 @@ export function SplineHeroComponent({
   }, [heroSubtitle])
 
   return (
-    <section id="hero" className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900">
+    <section id="hero" className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900" style={{ maxHeight: '100vh' }}>
       {/* Very Dark Grey Background */}
       <div className="absolute inset-0 z-0 bg-gray-900"></div>
 
-      {/* Spline 3D Background - Right side only, not overlapping content */}
-      <div className="absolute top-0 right-0 w-1/2 h-full z-0 hidden md:block overflow-hidden">
+      {/* Spline 3D Background - Right side only, strictly contained within section */}
+      <div className="absolute top-0 right-0 w-1/2 h-screen z-0 hidden md:block overflow-hidden" style={{ maxHeight: '100vh' }}>
         <iframe
           src="https://my.spline.design/thresholddarkambientui-o8iwxEWaWPAztTbgXjkCOSHb/"
           frameBorder="0"
@@ -80,13 +80,20 @@ export function SplineHeroComponent({
             top: 0,
             right: 0,
             border: 'none',
-            zIndex: 1
+            zIndex: 1,
+            maxHeight: '100vh'
           }}
         />
         {/* Overlay to hide Spline watermark badge */}
         <div
           className="absolute bottom-0 right-0 w-48 h-16 bg-gray-900 pointer-events-none"
           style={{ zIndex: 2 }}
+          aria-hidden="true"
+        />
+        {/* Bottom boundary to prevent overflow */}
+        <div
+          className="absolute bottom-0 right-0 w-full h-0 bg-gray-900 pointer-events-none"
+          style={{ zIndex: 3 }}
           aria-hidden="true"
         />
       </div>
@@ -257,7 +264,7 @@ export function SplineHeroComponent({
       </div>
 
       {/* Desktop Layout - Content on left, Spline on right */}
-      <div className="hidden md:flex relative z-10 h-full items-center justify-start py-0">
+      <div className="hidden md:flex relative z-10 h-screen items-center justify-start py-0" style={{ maxHeight: '100vh' }}>
         <div className="container mx-auto px-6 lg:px-8 w-full">
           <motion.div
             className="mr-auto max-w-2xl text-left relative z-10"
@@ -380,7 +387,10 @@ export function SplineHeroComponent({
       </div>
 
       {/* Gradient Overlay for better text readability - Right side only (where Spline is) */}
-      <div className="hidden md:block absolute top-0 right-0 w-1/2 h-full z-5 bg-gradient-to-l from-black/30 via-transparent to-transparent pointer-events-none"></div>
+      <div className="hidden md:block absolute top-0 right-0 w-1/2 h-screen z-5 bg-gradient-to-l from-black/30 via-transparent to-transparent pointer-events-none" style={{ maxHeight: '100vh' }}></div>
+      
+      {/* Bottom boundary line to prevent any overflow */}
+      <div className="absolute bottom-0 left-0 w-full h-px bg-gray-900 z-20 pointer-events-none"></div>
     </section>
   )
 }
