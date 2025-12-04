@@ -21,7 +21,7 @@ interface SplineHeroComponentProps {
 }
 
 export function SplineHeroComponent({
-  sceneUrl = 'https://my.spline.design/interactiveaiwebsite-3lum05amhbPWBKUXhwxEzA1I/',
+  sceneUrl = 'https://my.spline.design/interactiveaiwebsite-gw3lJHGF2qx53ppUFnzgeyWM/',
   title,
   subtitle,
   description,
@@ -71,7 +71,7 @@ export function SplineHeroComponent({
       {/* Spline 3D Background - Right side only, strictly contained within section */}
       <div className="absolute top-0 right-0 w-1/2 h-screen z-0 hidden md:block overflow-hidden" style={{ maxHeight: '100vh' }}>
         <iframe
-          src="https://my.spline.design/thresholddarkambientui-o8iwxEWaWPAztTbgXjkCOSHb/"
+          src="https://my.spline.design/interactiveaiwebsite-gw3lJHGF2qx53ppUFnzgeyWM/"
           frameBorder="0"
           width="100%"
           height="100%"
@@ -101,7 +101,7 @@ export function SplineHeroComponent({
       {/* Mobile Spline Background - Visible ONLY on mobile */}
       <div className="absolute inset-0 z-0 md:hidden flex items-center justify-center overflow-hidden">
         <iframe
-          src="https://my.spline.design/thresholddarkambientui-o8iwxEWaWPAztTbgXjkCOSHb/"
+          src="https://my.spline.design/interactiveaiwebsite-gw3lJHGF2qx53ppUFnzgeyWM/"
           frameBorder="0"
           width="100%"
           height="100%"
