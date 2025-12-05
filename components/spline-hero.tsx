@@ -105,81 +105,81 @@ export function SplineHeroComponent({
 
       {/* Mobile Layout - Content matching desktop structure (Image 3) - ONLY on mobile devices */}
       <div className="relative z-10 md:hidden flex flex-col justify-center items-center min-h-screen px-4 text-center bg-black/40 backdrop-blur-[2px]">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-6 py-12">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-6 py-12 w-full">
           <motion.div
             className="flex flex-col gap-6 w-full max-w-md"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
-            {/* Main Title - 4 Gradient Text Blocks (matching Image 3) */}
+            {/* Main Title - 4 Gradient Text Blocks (matching Image 3) - Increased by 21% */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-col gap-2 items-center"
+              className="flex flex-col gap-2.5 items-center w-full"
             >
               {/* Line 1 - CUTTING-EDGE, */}
               <motion.h2
-                className="text-xl sm:text-2xl font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.5125rem] sm:text-[1.815rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block rounded">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-5 py-2.5 inline-block rounded-lg">
                   CUTTING-EDGE,
                 </span>
               </motion.h2>
 
               {/* Line 2 - FORWARD-THINKING, */}
               <motion.h2
-                className="text-xl sm:text-2xl font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.5125rem] sm:text-[1.815rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block rounded">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-5 py-2.5 inline-block rounded-lg">
                   FORWARD-THINKING,
                 </span>
               </motion.h2>
 
               {/* Line 3 - TO BUILD ROBUST */}
               <motion.h2
-                className="text-xl sm:text-2xl font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.5125rem] sm:text-[1.815rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block rounded">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-5 py-2.5 inline-block rounded-lg">
                   TO BUILD ROBUST
                 </span>
               </motion.h2>
 
               {/* Line 4 - SOLUTIONS. */}
               <motion.h2
-                className="text-xl sm:text-2xl font-bold leading-tight text-white uppercase inline-block"
+                className="text-[1.5125rem] sm:text-[1.815rem] font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block rounded">
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-5 py-2.5 inline-block rounded-lg">
                   SOLUTIONS.
                 </span>
               </motion.h2>
             </motion.div>
 
-            {/* Action Buttons - Matching Image 3 */}
+            {/* Action Buttons - Matching Image 1 (pill-shaped, side by side) */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-row items-center justify-center gap-3 sm:gap-4 w-full mt-4"
+              className="flex flex-row items-center justify-center gap-3 sm:gap-4 w-full mt-6 px-2"
             >
               <Link href="/get-started" className="flex-1 max-w-[160px] sm:max-w-[180px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="primary-action"
                     size="lg"
-                    className="group gap-2 h-11 sm:h-12 w-full text-xs sm:text-sm !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
+                    className="group gap-2 h-12 sm:h-14 w-full text-sm sm:text-base !rounded-full bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 hover:from-orange-600 hover:via-orange-700 hover:to-pink-600 text-white border-none shadow-lg shadow-orange-900/30"
                   >
                     {heroPrimaryButton}
-                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-4 w-4 sm:h-5 sm:w-5 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
               </Link>
@@ -188,9 +188,9 @@ export function SplineHeroComponent({
                   <Button
                     variant="secondary-action"
                     size="lg"
-                    className="gap-2 h-11 sm:h-12 w-full text-xs sm:text-sm !rounded-full bg-transparent border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm"
+                    className="gap-2 h-12 sm:h-14 w-full text-sm sm:text-base !rounded-full bg-transparent border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm shadow-lg"
                   >
-                    <Play className="h-4 w-4 fill-current" />
+                    <Play className="h-4 w-4 sm:h-5 sm:w-5 fill-current" />
                     View Our Work
                   </Button>
                 </motion.div>
