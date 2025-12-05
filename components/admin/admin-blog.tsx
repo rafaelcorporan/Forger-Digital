@@ -405,31 +405,28 @@ export function AdminBlog() {
       <div className="flex gap-2 border-b border-gray-700">
         <button
           onClick={() => setActiveTab("posts")}
-          className={`px-4 py-2 font-medium ${
-            activeTab === "posts"
-              ? "border-b-2 border-orange-500 text-orange-500"
-              : "text-gray-400"
-          }`}
+          className={`px-4 py-2 font-medium ${activeTab === "posts"
+            ? "border-b-2 border-orange-500 text-orange-500"
+            : "text-gray-400"
+            }`}
         >
           Posts
         </button>
         <button
           onClick={() => setActiveTab("categories")}
-          className={`px-4 py-2 font-medium ${
-            activeTab === "categories"
-              ? "border-b-2 border-orange-500 text-orange-500"
-              : "text-gray-400"
-          }`}
+          className={`px-4 py-2 font-medium ${activeTab === "categories"
+            ? "border-b-2 border-orange-500 text-orange-500"
+            : "text-gray-400"
+            }`}
         >
           Categories
         </button>
         <button
           onClick={() => setActiveTab("tags")}
-          className={`px-4 py-2 font-medium ${
-            activeTab === "tags"
-              ? "border-b-2 border-orange-500 text-orange-500"
-              : "text-gray-400"
-          }`}
+          className={`px-4 py-2 font-medium ${activeTab === "tags"
+            ? "border-b-2 border-orange-500 text-orange-500"
+            : "text-gray-400"
+            }`}
         >
           Tags
         </button>
@@ -529,13 +526,13 @@ export function AdminBlog() {
                       <Label>Category</Label>
                       <Select
                         value={postForm.categoryId}
-                        onValueChange={(value) => setPostForm({ ...postForm, categoryId: value })}
+                        onValueChange={(value) => setPostForm({ ...postForm, categoryId: value === "none" ? "" : value })}
                       >
                         <SelectTrigger>
                           <SelectValue placeholder="Select category" />
                         </SelectTrigger>
                         <SelectContent>
-                          <SelectItem value="">None</SelectItem>
+                          <SelectItem value="none">None</SelectItem>
                           {categories.map((cat) => (
                             <SelectItem key={cat.id} value={cat.id}>
                               {cat.name}

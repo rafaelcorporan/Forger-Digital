@@ -55,7 +55,7 @@ export function AdminUsers() {
         page: page.toString(),
         limit: "10",
         ...(search && { search }),
-        ...(roleFilter && { role: roleFilter }),
+        ...(roleFilter && roleFilter !== "all" && { role: roleFilter }),
       })
       const response = await fetch(`/api/admin/users?${params}`)
       if (!response.ok) {
@@ -148,7 +148,7 @@ export function AdminUsers() {
               <SelectValue placeholder="Filter by role" />
             </SelectTrigger>
             <SelectContent>
-              <SelectItem value="">All Roles</SelectItem>
+              <SelectItem value="all">All Roles</SelectItem>
               <SelectItem value="USER">User</SelectItem>
               <SelectItem value="ADMIN">Admin</SelectItem>
               <SelectItem value="SUPER_ADMIN">Super Admin</SelectItem>

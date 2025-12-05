@@ -8,6 +8,8 @@ import { validateRequestBody } from '@/lib/validation/validator'
 import { checkRateLimit, RateLimitPresets, getRateLimitHeaders } from '@/lib/security/rate-limit'
 import { requireCsrfToken } from '@/lib/security/csrf'
 import { captureException } from '@/lib/sentry'
+import { analyzeAndAssignProject } from '@/lib/modules/project-assignment/logic'
+import { ProjectAssignmentResult } from '@/lib/modules/project-assignment/types'
 
 interface FormData {
   firstName: string
@@ -48,7 +50,7 @@ async function sendToCRM(data: FormData) {
 
     // Replace with actual HubSpot API call
     console.log('CRM Data to be sent:', hubspotData)
-    
+
     // Simulate API call
     // const response = await fetch('https://api.hubapi.com/crm/v3/objects/contacts', {
     //   method: 'POST',
@@ -98,7 +100,7 @@ async function sendInternalNotification(data: FormData, crmId?: string) {
 
     // Replace with actual Slack webhook
     console.log('Slack notification to be sent:', notificationData)
-    
+
     // Simulate Slack notification
     // const response = await fetch(process.env.SLACK_WEBHOOK_URL, {
     //   method: 'POST',
@@ -114,7 +116,7 @@ async function sendInternalNotification(data: FormData, crmId?: string) {
 }
 
 // Send notification email to team
-async function sendNotificationEmail(data: FormData, fileUrls: string[] = []) {
+async function sendNotificationEmail(data: FormData, fileUrls: string[] = [], assignment?: ProjectAssignmentResult) {
   try {
     const transporter = nodemailer.createTransport({
       host: process.env.SMTP_HOST || 'smtp.office365.com',
@@ -137,18 +139,37 @@ async function sendNotificationEmail(data: FormData, fileUrls: string[] = []) {
     const safeRole = data.role ? sanitizeHtml(data.role) : ''
     const safePhone = data.phone ? sanitizeHtml(data.phone) : ''
     const safeProjectDescription = sanitizeHtml(data.projectDescription)
-    
-    const serviceInterestsList = data.serviceInterests.length > 0 
+
+    const serviceInterestsList = data.serviceInterests.length > 0
       ? data.serviceInterests.map(s => `• ${sanitizeHtml(s)}`).join('<br>')
       : 'None selected'
 
+    const recipients = [process.env.SMTP_USER];
+
+    // Add assigned staff to recipients
+    if (assignment?.assignedStaff) {
+      assignment.assignedStaff.forEach(staff => {
+        if (staff.email && !recipients.includes(staff.email)) {
+          recipients.push(staff.email);
+        }
+      });
+    }
+
     const mailOptions = {
       from: process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER,
-      to: process.env.SMTP_USER, // Send to your own email
+      to: recipients.join(', '), // Send to Admin + Assigned Staff
       subject: `New Project Inquiry: ${safeFirstName} ${safeLastName} from ${safeCompany}`,
       html: `
         <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
           <h2 style="color: #FF5722;">New Project Inquiry - Get Started Form</h2>
+          
+          ${assignment ? `
+          <div style="background: #e8f5e9; padding: 15px; border-radius: 8px; margin: 20px 0; border: 1px solid #c8e6c9;">
+            <h3 style="color: #2e7d32; margin-top: 0; font-size: 16px;">✅ Project Assignment</h3>
+            <p style="margin: 5px 0;"><strong>Assigned To:</strong> ${assignment.assignedStaff.map(s => `${s.name} (${s.role})`).join(', ') || 'General Admin'}</p>
+            <p style="margin: 5px 0; font-size: 12px; color: #666;"><strong>Detected Keywords:</strong> ${assignment.detectedKeywords.join(', ') || 'None'}</p>
+          </div>
+          ` : ''}
           
           <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #333; margin-top: 0;">Contact Information</h3>
@@ -177,10 +198,10 @@ async function sendNotificationEmail(data: FormData, fileUrls: string[] = []) {
           <div style="background: #e3f2fd; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #2196F3;">
             <h3 style="color: #333; margin-top: 0;">📎 Uploaded Files (${fileUrls.length})</h3>
             ${fileUrls.map(url => {
-              const fileName = url.split('/').pop() || url
-              const displayName = fileName.replace(/^\d+_/, '') // Remove timestamp prefix
-              return `<p style="margin: 8px 0;"><a href="${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}${url}" style="color: #2196F3; text-decoration: none;">📄 ${sanitizeHtml(displayName)}</a></p>`
-            }).join('')}
+        const fileName = url.split('/').pop() || url
+        const displayName = fileName.replace(/^\d+_/, '') // Remove timestamp prefix
+        return `<p style="margin: 8px 0;"><a href="${process.env.NEXT_PUBLIC_BASE_URL || 'http://localhost:3000'}${url}" style="color: #2196F3; text-decoration: none;">📄 ${sanitizeHtml(displayName)}</a></p>`
+      }).join('')}
           </div>
           ` : ''}
 
@@ -218,8 +239,8 @@ async function sendConfirmationEmail(data: FormData) {
     // Sanitize all user input before including in email
     const safeFirstName = sanitizeHtml(data.firstName)
     const safeCompany = sanitizeHtml(data.company)
-    
-    const serviceInterestsList = data.serviceInterests.length > 0 
+
+    const serviceInterestsList = data.serviceInterests.length > 0
       ? data.serviceInterests.map(s => `• ${sanitizeHtml(s)}`).join('<br>')
       : 'None selected'
 
@@ -283,20 +304,20 @@ async function saveSubmissionToFile(data: FormData): Promise<{ success: boolean;
   try {
     const submissionsDir = join(process.cwd(), 'contact-submissions')
     await mkdir(submissionsDir, { recursive: true })
-    
+
     const timestamp = new Date().toISOString().replace(/[:.]/g, '-')
     const filename = `project-inquiry-${timestamp}.json`
     const filePath = join(submissionsDir, filename)
-    
+
     const submissionData = {
       timestamp: new Date().toISOString(),
       formType: 'get-started',
       ...data
     }
-    
+
     await writeFile(filePath, JSON.stringify(submissionData, null, 2), 'utf-8')
     console.log(`✅ Project inquiry saved to file: ${filePath}`)
-    
+
     return { success: true, filePath }
   } catch (error: any) {
     console.error('Failed to save submission to file:', error)
@@ -318,7 +339,7 @@ export async function POST(request: NextRequest) {
           message: 'Security validation failed. Please refresh the page and try again.',
           error: process.env.NODE_ENV === 'development' ? csrfError.message : 'CSRF validation error'
         },
-        { 
+        {
           status: 403,
           headers: {
             'Content-Type': 'application/json',
@@ -333,7 +354,7 @@ export async function POST(request: NextRequest) {
           success: false,
           message: csrfValidation.error || 'CSRF validation failed',
         },
-        { 
+        {
           status: 403,
           headers: {
             'Content-Type': 'application/json',
@@ -483,7 +504,7 @@ export async function POST(request: NextRequest) {
       return NextResponse.json(
         {
           success: fileSaveResult.success,
-          message: fileSaveResult.success 
+          message: fileSaveResult.success
             ? 'Your inquiry has been received and saved. We\'ll contact you soon!'
             : 'Email service not configured. Please contact support.',
           error: 'SMTP credentials missing',
@@ -493,7 +514,7 @@ export async function POST(request: NextRequest) {
             filesUploaded: savedFiles.length
           }
         },
-        { 
+        {
           status: fileSaveResult.success ? 200 : 500,
           headers: {
             'Content-Type': 'application/json',
@@ -501,6 +522,18 @@ export async function POST(request: NextRequest) {
         }
       )
     }
+
+    // 1. Run Project Assignment Analysis
+    const assignmentResult = analyzeAndAssignProject({
+      serviceInterests: data.serviceInterests,
+      projectDescription: data.projectDescription
+    });
+
+    console.log('🤖 Project Assignment Analysis:', {
+      assigned: assignmentResult.assignedStaff.map(s => s.role),
+      keywords: assignmentResult.detectedKeywords,
+      log: assignmentResult.analysisLog
+    });
 
     // Sanitize project description for database storage
     const sanitizedProjectDescription = sanitizeHtml(data.projectDescription)
@@ -520,6 +553,7 @@ export async function POST(request: NextRequest) {
           contactMethod: data.contactMethod,
           timeline: data.timeline || null,
           budget: data.budget || null,
+          assignmentData: assignmentResult as any, // Cast to any to avoid type error until client is regenerated
         },
       })
       console.log('✅ Get started submission saved to database')
@@ -534,7 +568,7 @@ export async function POST(request: NextRequest) {
 
     // Send emails (both notification and confirmation) and process CRM
     const results = await Promise.allSettled([
-      sendNotificationEmail(data, savedFiles),
+      sendNotificationEmail(data, savedFiles, assignmentResult),
       sendConfirmationEmail(data),
       sendToCRM(data),
       sendInternalNotification(data)
@@ -545,23 +579,23 @@ export async function POST(request: NextRequest) {
     // Extract results
     const notificationSuccess = notificationResult.status === 'fulfilled' && notificationResult.value.success
     const confirmationSuccess = confirmationResult.status === 'fulfilled' && confirmationResult.value.success
-    
+
     // Extract error messages for diagnostics
-    const notificationError = notificationResult.status === 'rejected' 
+    const notificationError = notificationResult.status === 'rejected'
       ? notificationResult.reason?.message || String(notificationResult.reason)
       : notificationResult.status === 'fulfilled' && !notificationResult.value.success
-      ? notificationResult.value.error
-      : null
-    
+        ? notificationResult.value.error
+        : null
+
     const confirmationError = confirmationResult.status === 'rejected'
       ? confirmationResult.reason?.message || String(confirmationResult.reason)
       : confirmationResult.status === 'fulfilled' && !confirmationResult.value.success
-      ? confirmationResult.value.error
-      : null
+        ? confirmationResult.value.error
+        : null
 
     // Log detailed results
     console.log('Get Started form processing results:', {
-      notification: notificationResult.status === 'fulfilled' 
+      notification: notificationResult.status === 'fulfilled'
         ? { success: notificationResult.value.success, messageId: notificationResult.value.messageId }
         : { error: notificationError },
       confirmation: confirmationResult.status === 'fulfilled'
@@ -577,31 +611,31 @@ export async function POST(request: NextRequest) {
         notificationError,
         confirmationError
       })
-      
+
       // Save submission to file
       const fileSaveResult = await saveSubmissionToFile(data)
-      
+
       if (fileSaveResult.success) {
         console.log(`✅ Project inquiry saved to: ${fileSaveResult.filePath}`)
       }
-      
+
       // Check if SMTP AUTH is disabled (common Outlook issue)
       // IMPORTANT: Only match the EXACT phrase "SmtpClientAuthentication is disabled"
       // DO NOT check for error code 535 5.7.139 as it's used for multiple auth errors (wrong password, etc.)
       const isSMTPAuthDisabled = (notificationError && (
-                                  notificationError.includes('SmtpClientAuthentication is disabled') ||
-                                  notificationError.includes('SmtpClientAuthentication is disabled for the Tenant')
-                                )) || 
-                                (confirmationError && (
-                                  confirmationError.includes('SmtpClientAuthentication is disabled') ||
-                                  confirmationError.includes('SmtpClientAuthentication is disabled for the Tenant')
-                                ))
+        notificationError.includes('SmtpClientAuthentication is disabled') ||
+        notificationError.includes('SmtpClientAuthentication is disabled for the Tenant')
+      )) ||
+        (confirmationError && (
+          confirmationError.includes('SmtpClientAuthentication is disabled') ||
+          confirmationError.includes('SmtpClientAuthentication is disabled for the Tenant')
+        ))
 
       // Return success with warning if saved to file, otherwise return error
       if (fileSaveResult.success) {
         return NextResponse.json({
           success: true,
-          message: isSMTPAuthDisabled 
+          message: isSMTPAuthDisabled
             ? 'Your inquiry has been received and saved. Our email service is currently being configured. We\'ll contact you soon!'
             : 'Your inquiry has been received and saved. We\'ll contact you soon!',
           data: {
@@ -614,7 +648,7 @@ export async function POST(request: NextRequest) {
             leadId: crmResult.status === 'fulfilled' ? crmResult.value?.crmId : null,
             filePath: process.env.NODE_ENV === 'development' ? fileSaveResult.filePath : undefined
           },
-          warning: isSMTPAuthDisabled 
+          warning: isSMTPAuthDisabled
             ? 'SMTP authentication is disabled. Please enable SMTP AUTH in Microsoft 365 Admin Center.'
             : 'Emails failed to send, but inquiry was saved to file.'
         })
@@ -644,7 +678,7 @@ export async function POST(request: NextRequest) {
         notification: notificationError || 'Success',
         confirmation: confirmationError || 'Success'
       })
-      
+
       // Save to file if notification email failed (so we don't lose the lead)
       if (!notificationSuccess) {
         const fileSaveResult = await saveSubmissionToFile(data)
@@ -684,7 +718,7 @@ export async function POST(request: NextRequest) {
 
   } catch (error) {
     console.error('Form submission error:', error)
-    
+
     // Ensure error is captured for monitoring (but don't fail if Sentry fails)
     try {
       captureException(error as Error, {
@@ -693,15 +727,15 @@ export async function POST(request: NextRequest) {
     } catch (sentryError) {
       console.error('Failed to capture exception:', sentryError)
     }
-    
+
     // ALWAYS return JSON, never HTML - this is critical
     return NextResponse.json(
-      { 
-        success: false, 
+      {
+        success: false,
         message: 'Internal server error. Please try again later.',
         error: process.env.NODE_ENV === 'development' ? (error as Error).message : 'Something went wrong'
       },
-      { 
+      {
         status: 500,
         headers: {
           'Content-Type': 'application/json',

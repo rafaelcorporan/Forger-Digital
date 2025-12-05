@@ -17,6 +17,9 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog"
+import { ManualAssignmentDialog } from "@/components/admin/manual-assignment-dialog"
+import { X } from "lucide-react"
+import { toast } from "sonner"
 
 interface Submission {
   id: string
@@ -33,6 +36,15 @@ interface Submission {
   timeline?: string | null
   budget?: string | null
   createdAt: string
+  assignmentData?: {
+    assignedStaff: Array<{
+      id: string
+      name: string
+      role: string
+      email: string
+    }>
+    detectedKeywords: string[]
+  }
 }
 
 export function AdminSubmissions() {
@@ -262,6 +274,61 @@ export function AdminSubmissions() {
                                 <div>
                                   <p className="text-sm text-gray-400 mb-1">Budget</p>
                                   <p className="text-white">{submission.budget}</p>
+                                </div>
+                              )}
+
+                              {/* Assignment Section */}
+                              {submission.type === "get-started" && (
+                                <div className="col-span-2 mt-4 pt-4 border-t border-gray-700">
+                                  <div className="flex items-center justify-between mb-3">
+                                    <h3 className="text-lg font-semibold text-white">Project Assignments</h3>
+                                    <ManualAssignmentDialog
+                                      submissionId={submission.id}
+                                      currentAssignments={submission.assignmentData?.assignedStaff || []}
+                                      onUpdate={fetchSubmissions}
+                                    />
+                                  </div>
+
+                                  <div className="space-y-2">
+                                    {submission.assignmentData?.assignedStaff && submission.assignmentData.assignedStaff.length > 0 ? (
+                                      submission.assignmentData.assignedStaff.map((staff) => (
+                                        <div key={staff.email} className="flex items-center justify-between bg-gray-900 p-3 rounded-lg border border-gray-700">
+                                          <div>
+                                            <p className="text-white font-medium">{staff.name}</p>
+                                            <p className="text-sm text-gray-400">{staff.role}</p>
+                                          </div>
+                                          <Button
+                                            variant="ghost"
+                                            size="sm"
+                                            className="text-red-400 hover:text-red-300 hover:bg-red-900/20"
+                                            onClick={async () => {
+                                              try {
+                                                const response = await fetch('/api/admin/assignments', {
+                                                  method: 'POST',
+                                                  headers: { 'Content-Type': 'application/json' },
+                                                  body: JSON.stringify({
+                                                    submissionId: submission.id,
+                                                    staffEmail: staff.email,
+                                                    action: 'remove'
+                                                  })
+                                                })
+                                                if (response.ok) {
+                                                  toast.success("Staff removed")
+                                                  fetchSubmissions()
+                                                }
+                                              } catch (e) {
+                                                toast.error("Failed to remove staff")
+                                              }
+                                            }}
+                                          >
+                                            <X className="h-4 w-4" />
+                                          </Button>
+                                        </div>
+                                      ))
+                                    ) : (
+                                      <p className="text-gray-500 italic">No staff assigned yet.</p>
+                                    )}
+                                  </div>
                                 </div>
                               )}
                             </div>

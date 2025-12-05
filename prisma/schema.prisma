@@ -81,6 +81,7 @@ enum UserRole {
   USER
   ADMIN
   SUPER_ADMIN
+  STAFF
 }
 
 // Contact Form Submission model
@@ -114,6 +115,7 @@ model GetStartedSubmission {
   contactMethod      String
   timeline           String?
   budget             String?
+  assignmentData     Json?    // Stores ProjectAssignmentResult
   createdAt          DateTime @default(now())
   updatedAt          DateTime @updatedAt
 

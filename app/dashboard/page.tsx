@@ -9,6 +9,7 @@ import { Button } from "@/components/ui/button"
 import { signOut } from "next-auth/react"
 import { User, Settings, LogOut, Shield, Mail } from "lucide-react"
 import { useEffect, useState } from "react"
+import { StaffAssignments } from "@/components/dashboard/staff-assignments"
 
 export default function DashboardPage() {
   const { data: session, status } = useSession()
@@ -46,7 +47,7 @@ export default function DashboardPage() {
   return (
     <main className="min-h-screen bg-gray-900">
       <Navigation />
-      
+
       <div className="container mx-auto px-4 py-20">
         <div className="max-w-4xl mx-auto">
           {/* Header */}
@@ -63,9 +64,9 @@ export default function DashboardPage() {
               <div className="flex items-center gap-4">
                 <div className="w-16 h-16 rounded-full bg-gradient-to-r from-orange-500 to-pink-600 flex items-center justify-center">
                   {session.user?.image ? (
-                    <img 
-                      src={session.user.image} 
-                      alt={session.user.name || "User"} 
+                    <img
+                      src={session.user.image}
+                      alt={session.user.name || "User"}
                       className="w-16 h-16 rounded-full"
                     />
                   ) : (
@@ -97,7 +98,7 @@ export default function DashboardPage() {
 
           {/* Quick Actions */}
           <div className="grid md:grid-cols-2 gap-6 mb-6">
-            <Card 
+            <Card
               className="bg-gray-800 border-gray-700 p-6 hover:border-orange-500 transition-colors cursor-pointer"
               onClick={() => router.push("/dashboard/profile")}
             >
@@ -112,7 +113,7 @@ export default function DashboardPage() {
               </div>
             </Card>
 
-            <Card 
+            <Card
               className="bg-gray-800 border-gray-700 p-6 hover:border-orange-500 transition-colors cursor-pointer"
               onClick={() => router.push("/dashboard/account")}
             >
@@ -144,6 +145,13 @@ export default function DashboardPage() {
                 </Button>
               </div>
             </Card>
+          )}
+
+          {/* Staff Assignments */}
+          {(session.user?.role === "STAFF" || session.user?.role === "ADMIN" || session.user?.role === "SUPER_ADMIN") && (
+            <div className="mt-8">
+              <StaffAssignments />
+            </div>
           )}
         </div>
       </div>
