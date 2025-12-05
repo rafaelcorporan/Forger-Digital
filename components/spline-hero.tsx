@@ -103,111 +103,104 @@ export function SplineHeroComponent({
         />
       </div>
 
-      {/* Mobile Layout - Content OVERLAID on Spline background */}
-      <div className="relative z-10 md:hidden flex flex-col justify-between items-center min-h-screen px-4 text-center bg-black/40 backdrop-blur-[2px]">
-        <div className="container mx-auto flex flex-col items-center justify-center gap-4 py-8 flex-grow">
+      {/* Mobile Layout - Content matching desktop structure (Image 3) - ONLY on mobile devices */}
+      <div className="relative z-10 md:hidden flex flex-col justify-center items-center min-h-screen px-4 text-center bg-black/40 backdrop-blur-[2px]">
+        <div className="container mx-auto flex flex-col items-center justify-center gap-6 py-12">
           <motion.div
-            className="flex flex-col gap-4 w-full"
+            className="flex flex-col gap-6 w-full max-w-md"
             variants={staggerContainer}
             initial="hidden"
             animate="visible"
           >
+            {/* Main Title - 4 Gradient Text Blocks (matching Image 3) */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-col gap-1.5 items-center"
+              className="flex flex-col gap-2 items-center"
             >
-              {/* Line 1 - Slide from LEFT */}
+              {/* Line 1 - CUTTING-EDGE, */}
               <motion.h2
-                className="text-[1.6rem] sm:text-[2.1rem] font-bold leading-tight text-white uppercase inline-block"
+                className="text-xl sm:text-2xl font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
-                  CUTTING-EDGE AND
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block rounded">
+                  CUTTING-EDGE,
                 </span>
               </motion.h2>
 
-              {/* Line 2 - Slide from RIGHT */}
+              {/* Line 2 - FORWARD-THINKING, */}
               <motion.h2
-                className="text-[1.6rem] sm:text-[2.1rem] font-bold leading-tight text-white uppercase inline-block"
+                className="text-xl sm:text-2xl font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
-                  FORWARD-THINKING
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block rounded">
+                  FORWARD-THINKING,
                 </span>
               </motion.h2>
 
-              {/* Line 3 - Slide from LEFT */}
+              {/* Line 3 - TO BUILD ROBUST */}
               <motion.h2
-                className="text-[1.6rem] sm:text-[2.1rem] font-bold leading-tight text-white uppercase inline-block"
+                className="text-xl sm:text-2xl font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: -300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
-                  TO TRANSFORM VISION
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block rounded">
+                  TO BUILD ROBUST
                 </span>
               </motion.h2>
 
-              {/* Line 4 - Slide from RIGHT */}
+              {/* Line 4 - SOLUTIONS. */}
               <motion.h2
-                className="text-[1.6rem] sm:text-[2.1rem] font-bold leading-tight text-white uppercase inline-block"
+                className="text-xl sm:text-2xl font-bold leading-tight text-white uppercase inline-block"
                 initial={{ x: 300, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
-                  INTO ROBUST REALITY.
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-4 py-2 inline-block rounded">
+                  SOLUTIONS.
                 </span>
               </motion.h2>
             </motion.div>
 
-            {/* Mobile Description */}
-            <motion.p
-              variants={staggerItem}
-              className="text-sm text-white/90 font-medium leading-relaxed px-2"
-            >
-              Craftsmanship creation, building solutions in a broadly spectrum of the digital field, including web, app, & custom software done by our Innovative & powerful skilled team.
-            </motion.p>
-
-            {/* Action Buttons */}
+            {/* Action Buttons - Matching Image 3 */}
             <motion.div
               variants={staggerItem}
-              className="flex flex-row items-center justify-center gap-3 mt-3 w-full"
+              className="flex flex-row items-center justify-center gap-3 sm:gap-4 w-full mt-4"
             >
-              <Link href="/get-started" className="flex-1 max-w-[150px]">
+              <Link href="/get-started" className="flex-1 max-w-[160px] sm:max-w-[180px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="primary-action"
                     size="lg"
-                    className="group gap-1.5 h-9 w-full text-xs !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
+                    className="group gap-2 h-11 sm:h-12 w-full text-xs sm:text-sm !rounded-full bg-orange-600 hover:bg-orange-700 text-white border-none shadow-lg shadow-orange-900/20"
                   >
                     {heroPrimaryButton}
-                    <ArrowRight className="h-3 w-3 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                   </Button>
                 </motion.div>
               </Link>
-              <Link href="/portfolio" className="flex-1 max-w-[150px]">
+              <Link href="/portfolio" className="flex-1 max-w-[160px] sm:max-w-[180px]">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} className="w-full">
                   <Button
                     variant="secondary-action"
                     size="lg"
-                    className="gap-1.5 h-9 w-full text-xs !rounded-full bg-transparent border-white text-white hover:bg-white/10 backdrop-blur-sm"
+                    className="gap-2 h-11 sm:h-12 w-full text-xs sm:text-sm !rounded-full bg-transparent border-2 border-white text-white hover:bg-white/10 backdrop-blur-sm"
                   >
-                    <Play className="h-3 w-3 fill-current" />
+                    <Play className="h-4 w-4 fill-current" />
                     View Our Work
                   </Button>
                 </motion.div>
               </Link>
             </motion.div>
 
-            {/* Statistics Section - Moved closer to buttons */}
+            {/* Statistics Section - Matching Image 3 */}
             <motion.div
               variants={staggerItem}
-              className="w-full flex items-center justify-center space-x-4 sm:space-x-8 pt-3 border-t border-white/10 mt-2"
+              className="w-full flex items-center justify-center space-x-6 sm:space-x-8 pt-6 mt-4"
             >
               <motion.div
                 className="text-center"
@@ -215,10 +208,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1, duration: 0.5 }}
               >
-                <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
                   <AnimatedCounter value={50} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">Projects Delivered</div>
+                <div className="text-xs sm:text-sm text-white/80 font-medium">Projects Delivered</div>
               </motion.div>
               <motion.div
                 className="text-center"
@@ -226,10 +219,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.2, duration: 0.5 }}
               >
-                <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
                   <AnimatedCounter value={98} suffix="%" duration={2.5} />
                 </div>
-                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">Client Satisfaction</div>
+                <div className="text-xs sm:text-sm text-white/80 font-medium">Client Satisfaction</div>
               </motion.div>
               <motion.div
                 className="text-center"
@@ -237,10 +230,10 @@ export function SplineHeroComponent({
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 1.4, duration: 0.5 }}
               >
-                <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
+                <div className="text-2xl sm:text-3xl font-bold text-white mb-1">
                   <AnimatedCounter value={21} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">Years Experience</div>
+                <div className="text-xs sm:text-sm text-white/80 font-medium">Years Experience</div>
               </motion.div>
             </motion.div>
           </motion.div>
