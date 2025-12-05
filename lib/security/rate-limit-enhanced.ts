@@ -39,7 +39,14 @@ let redisAvailable = false
 async function initRedis() {
   if (process.env.REDIS_URL) {
     try {
-      const { createClient } = await import("redis")
+      // Dynamic import with error handling for optional dependency
+      const redisModule = await import("redis").catch(() => null)
+      if (!redisModule) {
+        console.warn("Redis package not installed, using in-memory rate limiting")
+        redisAvailable = false
+        return
+      }
+      const { createClient } = redisModule
       redisClient = createClient({
         url: process.env.REDIS_URL,
       })
