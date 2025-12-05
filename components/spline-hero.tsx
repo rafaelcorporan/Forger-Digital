@@ -112,7 +112,6 @@ export function SplineHeroComponent({
             initial="hidden"
             animate="visible"
           >
-            {/* Mobile-only content with reduced size (30% smaller) and gradient background boxes */}
             <motion.div
               variants={staggerItem}
               className="flex flex-col gap-1.5 items-center"
@@ -125,7 +124,7 @@ export function SplineHeroComponent({
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
                 <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
-                  CUTTING-EDGE,
+                  CUTTING-EDGE AND
                 </span>
               </motion.h2>
 
@@ -137,7 +136,7 @@ export function SplineHeroComponent({
                 transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
               >
                 <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
-                  FORWARD-THINKING,
+                  FORWARD-THINKING
                 </span>
               </motion.h2>
 
@@ -149,7 +148,7 @@ export function SplineHeroComponent({
                 transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
               >
                 <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
-                  TO BUILD ROBUST
+                  TO TRANSFORM VISION
                 </span>
               </motion.h2>
 
@@ -161,10 +160,18 @@ export function SplineHeroComponent({
                 transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
               >
                 <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-3 py-1.5 inline-block">
-                  SOLUTIONS.
+                  INTO ROBUST REALITY.
                 </span>
               </motion.h2>
             </motion.div>
+
+            {/* Mobile Description */}
+            <motion.p
+              variants={staggerItem}
+              className="text-sm text-white/90 font-medium leading-relaxed px-2"
+            >
+              Craftsmanship creation, building solutions in a broadly spectrum of the digital field, including web, app, & custom software done by our Innovative & powerful skilled team.
+            </motion.p>
 
             {/* Action Buttons */}
             <motion.div
@@ -211,7 +218,7 @@ export function SplineHeroComponent({
                 <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
                   <AnimatedCounter value={50} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">{t('stats.projects')}</div>
+                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">Projects Delivered</div>
               </motion.div>
               <motion.div
                 className="text-center"
@@ -222,7 +229,7 @@ export function SplineHeroComponent({
                 <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
                   <AnimatedCounter value={98} suffix="%" duration={2.5} />
                 </div>
-                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">{t('stats.satisfaction')}</div>
+                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">Client Satisfaction</div>
               </motion.div>
               <motion.div
                 className="text-center"
@@ -233,7 +240,7 @@ export function SplineHeroComponent({
                 <div className="text-lg sm:text-xl font-bold text-white mb-0.5">
                   <AnimatedCounter value={21} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">{t('stats.experience')}</div>
+                <div className="text-[9px] sm:text-[10px] text-white/80 font-medium">Years Experience</div>
               </motion.div>
             </motion.div>
           </motion.div>
@@ -272,7 +279,7 @@ export function SplineHeroComponent({
               variants={staggerItem}
               className="mb-6 text-2xl lg:text-4xl text-white font-medium leading-snug"
             >
-              <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.
+              Cutting-edge and forward-thinking technology to transform your digital vision into robust reality.
             </motion.h2>
 
             {/* Description */}
@@ -280,7 +287,7 @@ export function SplineHeroComponent({
               variants={staggerItem}
               className="mb-8 text-lg lg:text-xl text-orange-500 font-medium leading-relaxed"
             >
-              <span className="font-bold">Forge Digital:</span> Evokes craftsmanship, creation, & building robust solutions. <span className="font-bold">Digital:</span> Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.
+              Craftsmanship creation, building solutions in a broadly spectrum of the digital field, including web, app, & custom software done by our Innovative & powerful skilled team.
             </motion.p>
 
             {/* Action Buttons */}
@@ -308,7 +315,7 @@ export function SplineHeroComponent({
                     className="gap-2 !rounded-full"
                   >
                     <Play className="h-5 w-5" />
-                    {heroSecondaryButton}
+                    View Our Work
                   </Button>
                 </motion.div>
               </Link>
@@ -317,7 +324,7 @@ export function SplineHeroComponent({
             {/* Statistics Section - Desktop */}
             <motion.div
               variants={staggerItem}
-              className="flex items-center justify-center space-x-8 lg:space-x-12 pt-12"
+              className="flex items-center justify-start space-x-8 lg:space-x-12 pt-12"
             >
               <motion.div
                 className="text-center"
@@ -328,7 +335,7 @@ export function SplineHeroComponent({
                 <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
                   <AnimatedCounter value={50} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.projects')}</div>
+                <div className="text-sm lg:text-base text-white/80 font-medium">Projects Delivered</div>
               </motion.div>
               <motion.div
                 className="text-center"
@@ -339,7 +346,7 @@ export function SplineHeroComponent({
                 <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
                   <AnimatedCounter value={98} suffix="%" duration={2.5} />
                 </div>
-                <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.satisfaction')}</div>
+                <div className="text-sm lg:text-base text-white/80 font-medium">Client Satisfaction</div>
               </motion.div>
               <motion.div
                 className="text-center"
@@ -350,7 +357,7 @@ export function SplineHeroComponent({
                 <div className="text-3xl lg:text-4xl font-bold text-white mb-1">
                   <AnimatedCounter value={21} suffix="+" duration={2.5} />
                 </div>
-                <div className="text-sm lg:text-base text-white/80 font-medium">{t('stats.experience')}</div>
+                <div className="text-sm lg:text-base text-white/80 font-medium">Years Experience</div>
               </motion.div>
             </motion.div>
           </motion.div>
