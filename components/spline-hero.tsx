@@ -21,7 +21,7 @@ interface SplineHeroComponentProps {
 }
 
 export function SplineHeroComponent({
-  sceneUrl = 'https://my.spline.design/interactiveaiwebsite-3lum05amhbPWBKUXhwxEzA1I/',
+  sceneUrl = 'https://my.spline.design/interactiveaiwebsite-gw3lJHGF2qx53ppUFnzgeyWM/',
   title,
   subtitle,
   description,
@@ -259,26 +259,64 @@ export function SplineHeroComponent({
             initial="hidden"
             animate="visible"
           >
-            {/* Main Title */}
-            <motion.h1
+            {/* Main Title - 4 Gradient Text Blocks (matching Image 1) */}
+            <motion.div
               variants={staggerItem}
-              className="mb-2 text-6xl lg:text-8xl font-bold leading-tight tracking-tight text-orange-500"
+              className="flex flex-col gap-3 mb-6"
             >
-              Forger Digital
-            </motion.h1>
+              {/* Line 1 - CUTTING-EDGE AND */}
+              <motion.h2
+                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white uppercase inline-block"
+                initial={{ x: -300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+              >
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-6 py-3 inline-block rounded-lg">
+                  CUTTING-EDGE AND
+                </span>
+              </motion.h2>
 
-            {/* Subtitle */}
-            <motion.h2
-              variants={staggerItem}
-              className="mb-6 text-2xl lg:text-4xl text-white font-medium leading-snug"
-            >
-              Cutting-edge and forward-thinking technology to transform your digital vision into robust reality.
-            </motion.h2>
+              {/* Line 2 - FORWARD-THINKING */}
+              <motion.h2
+                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white uppercase inline-block"
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+              >
+                <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 px-6 py-3 inline-block rounded-lg">
+                  FORWARD-THINKING
+                </span>
+              </motion.h2>
+
+              {/* Line 3 - TO TRANSFORM VISION */}
+              <motion.h2
+                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white uppercase inline-block"
+                initial={{ x: -300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
+              >
+                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-6 py-3 inline-block rounded-lg">
+                  TO TRANSFORM VISION
+                </span>
+              </motion.h2>
+
+              {/* Line 4 - INTO ROBUST REALITY. */}
+              <motion.h2
+                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white uppercase inline-block"
+                initial={{ x: 300, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
+              >
+                <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 px-6 py-3 inline-block rounded-lg">
+                  INTO ROBUST REALITY.
+                </span>
+              </motion.h2>
+            </motion.div>
 
             {/* Description */}
             <motion.p
               variants={staggerItem}
-              className="mb-8 text-lg lg:text-xl text-orange-500 font-medium leading-relaxed"
+              className="mb-8 text-lg lg:text-xl text-white font-medium leading-relaxed"
             >
               Craftsmanship creation, building solutions in a broadly spectrum of the digital field, including web, app, & custom software done by our Innovative & powerful skilled team.
             </motion.p>
