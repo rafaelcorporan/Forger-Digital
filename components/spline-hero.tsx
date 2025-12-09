@@ -21,7 +21,7 @@ interface SplineHeroComponentProps {
 }
 
 export function SplineHeroComponent({
-  sceneUrl = 'https://my.spline.design/interactiveaiwebsite-gw3lJHGF2qx53ppUFnzgeyWM/',
+  sceneUrl = 'https://my.spline.design/clonermotioninfraredcopy-4GMNba4vQ3NRRhAQdyRlWDgy/',
   title,
   subtitle,
   description,
@@ -64,28 +64,21 @@ export function SplineHeroComponent({
   }, [heroSubtitle])
 
   return (
-    <section className="relative min-h-fit md:h-screen w-full overflow-hidden bg-gray-900">
+    <section className="relative min-h-fit md:h-screen w-full overflow-hidden bg-[#050511]" suppressHydrationWarning>
       {/* Very Dark Grey Background */}
-      <div className="absolute inset-0 z-0 bg-gray-900"></div>
+      <div className="absolute inset-0 z-0 bg-[#050511]"></div>
 
-      {/* Spline 3D Background - Full screen on ALL devices */}
-      <div className="absolute inset-0 z-0 hidden md:block">
+      {/* Spline 3D Background - Desktop: Right 50% only */}
+      <div className="absolute top-0 right-0 w-[50%] h-full z-0 hidden md:block">
         <iframe
-          src={sceneUrl}
-          frameBorder="0"
+          src="https://my.spline.design/clonermotioninfraredcopy-4GMNba4vQ3NRRhAQdyRlWDgy/"
           width="100%"
           height="100%"
-          style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            border: 'none',
-            zIndex: 1
-          }}
+          className="absolute top-0 left-0 border-0 z-[1]"
         />
         {/* Overlay to hide Spline watermark badge */}
         <div
-          className="absolute bottom-0 left-0 w-48 h-16 bg-gray-900 pointer-events-none"
+          className="absolute bottom-0 left-0 w-48 h-16 bg-[#050511] pointer-events-none"
           style={{ zIndex: 2 }}
           aria-hidden="true"
         />
@@ -95,7 +88,6 @@ export function SplineHeroComponent({
       <div className="absolute inset-0 z-0 md:hidden flex items-center justify-center overflow-hidden">
         <iframe
           src="https://my.spline.design/thresholddarkambientui-o8iwxEWaWPAztTbgXjkCOSHb/"
-          frameBorder="0"
           width="100%"
           height="100%"
           className="h-full w-full scale-125"
@@ -259,67 +251,38 @@ export function SplineHeroComponent({
             initial="hidden"
             animate="visible"
           >
-            {/* Main Title - 4 Gradient Text Blocks (matching Image 1) */}
+            {/* Main Title - Forger Digital (Orange) */}
             <motion.div
               variants={staggerItem}
               className="flex flex-col gap-3 mb-6"
             >
-              {/* Line 1 - CUTTING-EDGE AND */}
               <motion.h2
-                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white uppercase inline-block"
-                initial={{ x: -300, opacity: 0 }}
+                className="text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight text-orange-500 tracking-tighter"
+                initial={{ x: -100, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
               >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-6 py-3 inline-block rounded-lg">
-                  CUTTING-EDGE AND
-                </span>
-              </motion.h2>
-
-              {/* Line 2 - FORWARD-THINKING */}
-              <motion.h2
-                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white uppercase inline-block"
-                initial={{ x: 300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-              >
-                <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 px-6 py-3 inline-block rounded-lg">
-                  FORWARD-THINKING
-                </span>
-              </motion.h2>
-
-              {/* Line 3 - TO TRANSFORM VISION */}
-              <motion.h2
-                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white uppercase inline-block"
-                initial={{ x: -300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
-              >
-                <span className="bg-gradient-to-r from-orange-500 via-pink-500 to-purple-600 px-6 py-3 inline-block rounded-lg">
-                  TO TRANSFORM VISION
-                </span>
-              </motion.h2>
-
-              {/* Line 4 - INTO ROBUST REALITY. */}
-              <motion.h2
-                className="text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight text-white uppercase inline-block"
-                initial={{ x: 300, opacity: 0 }}
-                animate={{ x: 0, opacity: 1 }}
-                transition={{ duration: 0.8, delay: 0.8, ease: "easeOut" }}
-              >
-                <span className="bg-gradient-to-r from-purple-500 via-pink-500 to-purple-600 px-6 py-3 inline-block rounded-lg">
-                  INTO ROBUST REALITY.
-                </span>
+                Forger Digital
               </motion.h2>
             </motion.div>
 
-            {/* Description */}
-            <motion.p
+            {/* Description 1 - White Text */}
+            <motion.div
               variants={staggerItem}
-              className="mb-8 text-lg lg:text-xl text-white font-medium leading-relaxed"
+              className="mb-4 text-lg lg:text-xl text-white font-medium leading-relaxed max-w-2xl"
             >
-              Craftsmanship creation, building solutions in a broadly spectrum of the digital field, including web, app, & custom software done by our Innovative & powerful skilled team.
-            </motion.p>
+              <span className="font-bold">Forger Digital:</span> Cutting-edge, advanced, and forward-thinking technology. We transform your digital vision into robust, scalable reality.<span className="text-orange-500 animate-pulse">|</span>
+            </motion.div>
+
+            {/* Description 2 - Orange Text */}
+            <motion.div
+              variants={staggerItem}
+              className="mb-8 text-base lg:text-lg text-orange-500 font-medium leading-relaxed max-w-2xl"
+            >
+              <span className="font-bold">Forge Digital:</span> Evokes craftsmanship, creation, & building robust solutions. Digital: Broadly encompasses the digital realm, including web, app, & software by Innovative, powerful skilles.
+            </motion.div>
+
+
 
             {/* Action Buttons */}
             <motion.div
@@ -331,7 +294,7 @@ export function SplineHeroComponent({
                   <Button
                     variant="primary-action"
                     size="xl"
-                    className="group gap-2 !rounded-full"
+                    className="group gap-2 !rounded-full bg-gradient-to-r from-orange-500 via-orange-600 to-pink-500 hover:from-orange-600 hover:via-orange-700 hover:to-pink-600 text-white border-none shadow-lg shadow-orange-900/30"
                   >
                     {heroPrimaryButton}
                     <ArrowRight className="h-5 w-5 group-hover:translate-x-1 transition-transform" />
@@ -343,9 +306,9 @@ export function SplineHeroComponent({
                   <Button
                     variant="secondary-action"
                     size="xl"
-                    className="gap-2 !rounded-full"
+                    className="gap-2 !rounded-full bg-transparent border-2 border-orange-500 text-white hover:bg-white/10 backdrop-blur-sm shadow-lg"
                   >
-                    <Play className="h-5 w-5" />
+                    <Play className="h-5 w-5 fill-current" />
                     View Our Work
                   </Button>
                 </motion.div>
@@ -393,6 +356,16 @@ export function SplineHeroComponent({
             </motion.div>
           </motion.div>
         </div>
+
+        {/* Desktop Down Arrow - Large and Orange to match reference */}
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1, repeat: Infinity, repeatType: "reverse" }}
+          className="absolute bottom-8 left-1/2 -translate-x-1/2 text-orange-600 pb-2 pointer-events-none"
+        >
+          <ChevronDown className="h-16 w-16 stroke-[1]" />
+        </motion.div>
       </div>
 
       {/* Gradient Overlay for better text readability - Desktop only */}
