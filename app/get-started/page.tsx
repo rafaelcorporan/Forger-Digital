@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
+import { Switch } from "@/components/ui/switch"
 import { CheckCircle, ArrowRight, Users, Clock, Shield, Star, Save, Loader2 } from "lucide-react"
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
@@ -18,7 +19,7 @@ import { ServiceAccordion } from "@/components/service-accordion"
 
 export default function GetStartedPage() {
   const { t, messages } = useTranslation('getStarted')
-  
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -38,8 +39,11 @@ export default function GetStartedPage() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [autoSaved, setAutoSaved] = useState(false)
   const [currentStep, setCurrentStep] = useState(0)
+  const [showTechnicalSelection, setShowTechnicalSelection] = useState(true)
 
-  const requiredFields = ["firstName", "lastName", "company", "email", "projectDescription", "serviceInterests"]
+  const requiredFields = showTechnicalSelection
+    ? ["firstName", "lastName", "company", "email", "projectDescription", "serviceInterests"]
+    : ["firstName", "lastName", "company", "email", "projectDescription"]
   const formProgress = calculateFormProgress(formData, requiredFields)
 
   // Service options are now handled by ServiceAccordion component
@@ -75,15 +79,23 @@ export default function GetStartedPage() {
   // Calculate current step based on form completion
   useEffect(() => {
     if (formData.firstName && formData.lastName && formData.company && formData.email) {
-      if (formData.projectDescription && formData.serviceInterests.length > 0) {
-        setCurrentStep(2)
+      if (showTechnicalSelection) {
+        if (formData.projectDescription && formData.serviceInterests.length > 0) {
+          setCurrentStep(2)
+        } else {
+          setCurrentStep(1)
+        }
       } else {
-        setCurrentStep(1)
+        if (formData.projectDescription) {
+          setCurrentStep(2)
+        } else {
+          setCurrentStep(1)
+        }
       }
     } else {
       setCurrentStep(0)
     }
-  }, [formData])
+  }, [formData, showTechnicalSelection])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -115,7 +127,7 @@ export default function GetStartedPage() {
       newErrors.email = t('validation.emailInvalid') as string
     }
     if (!formData.projectDescription.trim()) newErrors.projectDescription = t('validation.projectDescriptionRequired') as string
-    if (formData.serviceInterests.length === 0) newErrors.serviceInterests = t('validation.serviceInterestsRequired') as string
+    if (showTechnicalSelection && formData.serviceInterests.length === 0) newErrors.serviceInterests = t('validation.serviceInterestsRequired') as string
 
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -123,11 +135,11 @@ export default function GetStartedPage() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
+
     if (!validateForm()) return
 
     setIsSubmitting(true)
-    
+
     try {
       // Fetch CSRF token first
       let csrfToken: string | null = null
@@ -136,7 +148,7 @@ export default function GetStartedPage() {
           method: 'GET',
           credentials: 'include', // Include cookies
         })
-        
+
         // Check if CSRF response is JSON before parsing
         const csrfContentType = csrfResponse.headers.get('content-type')
         if (csrfResponse.ok && csrfContentType && csrfContentType.includes('application/json')) {
@@ -161,7 +173,7 @@ export default function GetStartedPage() {
 
       // Use FormData for form submission
       const submitFormData = new FormData()
-      
+
       // Append all form fields
       submitFormData.append('firstName', formData.firstName)
       submitFormData.append('lastName', formData.lastName)
@@ -174,10 +186,10 @@ export default function GetStartedPage() {
       submitFormData.append('contactMethod', formData.contactMethod)
       submitFormData.append('timeline', formData.timeline || '')
       submitFormData.append('budget', formData.budget || '')
-      
+
       // Build headers (do not set Content-Type for FormData - browser sets it with boundary)
       const headers: HeadersInit = {}
-      
+
       // Add CSRF token to headers if available
       if (csrfToken) {
         headers['X-CSRF-Token'] = csrfToken
@@ -204,7 +216,7 @@ export default function GetStartedPage() {
       if (response.ok) {
         setIsSubmitted(true)
         clearStorage() // Clear auto-saved draft on successful submission
-        
+
         // Track form submission
         if (typeof window !== "undefined") {
           const { trackFormSubmission } = await import("@/lib/analytics")
@@ -230,7 +242,7 @@ export default function GetStartedPage() {
     return (
       <main className="min-h-screen bg-background">
         <Navigation />
-        
+
         <div className="pt-32 pb-20">
           <div className="container mx-auto px-4">
             <div className="max-w-2xl mx-auto text-center">
@@ -299,7 +311,7 @@ export default function GetStartedPage() {
   return (
     <main className="min-h-screen bg-background">
       <Navigation />
-      
+
       <div className="pt-32 pb-20">
         <div className="container mx-auto px-4">
           {/* Header Section */}
@@ -531,26 +543,54 @@ export default function GetStartedPage() {
                     />
                   </div>
 
-                  <div className="mt-6">
-                    <div className="flex items-center gap-2 mb-3">
-                      <label htmlFor="serviceInterests" className="block text-sm font-medium">
-                        {t('fields.serviceInterests')} *
-                      </label>
-                      <FieldHelp
-                        tooltip={t('helpText.serviceInterests') as string}
-                        variant="help"
+                  {/* Toggle for Technical Selection */}
+                  <div className="mt-6 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg border border-gray-200 dark:border-gray-800">
+                    <div className="flex items-center justify-between gap-4">
+                      <div className="flex-1">
+                        <div className="flex items-center gap-2 mb-1">
+                          <label htmlFor="technical-toggle" className="text-sm font-medium cursor-pointer">
+                            I know which technical services I need
+                          </label>
+                        </div>
+                        <p className="text-xs text-muted-foreground">
+                          {showTechnicalSelection
+                            ? "Select the specific services you're interested in below"
+                            : "You can skip the technical selection and we'll help you determine the best services during our consultation"}
+                        </p>
+                      </div>
+                      <Switch
+                        id="technical-toggle"
+                        checked={showTechnicalSelection}
+                        onCheckedChange={setShowTechnicalSelection}
+                        aria-label="Toggle technical service selection"
+                        className="data-[state=checked]:bg-[#FF4500] data-[state=unchecked]:bg-gray-700 dark:data-[state=unchecked]:bg-gray-700"
                       />
                     </div>
-                    <ServiceAccordion
-                      selectedServices={formData.serviceInterests}
-                      onServiceToggle={handleServiceInterestChange}
-                      error={errors.serviceInterests}
-                    />
-                    <FieldHelp
-                      helpText={`${formData.serviceInterests.length} ${formData.serviceInterests.length !== 1 ? t('submit.servicesSelectedPlural') : t('submit.servicesSelected')}`}
-                      variant="info"
-                    />
                   </div>
+
+                  {/* Service Selection - Conditionally Rendered */}
+                  {showTechnicalSelection && (
+                    <div className="mt-6">
+                      <div className="flex items-center gap-2 mb-3">
+                        <label htmlFor="serviceInterests" className="block text-sm font-medium">
+                          {t('fields.serviceInterests')} *
+                        </label>
+                        <FieldHelp
+                          tooltip={t('helpText.serviceInterests') as string}
+                          variant="help"
+                        />
+                      </div>
+                      <ServiceAccordion
+                        selectedServices={formData.serviceInterests}
+                        onServiceToggle={handleServiceInterestChange}
+                        error={errors.serviceInterests}
+                      />
+                      <FieldHelp
+                        helpText={`${formData.serviceInterests.length} ${formData.serviceInterests.length !== 1 ? t('submit.servicesSelectedPlural') : t('submit.servicesSelected')}`}
+                        variant="info"
+                      />
+                    </div>
+                  )}
 
                   {/* Dynamic field: Show timeline/budget based on service interests */}
                   {formData.serviceInterests.length > 0 && (
@@ -623,11 +663,10 @@ export default function GetStartedPage() {
                     {contactMethods.map((method) => (
                       <div
                         key={method.value}
-                        className={`p-5 rounded-lg border cursor-pointer transition-all min-h-[80px] flex items-start ${
-                          formData.contactMethod === method.value
-                            ? 'border-orange-500 bg-orange-50'
-                            : 'border-gray-200 hover:border-gray-300 bg-white'
-                        }`}
+                        className={`p-5 rounded-lg border cursor-pointer transition-all min-h-[80px] flex items-start ${formData.contactMethod === method.value
+                          ? 'border-orange-500 bg-orange-50'
+                          : 'border-gray-200 hover:border-gray-300 bg-white'
+                          }`}
                         onClick={() => setFormData(prev => ({ ...prev, contactMethod: method.value }))}
                       >
                         <div className="flex items-start gap-4 w-full">
@@ -640,18 +679,16 @@ export default function GetStartedPage() {
                             className="text-orange-500 mt-1 flex-shrink-0"
                           />
                           <div className="flex-1 min-w-0">
-                            <div className={`font-semibold text-base mb-1 ${
-                              formData.contactMethod === method.value
-                                ? 'text-orange-600'
-                                : 'text-gray-900'
-                            }`}>
+                            <div className={`font-semibold text-base mb-1 ${formData.contactMethod === method.value
+                              ? 'text-orange-600'
+                              : 'text-gray-900'
+                              }`}>
                               {method.label}
                             </div>
-                            <div className={`text-sm leading-relaxed ${
-                              formData.contactMethod === method.value
-                                ? 'text-orange-500'
-                                : 'text-gray-600'
-                            }`}>
+                            <div className={`text-sm leading-relaxed ${formData.contactMethod === method.value
+                              ? 'text-orange-500'
+                              : 'text-gray-600'
+                              }`}>
                               {method.description}
                             </div>
                           </div>
@@ -668,7 +705,7 @@ export default function GetStartedPage() {
                       <p className="text-red-600 text-sm">{errors.submit}</p>
                     </div>
                   )}
-                  
+
                   <Button
                     type="submit"
                     variant="primary-action"
@@ -688,7 +725,7 @@ export default function GetStartedPage() {
                       </>
                     )}
                   </Button>
-                  
+
                   <p className="text-center text-sm text-muted-foreground mt-4">
                     {t('legal.agreement')}{" "}
                     <a href="#" className="text-orange-500 hover:underline">{t('legal.privacyPolicy')}</a> {t('legal.and')}{" "}
