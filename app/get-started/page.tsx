@@ -39,7 +39,7 @@ export default function GetStartedPage() {
   const [errors, setErrors] = useState<Record<string, string>>({})
   const [autoSaved, setAutoSaved] = useState(false)
   const [currentStep, setCurrentStep] = useState(0)
-  const [showTechnicalSelection, setShowTechnicalSelection] = useState(true)
+  const [showTechnicalSelection, setShowTechnicalSelection] = useState(false)
 
   const requiredFields = showTechnicalSelection
     ? ["firstName", "lastName", "company", "email", "projectDescription", "serviceInterests"]
