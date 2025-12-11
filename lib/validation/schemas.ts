@@ -152,7 +152,7 @@ export const GetStartedFormSchema = z.object({
   projectDescription: MessageSchema,
   serviceInterests: z
     .array(z.string().max(100).transform(sanitizeString))
-    .min(1, "Please select at least one service area")
+    .min(0, "Service interests must be an array")
     .max(10, "Too many service interests selected"),
   contactMethod: z.enum(["email", "phone", "video"], {
     errorMap: () => ({ message: "Invalid contact method" }),

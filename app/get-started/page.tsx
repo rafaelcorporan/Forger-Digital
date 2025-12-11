@@ -97,6 +97,17 @@ export default function GetStartedPage() {
     }
   }, [formData, showTechnicalSelection])
 
+  // Clear serviceInterests error when toggle is turned OFF
+  useEffect(() => {
+    if (!showTechnicalSelection && errors.serviceInterests) {
+      setErrors(prev => {
+        const newErrors = { ...prev }
+        delete newErrors.serviceInterests
+        return newErrors
+      })
+    }
+  }, [showTechnicalSelection, errors.serviceInterests])
+
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
     setFormData(prev => ({ ...prev, [name]: value }))
