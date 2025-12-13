@@ -10,6 +10,7 @@ import { signOut } from "next-auth/react"
 import { User, Settings, LogOut, Shield, Mail } from "lucide-react"
 import { useEffect, useState } from "react"
 import { StaffAssignments } from "@/components/dashboard/staff-assignments"
+import { ClientContracts } from "@/components/dashboard/client-contracts"
 
 export default function DashboardPage() {
   const { data: session, status } = useSession()
@@ -145,6 +146,13 @@ export default function DashboardPage() {
                 </Button>
               </div>
             </Card>
+          )}
+
+          {/* Client Contracts */}
+          {session.user?.role === "CLIENT" && (
+            <div className="mt-8">
+              <ClientContracts />
+            </div>
           )}
 
           {/* Staff Assignments */}

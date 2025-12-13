@@ -19,6 +19,8 @@ model User {
   image         String?
   password      String? // Hashed password (bcrypt) - null for OAuth users
   role          UserRole  @default(USER)
+  isActive      Boolean   @default(true)
+  lastLoginAt   DateTime?
   createdAt     DateTime  @default(now())
   updatedAt     DateTime  @updatedAt
 
@@ -30,6 +32,8 @@ model User {
   supportTickets SupportTicket[]
   blogPosts      BlogPost[]
   blogComments   BlogComment[]
+  clientProfile  ClientProfile?
+  staffProfile   StaffProfile?
 
   @@map("users")
 }
@@ -79,9 +83,10 @@ model VerificationToken {
 // User roles enum
 enum UserRole {
   USER
+  CLIENT
+  STAFF
   ADMIN
   SUPER_ADMIN
-  STAFF
 }
 
 // Contact Form Submission model
@@ -405,4 +410,183 @@ enum CommentStatus {
   APPROVED
   REJECTED
   SPAM
+}
+
+// ============================================
+// PROJECT & CONTRACT MANAGEMENT MODELS
+// ============================================
+
+// Client Profile - Extended data for client users
+model ClientProfile {
+  id              String   @id @default(cuid())
+  userId          String   @unique
+  company         String?
+  phone           String?
+  address         String?  @db.Text
+  billingEmail    String?
+  taxId           String?
+  notes           String?  @db.Text
+  createdAt       DateTime @default(now())
+  updatedAt       DateTime @updatedAt
+
+  // Relations
+  user     User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  projects Project[]
+
+  @@index([userId])
+  @@map("client_profiles")
+}
+
+// Staff Profile - Extended data for staff users
+model StaffProfile {
+  id           String   @id @default(cuid())
+  userId       String   @unique
+  department   String?
+  title        String?
+  skills       String[] // Array of skill tags
+  hourlyRate   Int?     // In cents
+  availability StaffAvailability @default(AVAILABLE)
+  startDate    DateTime?
+  notes        String?  @db.Text
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // Relations
+  user              User              @relation(fields: [userId], references: [id], onDelete: Cascade)
+  assignedProjects  ProjectAssignment[]
+
+  @@index([userId])
+  @@index([availability])
+  @@map("staff_profiles")
+}
+
+// Staff Availability enum
+enum StaffAvailability {
+  AVAILABLE
+  PARTIALLY_AVAILABLE
+  ON_PROJECT
+  ON_LEAVE
+  UNAVAILABLE
+}
+
+// Project model - Client projects
+model Project {
+  id              String        @id @default(cuid())
+  name            String
+  slug            String        @unique
+  description     String        @db.Text
+  clientProfileId String
+  status          ProjectStatus @default(DRAFT)
+  startDate       DateTime?
+  endDate         DateTime?
+  estimatedCost   Int?          // In cents
+  finalCost       Int?          // In cents
+  features        Json?         // Array of selected features with costs
+  complexity      ProjectComplexity @default(MEDIUM)
+  timeline        String?       // e.g., "3 months", "6 weeks"
+  deliverables    String[]      // Array of deliverable descriptions
+  techStack       String[]      // Array of technologies
+  notes           String?       @db.Text
+  metadata        Json?         // Additional project metadata
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  // Relations
+  clientProfile ClientProfile       @relation(fields: [clientProfileId], references: [id], onDelete: Cascade)
+  contracts     Contract[]
+  assignments   ProjectAssignment[]
+
+  @@index([clientProfileId])
+  @@index([status])
+  @@index([slug])
+  @@index([createdAt])
+  @@map("projects")
+}
+
+// Project Status enum
+enum ProjectStatus {
+  DRAFT
+  PROPOSAL
+  APPROVED
+  IN_PROGRESS
+  ON_HOLD
+  COMPLETED
+  CANCELLED
+}
+
+// Project Complexity enum
+enum ProjectComplexity {
+  LOW
+  MEDIUM
+  HIGH
+  ENTERPRISE
+}
+
+// Project Assignment - Links staff to projects
+model ProjectAssignment {
+  id             String   @id @default(cuid())
+  projectId      String
+  staffProfileId String
+  role           String   // e.g., "Lead Developer", "Designer"
+  hoursAllocated Int?     // Estimated hours
+  hoursWorked    Int      @default(0)
+  startDate      DateTime?
+  endDate        DateTime?
+  notes          String?  @db.Text
+  createdAt      DateTime @default(now())
+  updatedAt      DateTime @updatedAt
+
+  // Relations
+  project      Project      @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  staffProfile StaffProfile @relation(fields: [staffProfileId], references: [id], onDelete: Cascade)
+
+  @@unique([projectId, staffProfileId])
+  @@index([projectId])
+  @@index([staffProfileId])
+  @@map("project_assignments")
+}
+
+// Contract model - Generated contracts for projects
+model Contract {
+  id            String         @id @default(cuid())
+  projectId     String
+  contractNumber String        @unique
+  title         String
+  content       String         @db.Text // HTML/Markdown content
+  pdfUrl        String?        // URL to stored PDF
+  status        ContractStatus @default(DRAFT)
+  totalAmount   Int            // In cents
+  currency      String         @default("USD")
+  validUntil    DateTime?
+  signedAt      DateTime?
+  signedByClient String?       // Client signature/name
+  signedByAdmin  String?       // Company representative
+  shareToken    String?        @unique // For secure sharing
+  shareTokenExpiry DateTime?
+  termsVersion  String         @default("1.0")
+  metadata      Json?          // Pricing breakdown, terms, etc.
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+
+  // Relations
+  project Project @relation(fields: [projectId], references: [id], onDelete: Cascade)
+
+  @@index([projectId])
+  @@index([status])
+  @@index([contractNumber])
+  @@index([shareToken])
+  @@index([createdAt])
+  @@map("contracts")
+}
+
+// Contract Status enum
+enum ContractStatus {
+  DRAFT
+  PENDING_REVIEW
+  SENT
+  VIEWED
+  SIGNED
+  REJECTED
+  EXPIRED
+  CANCELLED
 }

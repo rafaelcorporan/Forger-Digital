@@ -190,9 +190,104 @@ export const SignupSchema = z.object({
 // Admin User Update Schema
 export const AdminUserUpdateSchema = z.object({
   userId: z.string().min(1, "User ID is required").max(100),
-  role: z.enum(["USER", "ADMIN", "SUPER_ADMIN"], {
+  role: z.enum(["USER", "CLIENT", "STAFF", "ADMIN", "SUPER_ADMIN"], {
     errorMap: () => ({ message: "Invalid role" }),
+  }).optional(),
+  name: z.string().min(1).max(100).optional(),
+  email: z.string().email("Invalid email format").optional(),
+  password: z.string().min(8, "Password must be at least 8 characters").max(128).optional(),
+  isActive: z.boolean().optional(),
+})
+
+// Create User Schema (for admin creating clients/staff)
+export const CreateUserSchema = z.object({
+  email: EmailSchema,
+  name: NameSchema,
+  role: z.enum(["CLIENT", "STAFF"], {
+    errorMap: () => ({ message: "Invalid role - must be CLIENT or STAFF" }),
   }),
+  // Client-specific fields
+  company: z.string().max(200).transform(sanitizeString).optional(),
+  phone: PhoneSchema.optional(),
+  // Staff-specific fields
+  department: z.string().max(100).transform(sanitizeString).optional(),
+  title: z.string().max(100).transform(sanitizeString).optional(),
+  skills: z.array(z.string().max(50).transform(sanitizeString)).max(20).optional(),
+  hourlyRate: z.number().int().min(0).max(100000).optional(), // In cents
+  sendWelcomeEmail: z.boolean().optional().default(true),
+})
+
+// Project Schema
+export const CreateProjectSchema = z.object({
+  name: z.string().min(1, "Project name is required").max(200).transform(sanitizeString),
+  description: z.string().min(10, "Description must be at least 10 characters").max(5000).transform(sanitizeString),
+  clientProfileId: z.string().min(1, "Client profile is required"),
+  features: z.array(z.string()).optional(),
+  complexity: z.enum(["LOW", "MEDIUM", "HIGH", "ENTERPRISE"]).optional().default("MEDIUM"),
+  timeline: z.string().max(100).transform(sanitizeString).optional(),
+  deliverables: z.array(z.string().max(500).transform(sanitizeString)).optional(),
+  techStack: z.array(z.string().max(50).transform(sanitizeString)).optional(),
+  startDate: z.string().optional(),
+  endDate: z.string().optional(),
+})
+
+export const UpdateProjectSchema = CreateProjectSchema.partial().extend({
+  status: z.enum(["DRAFT", "PROPOSAL", "APPROVED", "IN_PROGRESS", "ON_HOLD", "COMPLETED", "CANCELLED"]).optional(),
+  estimatedCost: z.number().int().min(0).optional(),
+  finalCost: z.number().int().min(0).optional(),
+})
+
+// Contract Schema
+export const CreateContractSchema = z.object({
+  projectId: z.string().min(1, "Project ID is required"),
+  // Company info
+  companyName: z.string().min(1).max(200).transform(sanitizeString),
+  companyAddress: z.string().min(1).max(500).transform(sanitizeString),
+  companyEmail: EmailSchema,
+  companyPhone: PhoneSchema.optional(),
+  // Pricing input for calculator
+  category: z.enum([
+    "web_development", "mobile_development", "ai_ml", "blockchain",
+    "cloud_infrastructure", "cybersecurity", "data_engineering",
+    "devops", "ui_ux_design", "consulting"
+  ]),
+  selectedFeatures: z.array(z.string()).min(1, "At least one feature is required"),
+  timelineType: z.enum(["urgent", "standard", "flexible"]).default("standard"),
+  teamSize: z.enum(["small", "medium", "large"]).default("medium"),
+  supportLevel: z.enum(["basic", "standard", "premium"]).default("standard"),
+  customFeatures: z.array(z.object({
+    name: z.string().min(1).max(200).transform(sanitizeString),
+    description: z.string().max(1000).transform(sanitizeString).optional(),
+    estimatedHours: z.number().int().min(1).max(10000),
+    hourlyRate: z.number().int().min(0).optional(),
+  })).optional(),
+  // Contract terms
+  paymentTerms: z.string().max(2000).transform(sanitizeString).optional(),
+  warrantyPeriod: z.string().max(100).transform(sanitizeString).optional(),
+  revisionPolicy: z.string().max(1000).transform(sanitizeString).optional(),
+  confidentialityClause: z.boolean().optional().default(true),
+})
+
+// Pricing Calculator Schema
+export const PricingCalculatorSchema = z.object({
+  projectName: z.string().min(1, "Project name is required").max(200).transform(sanitizeString),
+  description: z.string().min(1).max(5000).transform(sanitizeString),
+  category: z.enum([
+    "web_development", "mobile_development", "ai_ml", "blockchain",
+    "cloud_infrastructure", "cybersecurity", "data_engineering",
+    "devops", "ui_ux_design", "consulting"
+  ]),
+  complexity: z.enum(["low", "medium", "high", "enterprise"]),
+  selectedFeatures: z.array(z.string()),
+  timeline: z.enum(["urgent", "standard", "flexible"]),
+  teamSize: z.enum(["small", "medium", "large"]),
+  supportLevel: z.enum(["basic", "standard", "premium"]),
+  customFeatures: z.array(z.object({
+    name: z.string().min(1).max(200),
+    description: z.string().max(1000).optional(),
+    estimatedHours: z.number().int().min(1).max(10000),
+    hourlyRate: z.number().int().min(0).optional(),
+  })).optional(),
 })
 
 // Query Parameter Schemas
@@ -225,7 +320,7 @@ export const SearchSchema = z.object({
 
 export const AdminUsersQuerySchema = PaginationSchema.merge(SearchSchema).extend({
   role: z
-    .enum(["USER", "ADMIN", "SUPER_ADMIN"])
+    .enum(["USER", "CLIENT", "STAFF", "ADMIN", "SUPER_ADMIN"])
     .optional(),
 })
 
@@ -285,4 +380,9 @@ export type AdminSubmissionsQueryInput = z.infer<typeof AdminSubmissionsQuerySch
 export type CreateCheckoutSessionInput = z.infer<typeof CreateCheckoutSessionSchema>
 export type CreatePaymentIntentInput = z.infer<typeof CreatePaymentIntentSchema>
 export type RateLimitInput = z.infer<typeof RateLimitSchema>
+export type CreateUserInput = z.infer<typeof CreateUserSchema>
+export type CreateProjectInput = z.infer<typeof CreateProjectSchema>
+export type UpdateProjectInput = z.infer<typeof UpdateProjectSchema>
+export type CreateContractInput = z.infer<typeof CreateContractSchema>
+export type PricingCalculatorInput = z.infer<typeof PricingCalculatorSchema>
 

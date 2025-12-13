@@ -1,10 +1,11 @@
 import { NextRequest, NextResponse } from "next/server"
 import { auth } from "@/auth"
 import { prisma } from "@/lib/prisma"
-import { AdminUsersQuerySchema } from "@/lib/validation/schemas"
-import { validateQueryParams } from "@/lib/validation/validator"
+import { AdminUsersQuerySchema, AdminUserUpdateSchema } from "@/lib/validation/schemas"
+import { validateQueryParams, validateRequestBody } from "@/lib/validation/validator"
 import { rateLimit, getUserIdentifier } from "@/lib/security/rate-limit-middleware"
 import { captureException } from "@/lib/sentry"
+import bcrypt from "bcryptjs"
 
 export async function GET(request: NextRequest) {
   try {
@@ -61,7 +62,7 @@ export async function GET(request: NextRequest) {
         { email: { contains: search, mode: "insensitive" } },
       ]
     }
-    if (role && (role === "USER" || role === "ADMIN" || role === "SUPER_ADMIN")) {
+    if (role && ["USER", "CLIENT", "STAFF", "ADMIN", "SUPER_ADMIN"].includes(role)) {
       where.role = role
     }
 
@@ -77,6 +78,7 @@ export async function GET(request: NextRequest) {
           email: true,
           role: true,
           emailVerified: true,
+          isActive: true,
           image: true,
           createdAt: true,
           updatedAt: true,
@@ -172,24 +174,79 @@ export async function PATCH(request: NextRequest) {
       return response
     }
 
-    const { userId, role } = validation.data
+    const { userId, role, name, email, password, isActive } = validation.data
 
     // Prevent self-demotion
-    if (userId === session.user.id && role !== "ADMIN" && role !== "SUPER_ADMIN") {
+    if (userId === session.user.id && role && role !== "ADMIN" && role !== "SUPER_ADMIN") {
       return NextResponse.json(
         { error: "Cannot change your own role" },
         { status: 400 }
       )
     }
 
+    // Prevent self-deactivation
+    if (userId === session.user.id && isActive === false) {
+      return NextResponse.json(
+        { error: "Cannot disable your own account" },
+        { status: 400 }
+      )
+    }
+
+    // Build update data object with only provided fields
+    const updateData: any = {}
+    
+    if (role !== undefined) {
+      updateData.role = role
+    }
+    
+    if (name !== undefined) {
+      updateData.name = name
+    }
+    
+    if (email !== undefined) {
+      // Check if email is already taken by another user
+      const existingUser = await prisma.user.findFirst({
+        where: {
+          email: email,
+          NOT: { id: userId }
+        }
+      })
+      if (existingUser) {
+        return NextResponse.json(
+          { error: "Email is already in use by another account" },
+          { status: 400 }
+        )
+      }
+      updateData.email = email
+    }
+    
+    if (password !== undefined) {
+      // Hash the new password
+      const hashedPassword = await bcrypt.hash(password, 12)
+      updateData.password = hashedPassword
+    }
+    
+    if (isActive !== undefined) {
+      updateData.isActive = isActive
+    }
+
+    // Ensure at least one field is being updated
+    if (Object.keys(updateData).length === 0) {
+      return NextResponse.json(
+        { error: "No fields to update" },
+        { status: 400 }
+      )
+    }
+
     const updatedUser = await prisma.user.update({
       where: { id: userId },
-      data: { role },
+      data: updateData,
       select: {
         id: true,
         name: true,
         email: true,
         role: true,
+        isActive: true,
         updatedAt: true,
       },
     })

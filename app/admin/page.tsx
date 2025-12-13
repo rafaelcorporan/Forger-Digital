@@ -18,13 +18,17 @@ import {
   Clock,
   CheckCircle2,
   XCircle,
-  BookOpen
+  Building2,
+  FolderKanban,
+  FileSignature
 } from "lucide-react"
 import { AdminOverview } from "@/components/admin/admin-overview"
 import { AdminUsers } from "@/components/admin/admin-users"
 import { AdminSubmissions } from "@/components/admin/admin-submissions"
 import { AdminAnalytics } from "@/components/admin/admin-analytics"
-import { AdminBlog } from "@/components/admin/admin-blog"
+import { AdminClients } from "@/components/admin/admin-clients"
+import { AdminProjects } from "@/components/admin/admin-projects"
+import { AdminContracts } from "@/components/admin/admin-contracts"
 
 export default function AdminPage() {
   const { data: session, status } = useSession()
@@ -89,41 +93,55 @@ export default function AdminPage() {
 
           {/* Tabbed Interface */}
           <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-            <TabsList className="grid w-full grid-cols-5 bg-gray-800 p-1 rounded-lg border border-gray-700 mb-8">
+            <TabsList className="grid w-full grid-cols-7 bg-gray-800 p-1 rounded-lg border border-gray-700 mb-8">
               <TabsTrigger 
                 value="overview"
-                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all"
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all text-xs md:text-sm"
               >
-                <BarChart3 className="w-4 h-4 mr-2" />
-                Overview
+                <BarChart3 className="w-4 h-4 mr-1 md:mr-2" />
+                <span className="hidden md:inline">Overview</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="users"
-                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all"
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all text-xs md:text-sm"
               >
-                <Users className="w-4 h-4 mr-2" />
-                Users
+                <Users className="w-4 h-4 mr-1 md:mr-2" />
+                <span className="hidden md:inline">Users</span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="projects"
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all text-xs md:text-sm"
+              >
+                <FolderKanban className="w-4 h-4 mr-1 md:mr-2" />
+                <span className="hidden md:inline">Projects</span>
+              </TabsTrigger>
+              <TabsTrigger 
+                value="contracts"
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all text-xs md:text-sm"
+              >
+                <FileSignature className="w-4 h-4 mr-1 md:mr-2" />
+                <span className="hidden md:inline">Contracts</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="submissions"
-                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all"
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all text-xs md:text-sm"
               >
-                <FileText className="w-4 h-4 mr-2" />
-                Submissions
+                <FileText className="w-4 h-4 mr-1 md:mr-2" />
+                <span className="hidden md:inline">Submissions</span>
               </TabsTrigger>
               <TabsTrigger 
                 value="analytics"
-                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all"
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all text-xs md:text-sm"
               >
-                <TrendingUp className="w-4 h-4 mr-2" />
-                Analytics
+                <TrendingUp className="w-4 h-4 mr-1 md:mr-2" />
+                <span className="hidden md:inline">Analytics</span>
               </TabsTrigger>
               <TabsTrigger 
-                value="blog"
-                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all"
+                value="clients"
+                className="data-[state=active]:bg-orange-500 data-[state=active]:text-white transition-all text-xs md:text-sm"
               >
-                <BookOpen className="w-4 h-4 mr-2" />
-                Blog
+                <Building2 className="w-4 h-4 mr-1 md:mr-2" />
+                <span className="hidden md:inline">Clients</span>
               </TabsTrigger>
             </TabsList>
 
@@ -137,6 +155,16 @@ export default function AdminPage() {
               <AdminUsers />
             </TabsContent>
 
+            {/* Projects Tab */}
+            <TabsContent value="projects" className="mt-8">
+              <AdminProjects />
+            </TabsContent>
+
+            {/* Contracts Tab */}
+            <TabsContent value="contracts" className="mt-8">
+              <AdminContracts />
+            </TabsContent>
+
             {/* Submissions Tab */}
             <TabsContent value="submissions" className="mt-8">
               <AdminSubmissions />
@@ -147,9 +175,9 @@ export default function AdminPage() {
               <AdminAnalytics />
             </TabsContent>
 
-            {/* Blog Tab */}
-            <TabsContent value="blog" className="mt-8">
-              <AdminBlog />
+            {/* Clients Tab */}
+            <TabsContent value="clients" className="mt-8">
+              <AdminClients />
             </TabsContent>
           </Tabs>
         </div>
