@@ -211,7 +211,7 @@ export async function POST(request: NextRequest) {
         slug: generateSlug(name),
         description,
         clientProfileId,
-        features: features ? { features } : undefined,
+        features: features || undefined,
         complexity,
         timeline,
         deliverables: deliverables || [],

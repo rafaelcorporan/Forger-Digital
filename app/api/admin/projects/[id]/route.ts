@@ -189,7 +189,7 @@ export async function PUT(
       data: {
         ...(name && { name }),
         ...(description && { description }),
-        ...(features && { features: { features } }),
+        ...(features && { features }),
         ...(complexity && { complexity }),
         ...(timeline && { timeline }),
         ...(deliverables && { deliverables }),
