@@ -263,12 +263,8 @@ async function sendConfirmationEmail(data: FormData) {
             
             <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #FF5722;">
               <p style="margin: 0; color: #666; font-size: 14px;">
-                <strong>Your Project Details:</strong><br>
-                <strong>Company:</strong> ${safeCompany}<br>
-                <strong>Service Interests:</strong><br>
-                ${serviceInterestsList}<br>
-                ${data.timeline ? `<strong>Timeline:</strong> ${sanitizeHtml(data.timeline)}<br>` : ''}
-                ${data.budget ? `<strong>Budget Range:</strong> ${sanitizeHtml(data.budget)}<br>` : ''}
+                <strong>Inquiry Received:</strong><br>
+                We have securely received your project details and requirements.
               </p>
             </div>
 

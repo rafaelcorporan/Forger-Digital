@@ -103,8 +103,8 @@ async function sendConfirmationEmail(data: ContactFormData) {
             
             <div style="background: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0; border-left: 4px solid #FF5722;">
               <p style="margin: 0; color: #666; font-size: 14px;">
-                <strong>Your Message:</strong><br>
-                ${data.message.replace(/\n/g, '<br>')}
+                <strong>Receipt Confirmed:</strong><br>
+                We have securely received your message details.
               </p>
             </div>
 
